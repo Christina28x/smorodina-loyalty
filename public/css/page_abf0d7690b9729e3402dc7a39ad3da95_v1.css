@@ -1,0 +1,320 @@
+
+
+/* Start:/local/templates/smorodinacosmetic_f61/components/bitrix/news.list/awards/style.css?16890515241114*/
+.awards {
+    background: var(--colorPinkLight);
+}
+
+.awards__inner {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 40px 10px;
+}
+
+.awards__swiper-wrapper {
+    justify-content: space-between;
+    /*max-width: 880px;*/
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.awards__slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    max-width: 165px;
+}
+
+.awards__img {
+    display: block;
+    width: 100%;
+    max-width: 165px;
+    height: auto;
+    object-fit: contain;
+}
+
+.awards__text {
+    font-style: italic;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #000;
+    margin-bottom: 15px;
+    max-width: 680px;
+}
+
+
+@media (max-width: 680px) {
+    .awards__slide {
+        max-width: unset;
+    }
+
+    .awards__img {
+        max-width: 115px;
+    }
+
+    .awards__inner {
+        padding: 27px 10px;
+    }
+}
+
+@media (min-width: 680px) {
+    .awards .slider-button-next-svg_pink,
+    .awards .slider-button-prev-svg_pink {
+        display: none;
+    }
+}
+
+/* End */
+
+
+/* Start:/local/templates/smorodinacosmetic_f61/components/bitrix/news.list/advantages/style.css?1689051524870*/
+.advantages-pink {
+    background: var(--colorPinkLight);
+    /*margin: 10px 0;*/
+}
+
+.advantages-pink__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 23px;
+    align-items: self-end;
+}
+
+.advantages-pink__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.advantages-pink__icon {
+    height: 46px;
+    margin-bottom: 8.5px;
+}
+
+.advantages-pink__img {
+    height: 100%;
+}
+
+.advantages-pink__title {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+
+
+/* MEDIA */
+@media (max-width: 768px) {
+    .advantages-pink__icon {
+        height: 36px;
+    }
+
+    .advantages-pink__title {
+        font-size: 8.1px;
+        line-height: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .advantages-pink__inner {
+        grid-gap: 15px;
+    }
+}
+/* End */
+
+
+/* Start:/local/templates/smorodinacosmetic_f61/components/bitrix/news.list/blogposts_front_f61/style.css?16974591004197*/
+.front-blog__item {
+
+}
+.front-blog-item {
+    position: relative;
+}
+.front-blog-item:hover .front-blog-item__name {
+    font-size: 24px;
+}
+
+.front-blog-item__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    cursor: pointer;
+}
+.front-blog-item__photo {
+    height: 390px;
+    border-radius: 25px !important;
+    overflow: hidden !important;
+    transition: background .6s;
+    -webkit-transition: background .6s;
+    -moz-transition: background .6s;
+    -o-transition: background .6s;
+}
+
+@keyframes visible {
+    from {
+        opacity: .7;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes leave {
+    from {
+        opacity: .7;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes leavePhoto {
+    from {
+        background: linear-gradient(0deg, black, #000000);
+        background: -webkit-linear-gradient(0deg, black, #000000);
+        background: -moz-linear-gradient(0deg, black, #000000);
+        background: -o-linear-gradient(0deg, black, #000000);
+    }
+    to {
+        background: linear-gradient(0deg, black, #00000000);
+        background: -webkit-linear-gradient(0deg, black, #00000000);
+        background: -moz-linear-gradient(0deg, black, #00000000);
+        background: -o-linear-gradient(0deg, black, #00000000);
+    }
+}
+@keyframes enter {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: .7;
+    }
+}
+@keyframes enterPhoto {
+    from {
+        background: linear-gradient(0deg, black, #00000000);
+        background: -webkit-linear-gradient(0deg, black, #00000000);
+        background: -moz-linear-gradient(0deg, black, #00000000);
+        background: -o-linear-gradient(0deg, black, #00000000);
+    }
+    to {
+        background: linear-gradient(0deg, black, #000000);
+        background: -webkit-linear-gradient(0deg, black, #000000);
+        background: -moz-linear-gradient(0deg, black, #000000);
+        background: -o-linear-gradient(0deg, black, #000000);
+    }
+}
+
+.front-blog-item__img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px !important;
+    border: none;
+    position: relative;
+    overflow: hidden !important;
+    -webkit-transition: transform 0.25s;
+    transition: transform 0.25s;
+}
+.leave .front-blog-item__img {
+    animation: leave .3s;
+    animation-fill-mode: forwards;
+}
+.leave .front-blog-item__photo {
+    animation: leavePhoto .6s;
+    animation-fill-mode: forwards;
+}
+.enter:hover .front-blog-item__img {
+    transform: scale(1.2);
+    animation: enter .6s;
+    animation-fill-mode: forwards;
+}
+.enter .front-blog-item__photo {
+    animation: enterPhoto .3s;
+    animation-fill-mode: forwards;
+}
+.front-blog-item_1 .front-blog-item__photo {
+    height: 620px;
+}
+.front-blog-item__sections {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 12px;
+    margin-top: 10px;
+}
+.front-blog-item__section {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 14px */
+    letter-spacing: -0.28px;
+    text-transform: lowercase;
+    display: flex;
+    border-radius: 10px;
+    background: #F1F1F1;
+    width: max-content;
+    padding: 6px 12px;
+}
+.front-blog-item__name {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -.18px;
+    margin-top: 12px;
+    transition: .6s all;
+}
+.front-blog-item__desc {
+    font-size: 14px;
+    font-weight: 450;
+    line-height: 130%;
+    letter-spacing: -.28px;
+}
+.front-blog__btn {
+    margin-top: 50px;
+}
+@media (max-width: 767.98px) {
+    .front-blog-item__photo {
+        height: 160px;
+    }
+
+    .front-blog-item_1 .front-blog-item__photo {
+        height: 220px;
+    }
+    .front-blog-item__name {
+        font-size: 14px;
+        letter-spacing: -.14px;
+        margin-top: 10px;
+        transition: .2s all;
+    }
+    .front-blog-item:hover .front-blog-item__name {
+        font-size: 14px;
+    }
+    .front-blog-item__desc {
+        font-size: 12px;
+        letter-spacing: -.12px;
+    }
+    .front-blog-item__sections {
+        grid-gap: 6px;
+    }
+    .front-blog-item__section {
+        font-size: 10px;
+    }
+    .front-blog__btn {
+        margin-top: 30px;
+    }
+}
+
+/* End */
+/* /local/templates/smorodinacosmetic_f61/components/bitrix/news.list/awards/style.css?16890515241114 */
+/* /local/templates/smorodinacosmetic_f61/components/bitrix/news.list/advantages/style.css?1689051524870 */
+/* /local/templates/smorodinacosmetic_f61/components/bitrix/news.list/blogposts_front_f61/style.css?16974591004197 */

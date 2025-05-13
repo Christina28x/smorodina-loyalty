@@ -1,0 +1,159 @@
+
+; /* Start:"a:4:{s:4:"full";s:105:"/local/templates/smorodinacosmetic_f61/components/bitrix/news.detail/about-brand/script.js?16974465184445";s:6:"source";s:90:"/local/templates/smorodinacosmetic_f61/components/bitrix/news.detail/about-brand/script.js";s:3:"min";s:0:"";s:3:"map";s:0:"";}"*/
+jQuery(function ($) {
+
+    if (screen.width < 767) {
+        if( $('.company-parallax').data('bg-mob') ) {
+            let mobBg = $('.company-parallax').data('bg-mob');
+            $('.company-parallax').css('background-image', 'url(' + mobBg + ')');
+        }
+    }
+
+
+    // Слайдер
+    const gallerySwiper = new Swiper('.company-gallery__slider', {
+        slidesPerView: 4,
+        spaceBetween: 12,
+        // freeMode: true,
+        loop: true,
+        autoplay: {
+            delay: 1,
+            disableOnInteraction: true
+        },
+        freeMode: true,
+        speed: 8000,
+        freeModeMomentum: false,
+        // 0: {
+        //     slidesPerView: 'auto',
+        //     spaceBetween: 12,
+        // },
+        breakpoints: {
+            320: {
+                //autoplay: false,
+                freeMode: false,
+            },
+            // 374: {
+            //     slidesPerView: 2.4,
+            //     spaceBetween: 9
+            // },
+            // 680: {
+            //     slidesPerView: 3.4,
+            //     spaceBetween: 10
+            // },
+            // 960: {
+            //     slidesPerView: 4,
+            //     spaceBetween: 20
+            // }
+        }
+    });
+
+    // $('.company-gallery__slider').on('mouseenter', function (e) {
+    //     gallerySwiper.autoplay.stop();
+    // });
+    //
+    // $('.company-gallery__slider').on('mouseleave', function (e) {
+    //     gallerySwiper.autoplay.start();
+    // });
+
+    // const philosophySwiper = new Swiper('.company-slides__swiper', {
+    //     slidesPerView: 1,
+    //     spaceBetween: 12,
+    //     freeMode: true,
+    //     loop: true,
+    // });
+
+    const philosophySwiper = new Swiper('.company-slides__swiper', {
+        slidesPerView: 1,
+        spaceBetween: 12,
+        //freeMode: true,
+
+        loop: true,
+        effect: 'fade',
+        speed: 500,
+        autoHeight: true,
+        // autoplay: {
+        //     delay: 5000,
+        //     disableOnInteraction: false,
+        // },
+        pagination: {
+            el: '.company-slides__swiper .swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.f61-slider__slides__next',
+            prevEl: '.f61-slider__slides__prev',
+        },
+
+
+
+    });
+
+    if ($('.company-intro').length) {
+
+        let introDescController = new ScrollMagic.Controller();
+        const introDesc = new ScrollMagic.Scene({
+            triggerElement: '.company-intro__empty'
+        })
+            // .setClassToggle('.company-intro__desc', 'company-intro__desc_animated')
+            .setClassToggle('.company-intro__desc', 'company-intro__desc_act')
+            .addTo(introDescController);
+
+    }
+
+    if ($('.company-ceo').length) {
+
+        let ceoDescController = new ScrollMagic.Controller();
+        const ceoDesc = new ScrollMagic.Scene({
+            triggerElement: '.company-ceo'
+        })
+            .setClassToggle('.company-ceo__cont', 'company-ceo__cont_act')
+            .addTo(ceoDescController);
+
+    }
+
+    if ($('.company-fabrication').length) {
+
+        let fabricationController1 = new ScrollMagic.Controller();
+        const fabrication1 = new ScrollMagic.Scene({
+            triggerElement: '.cf1'
+        })
+            .setClassToggle('.cf1', 'cf1_active')
+            .addTo(fabricationController1);
+
+        let fabricationController2 = new ScrollMagic.Controller();
+        const fabrication2 = new ScrollMagic.Scene({
+            triggerElement: '.cf2'
+        })
+            .setClassToggle('.cf2', 'cf2_active')
+            .addTo(fabricationController2);
+
+    }
+
+    // if ($('.company-community').length) {
+    //
+    //     let companyСommunityController = new ScrollMagic.Controller();
+    //
+    //     const companyСommunity = new ScrollMagic.Scene({
+    //         triggerElement: '.company-community'
+    //     })
+    //         .setClassToggle('.company-community__static', 'company-community__moving')
+    //         // .reverse(false)
+    //         .addTo(companyСommunityController);
+    //
+    // }
+
+    // if ($('.company-slides').length) {
+    //
+    //     let companySlidesController = new ScrollMagic.Controller();
+    //     const companySlides = new ScrollMagic.Scene({
+    //         triggerElement: '.company-community'
+    //     })
+    //         .setClassToggle('.company-slides', 'company-slides__parallax')
+    //         .addTo(companySlidesController);
+    //
+    // }
+
+});
+
+/* End */
+;; /* /local/templates/smorodinacosmetic_f61/components/bitrix/news.detail/about-brand/script.js?16974465184445*/

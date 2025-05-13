@@ -1,0 +1,131 @@
+
+
+/* Start:/local/templates/smorodinacosmetic_f61/components/bitrix/catalog.section/promotions/style.css?17320954032592*/
+.search__input {
+    border-radius: 17px;
+    background: var(--colorGrey2);
+    height: 50px;
+    padding: 0 20px;
+    width: 100%;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: -.28px;
+    background: #fff url('https://smorodinacosmetic.com/local/templates/smorodinacosmetic_f61/components/bitrix/catalog.section/promotions/../images/loupe_black.svg') no-repeat left 20px center / 16px;
+    padding-left: 60px;
+}
+
+/*.close-search {*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.search {*/
+/*    width: 100%;*/
+/*}*/
+
+/*.search__input {*/
+/*    background: #fff;*/
+/*    border-radius: 18px;*/
+/*    padding: 10px 15px;*/
+/*    margin-bottom: 0;*/
+/*    margin-right: 15px;*/
+/*}*/
+
+/*.search__input::placeholder {*/
+/*    color: #767676;*/
+/*    font-size: 14px;*/
+/*}*/
+
+/*.search__inner {*/
+/*    margin-bottom: 10px;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.search__inner.progress {*/
+/*    height: unset !important;*/
+/*    background-color: unset !important;*/
+/*    box-shadow: none !important;*/
+/*}*/
+
+/*.search__title_not-found {*/
+/*    font-size: 14px;*/
+/*    padding: 10px;*/
+/*}*/
+
+/*!* Результаты поиска *!*/
+/*.search__results-wrapper {*/
+/*    !*margin-bottom: 15px;*!*/
+/*    border-radius: 10px;*/
+/*    max-height: 300px;*/
+/*    height: 100%;*/
+/*    overflow-x: hidden;*/
+/*    overflow-y: scroll;*/
+/*}*/
+
+/*.search__results-wrapper::-webkit-scrollbar {*/
+/*    width: 0;*/
+/*}*/
+
+/*.search__results {*/
+/*    padding: 10px 10px 0 10px;*/
+/*}*/
+
+/*.item-search__link {*/
+/*    margin-bottom: 30px;*/
+/*}*/
+
+/*.item-search__link:hover .item-search {*/
+/*    background: #fefafd;*/
+/*}*/
+
+/*.item-search__link:hover .item-search__img,*/
+/*.item-search__link:hover .item-search__title {*/
+/*    transform: scale(1.01);*/
+/*}*/
+
+/*.item-search,*/
+/*.item-search__img,*/
+/*.item-search__title {*/
+/*    transition: all var(--transitionSlow);*/
+/*}*/
+
+/*.item-search {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    border-radius: 8px;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/*.item-search__img {*/
+/*    margin-right: 20px;*/
+/*}*/
+
+/*.item-search__title {*/
+/*}*/
+
+
+/*!* Media *!*/
+/*@media (max-width: 425px) {*/
+/*    .close-search {*/
+/*        font-size: 12px;*/
+/*    }*/
+
+/*    .item-search__title {*/
+/*        font-size: 12px;*/
+/*    }*/
+
+/*    .search__input {*/
+/*        font-size: 14px;*/
+/*    }*/
+/*}*/
+
+/*@media all and (max-width: 320px) {*/
+/*    .search__results-wrapper {*/
+/*        max-height: 270px;*/
+/*    }*/
+/*}*/
+/* End */
+/* /local/templates/smorodinacosmetic_f61/components/bitrix/catalog.section/promotions/style.css?17320954032592 */

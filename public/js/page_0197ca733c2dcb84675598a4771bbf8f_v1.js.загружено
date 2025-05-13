@@ -1,0 +1,74 @@
+
+; /* Start:"a:4:{s:4:"full";s:108:"/local/templates/smorodinacosmetic_f61/components/bitrix/catalog.section/promotions/script.js?17320954032025";s:6:"source";s:93:"/local/templates/smorodinacosmetic_f61/components/bitrix/catalog.section/promotions/script.js";s:3:"min";s:0:"";s:3:"map";s:0:"";}"*/
+$(function () {
+    var timeOut;
+
+    $('input[type="search"]', '#searchHeader').on(
+        'focus',
+        function () {
+            $(this).removeClass('done');
+        }
+    );
+
+    $('input[type="search"]', '#searchHeader').on(
+        'change paste keyup',
+        function () {
+
+            var field = $(this).parent('.field'),
+                query = $(this).val();
+
+            field.addClass('progress').removeClass('found').removeClass('done');
+
+            clearTimeout(timeOut);
+
+            timeOut = setTimeout(
+                function () {
+
+                    if (query.length > 1) {
+
+                        $.ajax(
+                            {
+                                url: '/local/templates/smorodinacosmetic_f61/ajax/search.php',
+                                data: {
+                                    'AJAX': 'Y',
+                                    'COMPONENT': 'AJAX_CATALOG_SEARCH',
+                                    'QUERY': query
+                                },
+                                success: function (data) {
+
+                                    field.removeClass('progress');
+
+                                    if (data.length > 0) {
+                                        field.addClass('found');
+                                    } else {
+                                        field.addClass('none');
+                                    }
+
+                                    if (data.length > 0 && data !== 'null') {
+                                        $('#searchHeaderResults').html(data).slideDown();
+                                    }
+
+                                }
+                            }
+                        );
+
+                    } else {
+
+                        $('#searchHeaderResults').html('');
+
+                        field.removeClass('progress');
+
+                    }
+
+                },
+                500
+            );
+
+
+        }
+    );
+
+});
+
+/* End */
+;; /* /local/templates/smorodinacosmetic_f61/components/bitrix/catalog.section/promotions/script.js?17320954032025*/
