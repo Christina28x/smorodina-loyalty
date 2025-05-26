@@ -3,7 +3,15 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CabinetController;
+use App\Http\Controllers\Auth\VerifyEmailController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\LoyaltyAdminController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('home');
@@ -248,15 +256,62 @@ Route::get('/cart/total', [CartController::class, 'total'])->name('cart.total');
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 
+Route::get('/purchase', [OrderController::class, 'index'])->name('purchase.index');
+Route::post('/purchase', [OrderController::class, 'submit'])->name('purchase.submit');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/complete', function () {
+    return view('order.complete');
+})->name('order.complete');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+// AJAX-проверка email
+Route::post('/auth/check-email', [AuthController::class, 'checkEmail']);
+
+// Логин через pop-up
+Route::post('/auth/login', [AuthController::class, 'login']);
+
+// Позже подключим
+Route::post('/auth/register', [AuthController::class, 'register'])->name('auth.register');
+
+
+// Кабинет (в будущем – редирект авторизованным)
+Route::get('/cabinet', function () {
+    return view('cabinet.index'); // если понадобится отдельная страница
+})->middleware('auth')->name('cabinet');
+
+
+
+
+// маршрут, на который ведёт письмо
+Route::get('/verify-email/{id}/{hash}', VerifyEmailController::class)
+    ->middleware(['signed', 'throttle:6,1'])
+    ->name('verification.verify');
+
+
+    Route::get('/login', function () {
+    return redirect('/'); // или на popup login не важно
+})->name('login');
+
+Route::get('/check-auth', function () {
+    return response()->json(['authenticated' => auth()->check()]);
 });
 
-require __DIR__.'/auth.php';
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/')->with('message', 'Вы вышли из аккаунта.');
+})->name('logout');
+
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/cabinet', [CabinetController::class, 'index'])->name('cabinet');
+    Route::post('/cabinet/update', [CabinetController::class, 'updateProfile'])->name('cabinet.updateProfile');
+    Route::post('/cabinet/update-password', [CabinetController::class, 'updatePassword'])->name('cabinet.updatePassword');
+    Route::post('/favorite/toggle', [FavoriteController::class, 'toggle'])->name('favorite.toggle');
+    Route::post('/cabinet/discounts/select', [CabinetController::class, 'submitDiscountChoice'])->name('loyalty.selectDiscount');
+    Route::post('/cart/apply-coupon', [CartController::class, 'applyCoupon']);
+    Route::post('/cart/set-discounted-total', [CartController::class, 'setDiscountedTotal']);
+    Route::get('/cabinet/loyalty-admin', [LoyaltyAdminController::class, 'index'])->name('admin.loyalty');
+    Route::post('/cabinet/loyalty-admin', [LoyaltyAdminController::class, 'update'])->name('admin.loyalty.update');
+
+});
+

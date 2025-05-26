@@ -247,6 +247,10 @@
                        class="product-card__photo metrika_good_click"
                        style="background-image: url('{{ asset($product->image) }}')">
                     </a>
+                    <div class="product-card__favorite {{ auth()->user()?->hasFavorite($product->id) ? 'product-card__favorite_active' : '' }}" data-product-id="{{ $product->id }}">
+                        <svg><use href="#heart"></use></svg>
+                    </div>
+
 
                     <div class="product-card__text">
                         <div class="product-card__text__prev">

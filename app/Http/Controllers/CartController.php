@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\Product;
+use App\Models\Discount;
 
 class CartController extends Controller
 {
@@ -75,6 +76,73 @@ class CartController extends Controller
         $cart = Session::get('cart', []);
         return array_sum(array_map(fn($item) => $item['quantity'], $cart));
     }
+
+    public function applyCoupon(Request $request)
+    {
+        $code = trim($request->input('code'));
+        $user = auth()->user();
+
+        $discount = Discount::where('code', $code)
+            ->where(function ($q) use ($user) {
+                $q->whereNull('user_id')
+                ->orWhere('user_id', $user?->id ?? 0);
+            })
+            ->where('valid_until', '>=', now())
+            ->first();
+
+        if (!$discount) {
+            return response()->json(['error' => 'Промокод недействителен'], 422);
+        }
+
+
+session()->put('applied_discount', [
+    'code' => $discount->code,
+    'value' => $discount->value,
+    'type' => $discount->type,
+    'target_id' => $discount->target_id,
+]);
+
+
+        return response()->json([
+    'success' => true,
+    'discount' => [
+        'code' => $discount->code,
+        'value' => $discount->value,
+        'type' => $discount->type,
+        'target' => match ($discount->type) {
+            'category' => \App\Models\Category::find($discount->target_id)?->name,
+            'subcategory' => \App\Models\Subcategory::find($discount->target_id)?->name,
+            default => null,
+        }
+    ],
+]);
+    }
+public function setDiscountedTotal(Request $request)
+{
+    $total = (int) $request->input('total');
+
+    if (session()->has('applied_discount')) {
+        $discount = session('applied_discount');
+        $discount['amount'] = $this->getOriginalTotal() - $total;
+        $discount['final_total'] = $total;
+
+        session()->put('applied_discount', $discount);
+    }
+
+    return response()->json(['success' => true]);
+}
+
+protected function getOriginalTotal()
+{
+    $cart = Session::get('cart', []);
+    $total = 0;
+
+    foreach ($cart as $item) {
+        $total += $item['price'] * $item['quantity'];
+    }
+
+    return $total;
+}
 
 
     public function index()

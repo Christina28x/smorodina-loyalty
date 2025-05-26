@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Моя корзина')
 @section('content')
 <main class="">
     <section class="cart pink f61-temp-page">
@@ -15,18 +15,15 @@
                         </span>
                     </h2>
 
-                    <p class="cart__block-desc">
-                        Срок сборки заказов до 2-х рабочих дней! Доставка до ПВЗ и Постамата СДЭК и Яндекс бесплатная от 3500 ₽, кроме дальних городов*
-                    </p>
 
-                    <div class="cart__free-delivery_mobile">
-                        <div class="cart__free-delivery_general">Бесплатная доставка от 3000 ₽</div>
-                    </div>
 
                     <div class="cart__content">
                         <div class="cart__items">
                             @foreach ($products as $product)
-                                <article class="cart__article item-cart" data-id="{{ $product->id }}" data-product-id="{{ $product->id }}" data-price="{{ $product->price }}">
+                                <article class="cart__article item-cart" data-id="{{ $product->id }}" data-product-id="{{ $product->id }}" 
+                                data-price="{{ $product->price }}" data-product-category="{{ $product->category }}"
+         data-product-subcategory="{{ $product->subcategory }}" data-original-price="{{ $product->price }}"
+>
                                     <div class="item-cart__inner">
                                         <div class="item-cart__pic">
                                             <a class="item-cart__photo-link" href="{{ route('products.show', [$product->category, $product->subcategory, $product->slug]) }}"></a>
@@ -84,7 +81,7 @@
                                     </div>
                                 </article>
                             @endforeach
-                                                    <div class="promocode">
+                        <div class="promocode">
                             <div class="promocode__wrap">
                                 <input type="text" name="coupon" class="promocode__input" placeholder="Введите промокод или сертификат">
                                 <div class="promocode__check">Применить</div>
@@ -125,16 +122,24 @@ document.addEventListener('DOMContentLoaded', function () {
         let totalCount = 0;
 
         document.querySelectorAll('.item-cart').forEach(item => {
+            const originalPrice = parseInt(item.dataset.originalPrice || item.dataset.price || '0');
             const price = parseInt(item.dataset.price || '0');
             const quantity = parseInt(item.querySelector('.item-cart__number').value);
 
             total += price * quantity;
             totalCount += quantity;
 
-            // Обновить цену
+            // Обновить текущую цену
             const priceEl = item.querySelector('.item-cart__price_current');
             if (priceEl) {
                 priceEl.textContent = (price * quantity).toLocaleString('ru-RU') + ' ₽';
+            }
+
+            // Обновить зачёркнутую цену, если есть
+            const priceOldEl = item.querySelector('.item-cart__price_old');
+            if (priceOldEl && price !== originalPrice) {
+                priceOldEl.textContent = (originalPrice * quantity).toLocaleString('ru-RU') + ' ₽';
+                priceOldEl.style.display = 'inline';
             }
 
             // Обновить input с количеством
@@ -158,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     }
+
 
     // Удаление товара
     document.querySelectorAll('.item-cart__delete').forEach(delBtn => {
@@ -223,8 +229,87 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+        document.querySelector('.promocode__check').addEventListener('click', () => {
+    const code = document.querySelector('.promocode__input').value.trim();
+    if (!code) return;
+
+    fetch('/cart/apply-coupon', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+        },
+        body: JSON.stringify({ code })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            const discount = data.discount;
+            applyDiscountToCart(discount);
+        } else {
+            alert(data.error || 'Ошибка применения промокода');
+        }
+    });
+});
+
+function applyDiscountToCart(discount) {
+    const cartItems = document.querySelectorAll('.item-cart');
+    let discountedTotal = 0;
+
+    cartItems.forEach(item => {
+        const price = parseInt(item.dataset.originalPrice || item.dataset.price);
+        const quantity = parseInt(item.querySelector('.item-cart__number').value);
+        const category = item.dataset.productCategory;
+        const subcategory = item.dataset.productSubcategory;
+
+        const matches = (
+            discount.type === 'all' ||
+            (discount.type === 'category' && discount.target === category) ||
+            (discount.type === 'subcategory' && discount.target === subcategory)
+        );
+
+        let newPrice = price;
+        if (matches) {
+            newPrice = Math.round(price * (1 - discount.value / 100));
+
+            const badge = document.createElement('div');
+            badge.classList.add('item-cart__badge', 'item-cart__badge_discount');
+            badge.textContent = `-${discount.value}%`;
+
+            const pic = item.querySelector('.item-cart__pic');
+            if (pic && !pic.querySelector('.item-cart__badge_discount')) {
+                pic.appendChild(badge);
+            }
+
+            const priceOldEl = item.querySelector('.item-cart__price_old');
+            if (priceOldEl) {
+                priceOldEl.textContent = (price * quantity).toLocaleString('ru-RU') + ' ₽';
+                priceOldEl.style.display = 'inline';
+            }
+        }
+
+        item.dataset.price = newPrice;
+        const currentEl = item.querySelector('.item-cart__price_current');
+        if (currentEl) {
+            currentEl.textContent = (newPrice * quantity).toLocaleString('ru-RU') + ' ₽';
+        }
+
+        discountedTotal += newPrice * quantity;
+    });
+
     updateCartSummary();
+
+    // 💾 Сохраняем сумму со скидкой в сессию
+    fetch('/cart/set-discounted-total', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+        },
+        body: JSON.stringify({ total: discountedTotal })
+    });
+}
+
 });
 </script>
-
 

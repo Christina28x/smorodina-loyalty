@@ -40,9 +40,16 @@
             </div>
             <div class="header__wrap__rb d-flex">
                                 
-                <a href="/cabinet/" class="header__cabinet header__icon d-flex">
+                <div class="header__cabinet header__icon d-flex" role="button" tabindex="0">
                     <svg><use href="#person"></use></svg>
-                </a>
+                </div>
+
+                @auth
+                    <a href="/cabinet/?view=favorites" class="header__favorites header__icon">
+                        <svg><use href="#heart"></use></svg>
+                    </a>
+                @endauth
+
 
 <a href="/cart/" class="header__cart header__icon">
     <svg><use href="#bag"></use></svg>

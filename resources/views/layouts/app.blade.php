@@ -35,7 +35,10 @@
 <link href="{{ asset('css/page_3de68166bf3f01df3a58ee3325cbd8f2_v1.css') }}" type="text/css" rel="stylesheet">
 <link href="{{ asset('css/page_e198664f0fd1caa381d98038ab8fde33_v1.css') }}" type="text/css" rel="stylesheet">
 <link href="{{ asset('css/page_6b5c3069aca444f3c3a84687610c6f8f_v1.css') }}" type="text/css" rel="stylesheet">
-<link href="{{ asset('css/page_b2ccd533cc9a2a95528aad9d70ed673d_v1.css') }}" type="text/css"  rel="stylesheet" />
+<link href="{{ asset('css/page_b2ccd533cc9a2a95528aad9d70ed673d_v1.css') }}" type="text/css"  rel="stylesheet">
+<link href="{{ asset('css/purchase_page.css') }}" type="text/css" rel="stylesheet">
+<link href="{{ asset('css/cabinet_page.css') }}" type="text/css" rel="stylesheet">
+<link href="{{ asset('css/kernel_main_v1.css') }}" type="text/css" rel="stylesheet">
 <link href="{{ asset('css/template_0b80b7434013b79b15128a7013bfd855_v1.css') }}" type="text/css"  data-template-style="true" rel="stylesheet" />
 <link href="{{ asset('css/template_5957792d4c57c19441691684972a6901_v1.css') }}" type="text/css" data-template-style="true" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -694,6 +697,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
+@if (!request()->is('cabinet') || request('view') !== 'favorites')
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.product-card__favorite').forEach(el => {
+        el.addEventListener('click', function () {
+            const productId = this.dataset.productId;
+
+            fetch('/favorite/toggle', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                },
+                body: JSON.stringify({ product_id: productId })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'added') {
+                    this.classList.add('product-card__favorite_active');
+                } else {
+                    this.classList.remove('product-card__favorite_active');
+                }
+            });
+        });
+    });
+});
+</script>
+@endif
 
 
 
@@ -704,6 +735,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <script>
     window.popupForSubscriptionsForm("https://apig.unisender.com");
 </script>
+@include('includes.auth-popup')
 @include('partials.footer')
 <svg style="display: none">
     @include('partials.sprite')
@@ -717,5 +749,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     </div>
 </div>
+
+
 @stack('scripts')
 </body></html>

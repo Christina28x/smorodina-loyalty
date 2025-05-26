@@ -20092,25 +20092,7 @@ textarea::placeholder {
 .fly-popup2 .fly-popup__item {
     transform: translate(40%) scale(0.95);
 }
-.fly-popup__close {
-    background-image: url('/local/templates/smorodinacosmetic_f61/svg/close_black.svg');
-    width: 32px;
-    height: 32px;
-    border-radius: 10px;
-    background-color: #fff;
-    position: absolute;
-    z-index: 1;
-    background-repeat: no-repeat;
-    background-position: center;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    background-size: 14px;
-    transition: all 200ms ease;
-}
-.fly-popup__close:hover {
 
-}
 .fly-popup__cont {
     font-size: 14px;
     font-style: normal;
