@@ -270,7 +270,7 @@ Route::post('/auth/check-email', [AuthController::class, 'checkEmail']);
 // Логин через pop-up
 Route::post('/auth/login', [AuthController::class, 'login']);
 
-// Позже подключим
+// Регистрация
 Route::post('/auth/register', [AuthController::class, 'register'])->name('auth.register');
 
 
