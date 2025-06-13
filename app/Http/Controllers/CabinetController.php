@@ -48,14 +48,15 @@ class CabinetController extends Controller
             $loyaltyLevels = \App\Models\LoyaltyLevel::orderBy('bonus_percent')->get();
             $currentLevel = $user->loyaltyLevel;
 
-            $subcategoryNames = $user->orders()
+            $subcategoryIds = $user->orders()
                 ->with('items.product')
                 ->get()
                 ->pluck('items')
                 ->flatten()
-                ->pluck('product.subcategory')
+                ->pluck('product.subcategory_id') // ← теперь правильно
                 ->filter()
-                ->unique();
+                ->unique()
+                ->toArray(); // обязательно, чтобы передать массив
 
             // ID уже купленных товаров
             $purchasedIds = $user->orders()
@@ -67,7 +68,7 @@ class CabinetController extends Controller
                 ->unique();
 
             // Рекомендации из тех же подкатегорий, которых ещё не было в заказах
-            $recommended = Product::whereIn('subcategory', $subcategoryNames)
+            $recommended = Product::whereIn('subcategory_id', $subcategoryIds)
                 ->whereNotIn('id', $purchasedIds)
                 ->inRandomOrder()
                 ->take(10)
@@ -80,14 +81,12 @@ class CabinetController extends Controller
             
             // Показывать форму только в первые 3 дня месяца
             $hasChosenDiscounts = Discount::where('user_id', $user->id)
-            ->where('type', 'category')
             ->whereMonth('created_at', now()->month)
             ->exists();
 
             $availableCategories = Category::all();
 
             $currentDiscount = Discount::where('user_id', $user->id)
-                ->where('type', 'category')
                 ->whereMonth('created_at', now()->month)
                 ->first();
 
@@ -142,20 +141,18 @@ class CabinetController extends Controller
         // Проверка — не создавал ли уже выбор в этом месяце
         $already = Discount::where('user_id', $user->id)
             ->whereMonth('created_at', now()->month)
-            ->where('type', 'category')
             ->exists();
 
         if ($already) {
             return response()->json(['error' => 'Вы уже выбрали скидку в этом месяце.'], 422);
         }
 
-        $code = strtoupper(Str::random(8)); // Пример: W3XZ8LQN
+        $code = strtoupper(Str::random(8)); 
 
         // Создаём запись
         $discount = Discount::create([
             'user_id' => $user->id,
             'code' => $code,
-            'type' => 'category',
             'target_id' => $request->category_id,
             'value' => 15, // например, 15%
             'valid_until' => now()->addMonth()->startOfMonth()->addDays(30),

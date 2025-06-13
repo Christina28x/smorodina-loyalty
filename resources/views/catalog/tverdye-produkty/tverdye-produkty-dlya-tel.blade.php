@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Кондиционеры')
+@section('title', 'Для тела')
 @section('content')
 <main class="">
 
@@ -74,53 +74,46 @@
     [60] => 2590
     [61] => 2587
     [62] => 2588
-    [63] => 2130
-    [64] => 2126
-    [65] => 2142
-    [66] => 2141
-    [67] => 2127
-    [68] => 2132
-    [69] => 2143
-    [70] => 2144
-    [71] => 2536
-    [72] => 2537
-    [73] => 2539
-    [74] => 2540
-    [75] => 2541
-    [76] => 2542
-    [77] => 2543
-    [78] => 2544
-    [79] => 2545
-    [80] => 2546
-    [81] => 2547
-    [82] => 2548
-    [83] => 1070
-    [84] => 3027
-    [85] => 1072
-    [86] => 2952
-    [87] => 1073
-    [88] => 520
-    [89] => 521
-    [90] => 522
-    [91] => 620
-    [92] => 518
-    [93] => 519
-    [94] => 515
-    [95] => 516
-    [96] => 517
-    [97] => 543
+    [63] => 1070
+    [64] => 3027
+    [65] => 1072
+    [66] => 2952
+    [67] => 1073
+    [68] => 3031
+    [69] => 3032
+    [70] => 1074
+    [72] => 2430
+    [75] => 1110
+    [76] => 1106
+    [77] => 1111
+    [78] => 1107
+    [79] => 1112
+    [80] => 1108
+    [81] => 1113
+    [82] => 1109
+    [83] => 1119
+    [84] => 1114
+    [85] => 1077
+    [86] => 2950
+    [87] => 2951
 )
 </pre>
-    <pre class="d-none"></pre>
+    <pre class="d-none">Array
+(
+    [0] => 1077
+    [1] => 2950
+    [2] => 2951
+)
+</pre>
 
-        <div class="catalog-section__head" style="background-image: url(https://smorodinacosmetic.com/upload/resize_cache/uf/0f7/iiqsj9u0o8n028blqxlpvqik417lhejm/1400_0_0/Cataloge-preview-banner_2.jpg)">
+        <div class="catalog-section__head" style="background-image: url(https://smorodinacosmetic.com/upload/resize_cache/uf/26d/y9xxo7s34eduyoguzlo05gsapa9plfi0/1400_0_0/Cataloge-preview-banner_3-kopiya.jpg)">
             <div class="container-xxl h-100 d-flex flex-column justify-content-end justify-content-lg-between">
             <div class="head-breadcrumbs d-none d-lg-flex flex-wrap">
                 <a href="/">Главная страница</a>
                 <span>/</span>
                 <a href="/catalog/">Каталог</a>
             </div>
-            <h1 class="text-lowercase">Кондиционеры</h1>
+            <h1 class="text-lowercase">Для тела </h1>
         </div>
     </div>
 
@@ -133,22 +126,16 @@
                 <div class="catalog-section__menu__slides overflow-visible swiper">
                     <div class="swiper-wrapper">
                                                                                                             <div class="swiper-slide">
-                                    <a href="/catalog/hair-care/" class="d-block catalog-section__menu__item ">все товары</a>
+                                    <a href="/catalog/tverdye-produkty/" class="d-block catalog-section__menu__item ">все товары</a>
                                 </div>
                                                                     <div class="swiper-slide">
-                                        <a href="/catalog/hair-care/shampuni/" class="d-block catalog-section__menu__item ">Шампуни</a>
+                                        <a href="/catalog/tverdye-produkty/tverdye-shampuni-i-konditsionery/" class="d-block catalog-section__menu__item ">Для волос</a>
                                     </div>
                                                                     <div class="swiper-slide">
-                                        <a href="/catalog/hair-care/konditsionery/" class="d-block catalog-section__menu__item catalog-section__menu__item_active">Кондиционеры</a>
+                                        <a href="/catalog/tverdye-produkty/tverdye-produkty-dlya-tela/" class="d-block catalog-section__menu__item catalog-section__menu__item_active">Для тела </a>
                                     </div>
                                                                     <div class="swiper-slide">
-                                        <a href="/catalog/hair-care/refily/" class="d-block catalog-section__menu__item ">Рефилы</a>
-                                    </div>
-                                                                    <div class="swiper-slide">
-                                        <a href="/catalog/hair-care/aromaraschesyvanie-hair/" class="d-block catalog-section__menu__item ">Аромарасчесывание</a>
-                                    </div>
-                                                                    <div class="swiper-slide">
-                                        <a href="/catalog/hair-care/polotentse-s/" class="d-block catalog-section__menu__item ">Полотенце</a>
+                                        <a href="/catalog/tverdye-produkty/aksessuary-dlya-sushki-i-khraneniya/" class="d-block catalog-section__menu__item ">Аксессуары </a>
                                     </div>
                                                                                                         </div>
                     <div class="catalog-section__menu-scrollbar swiper-scrollbar"></div>
@@ -236,7 +223,5 @@
 </section>
 
 
-
 </main>
-
 @endsection

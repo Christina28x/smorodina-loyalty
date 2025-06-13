@@ -3,19 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
+use App\Models\Subcategory;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    /**
-     * Вывод списка товаров по категории и подкатегории
-     */
     public function index($category, $subcategory = null)
     {
-        $query = Product::where('category', $category);
+        $categoryModel = Category::where('name', $category)->orWhere('rus_name', $category)->firstOrFail();
+        $query = Product::where('category_id', $categoryModel->id);
 
         if ($subcategory) {
-            $query->where('subcategory', $subcategory);
+            $subcategoryModel = Subcategory::where('name', $subcategory)->orWhere('rus_name', $subcategory)->firstOrFail();
+            $query->where('subcategory_id', $subcategoryModel->id);
         }
 
         $products = $query->with('images')->get();
@@ -27,87 +28,89 @@ class ProductController extends Controller
         ]);
     }
 
-    /**
-     * Отображение страницы одного товара
-     */
     public function show($category, $subcategory, $slug)
     {
         $product = Product::where('slug', $slug)
-            ->with('images')
+            ->with('images', 'category', 'subcategory')
             ->firstOrFail();
-
-        // (опционально) проверим, что товар действительно из этой категории
-        // if ($product->category !== $category || $product->subcategory !== $subcategory) {
-        //     abort(404);
-        // }
 
         return view('products.show', compact('product'));
     }
 
     public function readyPage()
     {
-        $products_1 = Product::where('category', 'promotions')
-            ->where('subcategory', 'populyarnye-tovary')
-            ->get();
+        $products_1 = $this->getBy('promotions', 'populyarnye-tovary');
+        $products_2 = $this->getBy('promotions', 'nabory-s-tonerami');
+        $products_3 = $this->getBy('promotions', 'prodvinutyy-ukhod');
 
-        $products_2 = Product::where('category', 'promotions')
-            ->where('subcategory', 'nabory-s-tonerami')
-            ->get();
-
-        $products_3 = Product::where('category', 'promotions')
-            ->where('subcategory', 'prodvinutyy-ukhod')
-            ->get();
-        return view('promotions.complex-face.ready', compact('products_1', 'products_2','products_3'));
+        return view('promotions.complex-face.ready', compact('products_1', 'products_2', 'products_3'));
     }
 
-    public function showCatalogView($category, $subcategory)
+    public function showCatalog()
     {
-        $products = Product::where('category', $category)
-            ->where('subcategory', $subcategory)
-            ->with('images')
-            ->get();
+        $products = $this->getBy($category, $subcategory);
 
         return view("catalog.$category.$subcategory", compact('products'));
     }
 
-    public function showComplexHair()
+    public function showCatalogView($category, $subcategory)
     {
-        $products = Product::where('category', 'promotions')
-            ->where('subcategory', 'nabory-dlya-ukhoda-za-volosami')
-            ->with('images')
-            ->get();
+        $products = $this->getBy($category, $subcategory);
 
-        return view("promotions.complex-hair", compact('products'));
-    }
-
-    public function showComplexBody()
-    {
-        $products = Product::where('category', 'promotions')
-            ->where('subcategory', 'anti-cellulite')
-            ->with('images')
-            ->get();
-
-        return view("promotions.complex-body", compact('products'));
-    }
-
-    public function showComplexAroma()
-    {
-        $products = Product::where('category', 'promotions')
-            ->where('subcategory', 'aromaraschesyvanie')
-            ->with('images')
-            ->get();
-
-        return view("promotions.complex-aroma", compact('products'));
+        return view("catalog.$category.$subcategory", compact('products'));
     }
 
     public function showCategoryView($category)
     {
-        $products = Product::where('category', $category)
+        $categoryModel = Category::where('name', $category)->orWhere('rus_name', $category)->firstOrFail();
+
+        $products = Product::where('category_id', $categoryModel->id)
+            ->with('images')
+            ->get();
+
+        return view("catalog.$category.index", compact('products'));
+    }
+
+    public function showCategory($category)
+    {
+        $categoryModel = Category::where('name', $category)->orWhere('rus_name', $category)->firstOrFail();
+
+        $products = Product::where('category_id', $categoryModel->id)
             ->with('images')
             ->get();
 
         return view("$category.index", compact('products'));
     }
-    
+
+    public function showComplexHair()
+    {
+        $products = $this->getBy('promotions', 'nabory-dlya-ukhoda-za-volosami');
+        return view("promotions.complex-hair", compact('products'));
+    }
+
+    public function showComplexBody()
+    {
+        $products = $this->getBy('promotions', 'anti-cellulite');
+        return view("promotions.complex-body", compact('products'));
+    }
+
+    public function showComplexAroma()
+    {
+        $products = $this->getBy('promotions', 'aromaraschesyvanie');
+        return view("promotions.complex-aroma", compact('products'));
+    }
+
+    // 🔧 Вспомогательный метод
+    private function getBy($category, $subcategory)
+    {
+        $categoryModel = Category::where('name', $category)->orWhere('rus_name', $category)->firstOrFail();
+        $subcategoryModel = Subcategory::where('name', $subcategory)->orWhere('rus_name', $subcategory)->firstOrFail();
+
+        return Product::where('category_id', $categoryModel->id)
+            ->where('subcategory_id', $subcategoryModel->id)
+            ->with('images')
+            ->get();
+    }
 }
+
 

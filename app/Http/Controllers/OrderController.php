@@ -132,12 +132,13 @@ if ($discount) {
             'order_id' => $order->id,
         ]);
 
-        if ($user->total_spent >= 30000) {
-            $user->loyalty_level_id = 3;
-        } elseif ($user->total_spent >= 10000) {
-            $user->loyalty_level_id = 2;
-        } else {
-            $user->loyalty_level_id = 1;
+        $newLevel = \App\Models\LoyaltyLevel::where('min_spending', '<=', $user->total_spent)
+            ->orderByDesc('min_spending')
+            ->first();
+
+        // Если уровень изменился, обновить его
+        if ($newLevel && $user->loyalty_level_id !== $newLevel->id) {
+            $user->loyalty_level_id = $newLevel->id;
         }
 
         $user->save();

@@ -137,578 +137,67 @@
         <div class="mt-7">
         
 <div class="row gx-4 gy-7 mb-7 mb-lg-9">
-
-            
-            
-                
-                
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <a href="/sets/spf/" class="catalog-banner-2 d-flex flex-column align-items-center justify-content-between p-4"
-                           style="background-image: url('https://smorodinacosmetic.com/upload/iblock/25e/7ml98nxktdjqmu8i79s79xx31bk319q9/Frame-2087328988.jpg')">
-                            <div class="catalog-banner-2__tag" ></div>
-                            <span class="catalog-banner-2__title" >SPF серия</span>
-                        </a>
-                    </div>
-
-                
-            
-            
-            <div class="nm_0 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_0 item " data-id="156">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/body/selective-oils/naturalnaya-svecha-dlya-aromamassazha-yaponiya/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/c41/kr2ff9rxrpjiju3yvenagd6xv8qlqi7z/309_390_2/yaponiya.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Массажная свеча «Япония» афродизиак для нее  200 ml</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1690">1 690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Массажная свеча «Япония» афродизиак для нее  200 ml"
-                                    data-product-category="Массажные свечи"
-                                                                            data-product-price="1690"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/body/selective-oils/naturalnaya-svecha-dlya-aromamassazha-yaponiya/" class="product-card__name metrika_good_click">Массажная свеча «Япония» афродизиак для нее  200 ml
-                                                                                                            <span>/ 170 g</span>
-                                                    
+    @foreach ($products as $product)
+        <div class="nm_{{ $loop->index }} col-6 col-md-4 col-lg-3">
+            <article class="product-card ssss_{{ $loop->index }} item" data-id="{{ $product->id }}">
+                <div class="product-card__desc">
+                    <a href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"
+                       class="product-card__photo metrika_good_click"
+                       style="background-image: url('{{ asset($product->image) }}')">
                     </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_1 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_1 item " data-id="121">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/body/selective-oils/naturalnaya-svecha-dlya-aromamassazha-gruziya/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/c70/b7cib9k6rwcg0k6r8l1ibro2agnvhxbj/309_390_2/gruziya.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Массажная свеча «Грузия» афродизиак для него  200 ml</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1690">1 690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Массажная свеча «Грузия» афродизиак для него  200 ml"
-                                    data-product-category="Массажные свечи"
-                                                                            data-product-price="1690"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
+                    <div class="product-card__favorite {{ auth()->user()?->hasFavorite($product->id) ? 'product-card__favorite_active' : '' }}" data-product-id="{{ $product->id }}">
+                        <svg><use href="#heart"></use></svg>
                     </div>
-                                        <a href="/catalog/body/selective-oils/naturalnaya-svecha-dlya-aromamassazha-gruziya/" class="product-card__name metrika_good_click">Массажная свеча «Грузия» афродизиак для него  200 ml
-                                                                                                            <span>/ 170 g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_2 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_2 item " data-id="109">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/aromatherapy/aroma-therapy-massage-candles/naturalnaya-svecha-dlya-aromamassazha-novaya-zelandiya/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/ff8/iz6jt9vvu5uto4eagmbxfpu4xoqpdghv/309_390_2/novaya_zelandiya.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Массажная свеча «Новая Зеландия» для сладкого сна 200 ml</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1690">1 690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                    <div class="product-card__text">
+                        <div class="product-card__text__prev">
+                            {{ $product->name }}
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Массажная свеча «Новая Зеландия» для сладкого сна 200 ml"
-                                    data-product-category="Массажные свечи Aromatherapy"
-                                                                            data-product-price="1690"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
+
+                        <div class="product-card__text__price" data-currency-symbol="₽">
+                            <span class="product-card__text__price-current" data-current-price="{{ $product->price }}">
+                                {{ number_format($product->price, 0, ',', ' ') }} ₽
+                            </span>
+                            <span class="product-card__text__price-quantity">0</span>
+                        </div>
                     </div>
-                                        <a href="/catalog/aromatherapy/aroma-therapy-massage-candles/naturalnaya-svecha-dlya-aromamassazha-novaya-zelandiya/" class="product-card__name metrika_good_click">Массажная свеча «Новая Зеландия» для сладкого сна 200 ml
-                                                                                                            <span> / 170 g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_3 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_3 item " data-id="117">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/body/selective-oils/naturalnaya-svecha-dlya-aromamassazha-daniya/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/900/yc4ef3aqbkilcgdi5rfg3i6twuiup6mj/309_390_2/daniya.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Массажная свеча «Дания» для счастья и уюта в стиле хюгге  200 ml</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1690">1 690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                    <div class="product-card__add-block">
+                        <div class="product-card__count">
+                            <div class="product-card__count__minus" data-type="minus">-</div>
+                            <div class="product-card__count__value">0</div>
+                            <div class="product-card__count__plus" data-type="plus">+</div>
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Массажная свеча «Дания» для счастья и уюта в стиле хюгге  200 ml"
-                                    data-product-category="Массажные свечи"
-                                                                            data-product-price="1690"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
+
+                        <div class="product-card__btn-wrap product-card__btn-js"
+                             data-product-name="{{ $product->name }}"
+                             data-product-category="{{ $product->category->name }}"
+                             data-product-price="{{ $product->price }}">
+                            <div class="product-card__btn smo-btn">
+                                <svg><use href="#bag"></use></svg>
+                                <span class="product-card__btn-text">В корзину</span>
+                            </div>
+                        </div>
                     </div>
-                                        <a href="/catalog/body/selective-oils/naturalnaya-svecha-dlya-aromamassazha-daniya/" class="product-card__name metrika_good_click">Массажная свеча «Дания» для счастья и уюта в стиле хюгге  200 ml
-                                                                                                            <span>/ 170 g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
+                </div>
 
-            
-        
-
-            <div class="nm_11 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_11 item " data-id="124">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/body/selective-oils/naturalnaya-svecha-dlya-aromamassazha-shri-lanka/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/e8c/4etp43lhs588lxuadaubxcloy0inl53n/309_390_2/shri_lanka.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Массажная свеча «Шри-Ланка» для бодрости и оптимизма  200 ml</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1690">1 690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            
-                                
-                                    
+                <a href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"
+                   class="product-card__name metrika_good_click">
+                    {{ $product->name }}
                                         
-                                    
-                                
-                                                    </div>
+                    @if($product->volume)
+                    <span>{{ $product->volume }}</span>  
+                    @endif
+                </a>
+
+                <div class="facial-item__price">
+                    <div class="product-card__price">
+                        {{ number_format($product->price, 0, ',', ' ') }} ₽
                     </div>
-                                        <a href="/catalog/body/selective-oils/naturalnaya-svecha-dlya-aromamassazha-shri-lanka/" class="product-card__name metrika_good_click">Массажная свеча «Шри-Ланка» для бодрости и оптимизма  200 ml
-                                                                                                            <span>170 g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-
-
-
-            
-            
-            <div class="nm_4 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_4 item " data-id="2033">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/body/selective-oils/massazhnaya-svecha-sitsiliya-so-svezhim-aromatom-melissy-i-mandarina-200-ml/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/c2d/3ph2pxyuz7c0pgq11vowtsn9rcuau9f4/309_390_2/sitsiliiya.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Массажная свеча «Сицилия» для релакса и снятия усталости 50ml</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="690">690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Массажная свеча «Сицилия» для релакса и снятия усталости 50ml"
-                                    data-product-category="Массажные свечи"
-                                                                            data-product-price="690"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/body/selective-oils/massazhnaya-svecha-sitsiliya-so-svezhim-aromatom-melissy-i-mandarina-200-ml/" class="product-card__name metrika_good_click">Массажная свеча «Сицилия» для релакса и снятия усталости 50ml
-                                                                                                            <span>/ 40g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_5 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_5 item " data-id="2034">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/body/selective-oils/massazhnaya-svecha-novaya-zelandiya-s-uspokaivayushchimi-notami-lavandy-i-neroli-200-ml/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/4db/t4xzx4h69zycc94444hitz1zc7cnityb/309_390_2/zelandiya.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Массажная свеча «Новая Зеландия» для сладкого сна 50ml</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="690">690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Массажная свеча «Новая Зеландия» для сладкого сна 50ml"
-                                    data-product-category="Массажные свечи"
-                                                                            data-product-price="690"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/body/selective-oils/massazhnaya-svecha-novaya-zelandiya-s-uspokaivayushchimi-notami-lavandy-i-neroli-200-ml/" class="product-card__name metrika_good_click">Массажная свеча «Новая Зеландия» для сладкого сна 50ml
-                                                                                                            <span>/ 40 g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_6 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_6 item " data-id="2037">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/body/selective-oils/massazhnaya-svecha-gruziya-s-terpkimi-notami-bergamota-i-pachuli-50ml/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/ddc/ioa8o89ielh496lrroyb0otav7magwid/309_390_2/gruziya.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Массажная свеча «Грузия» афродизиак для него 50ml</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="690">690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Массажная свеча «Грузия» афродизиак для него 50ml"
-                                    data-product-category="Массажные свечи"
-                                                                            data-product-price="690"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/body/selective-oils/massazhnaya-svecha-gruziya-s-terpkimi-notami-bergamota-i-pachuli-50ml/" class="product-card__name metrika_good_click">Массажная свеча «Грузия» афродизиак для него 50ml
-                                                                                                            <span>/ 40 g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_7 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_7 item " data-id="128">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/aromatherapy/interior-candles-selective/aromaticheskaya-svecha-iz-soevogo-voska-morskaya-sol/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/5d5/vaquop4lwjy9w419cowxwtultoia1fef/309_390_2/Sol.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Интерьерная свеча «Морская соль»</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="690">690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Интерьерная свеча «Морская соль»"
-                                    data-product-category="Интерьерные свечи Selective"
-                                                                            data-product-price="690"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/aromatherapy/interior-candles-selective/aromaticheskaya-svecha-iz-soevogo-voska-morskaya-sol/" class="product-card__name metrika_good_click">Интерьерная свеча «Морская соль»
-                                                                                                            <span>50 ml / 40g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_8 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_8 item " data-id="131">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/aromatherapy/interior-candles-selective/aromaticheskaya-svecha-iz-soevogo-voska-shokoladnoe-pechene/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/fbd/r2pq1gj3kmqx2atuwc9ak05iybfhajsv/309_390_2/SHokolad.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Интерьерная свеча «Шоколадное печенье»</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="690">690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Интерьерная свеча «Шоколадное печенье»"
-                                    data-product-category="Интерьерные свечи Selective"
-                                                                            data-product-price="690"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/aromatherapy/interior-candles-selective/aromaticheskaya-svecha-iz-soevogo-voska-shokoladnoe-pechene/" class="product-card__name metrika_good_click">Интерьерная свеча «Шоколадное печенье»
-                                                                                                            <span>50 ml / 40 g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_9 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_9 item " data-id="134">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/aromatherapy/interior-candles-selective/aromaticheskaya-svecha-iz-soevogo-voska-kholodnaya-vishnya/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/d16/44oc0e8okk156xxwmhm2sqaeek9puv1z/309_390_2/Vishnya.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Интерьерная свеча «Холодная вишня»</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="690">690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Интерьерная свеча «Холодная вишня»"
-                                    data-product-category="Интерьерные свечи Selective"
-                                                                            data-product-price="690"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/aromatherapy/interior-candles-selective/aromaticheskaya-svecha-iz-soevogo-voska-kholodnaya-vishnya/" class="product-card__name metrika_good_click">Интерьерная свеча «Холодная вишня»
-                                                                                                            <span>50 ml / 40 g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_10 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_10 item " data-id="2036">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/body/selective-oils/massazhnaya-svecha-shri-lanka-s-yarkimi-notami-lemongrassa-i-layma-50ml/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/4bc/hpq7d8v2uuft4pfc74dlflplnoa9mn06/309_390_2/shri_lanka.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Массажная свеча «Шри-Ланка» для бодрости и оптимизма 50ml</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="690">690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            
-                                
-                                    
-
-                                        
-                                            
-                                        
-
-
-
-                                    
-                                
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/body/selective-oils/massazhnaya-svecha-shri-lanka-s-yarkimi-notami-lemongrassa-i-layma-50ml/" class="product-card__name metrika_good_click">Массажная свеча «Шри-Ланка» для бодрости и оптимизма 50ml
-                                                                                                            <span>/ 40 g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            
-
-            
-            
+                </div>
+            </article>
+        </div>
+    @endforeach
 </div>
 
 

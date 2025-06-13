@@ -24,6 +24,7 @@
     <link rel="mask-icon" href="https://smorodinacosmetic.com/local/templates/smorodinacosmetic_f61/favicon/safari-pinned-tab.svg" color="#dea0c5">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
+    
 
 
 
@@ -47,6 +48,8 @@
 <script type="text/javascript">(window.BX||top.BX).message({'JS_CORE_LOADING':'Загрузка...','JS_CORE_NO_DATA':'- Нет данных -','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_WINDOW_CONTINUE':'Продолжить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с','JSADM_AI_HIDE_EXTRA':'Скрыть лишние','JSADM_AI_ALL_NOTIF':'Показать все','JSADM_AUTH_REQ':'Требуется авторизация!','JS_CORE_WINDOW_AUTH':'Войти','JS_CORE_IMAGE_FULL':'Полный размер'});</script>
 
 <script type="text/javascript" src="{{ asset('js/core.min.js') }}"></script>
+
+
 
 <script>BX.setJSList(['https://smorodinacosmetic.com/bitrix/js/main/core/core_ajax.js','https://smorodinacosmetic.com/bitrix/js/main/core/core_promise.js','https://smorodinacosmetic.com/bitrix/js/main/polyfill/promise/js/promise.js','https://smorodinacosmetic.com/bitrix/js/main/loadext/loadext.js','https://smorodinacosmetic.com/bitrix/js/main/loadext/extension.js','https://smorodinacosmetic.com/bitrix/js/main/polyfill/promise/js/promise.js','https://smorodinacosmetic.com/bitrix/js/main/polyfill/find/js/find.js','https://smorodinacosmetic.com/bitrix/js/main/polyfill/includes/js/includes.js','https://smorodinacosmetic.com/bitrix/js/main/polyfill/matches/js/matches.js','https://smorodinacosmetic.com/bitrix/js/ui/polyfill/closest/js/closest.js','https://smorodinacosmetic.com/bitrix/js/main/polyfill/fill/main.polyfill.fill.js','https://smorodinacosmetic.com/bitrix/js/main/polyfill/find/js/find.js','https://smorodinacosmetic.com/bitrix/js/main/polyfill/matches/js/matches.js','https://smorodinacosmetic.com/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js','https://smorodinacosmetic.com/bitrix/js/main/core/core.js','https://smorodinacosmetic.com/bitrix/js/main/polyfill/intersectionobserver/js/intersectionobserver.js','https://smorodinacosmetic.com/bitrix/js/main/lazyload/dist/lazyload.bundle.js','https://smorodinacosmetic.com/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js','https://smorodinacosmetic.com/bitrix/js/main/parambag/dist/parambag.bundle.js']);
 BX.setCSSList(['https://smorodinacosmetic.com/bitrix/js/main/lazyload/dist/lazyload.bundle.css','https://smorodinacosmetic.com/bitrix/js/main/parambag/dist/parambag.bundle.css']);</script>

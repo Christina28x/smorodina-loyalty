@@ -242,386 +242,67 @@
         <div class="mt-7">
         
 <div class="row gx-4 gy-7 mb-7 mb-lg-9">
-
-            
-            
-            
-            <div class="nm_0 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_0 item " data-id="2838">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/serum/syvorotka-dlya-normalizatsii-mikrobioma-kozhi-s-lizatami-prebiotikami-i-postbiotikami/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/717/azoku7gd0dssdrp78q4p7ujxrlegz1k0/309_390_2/frame_2087328663.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Сыворотка для нормализации микробиома кожи с лизатами, пребиотиками и постбиотиками new</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1890">1 890 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Сыворотка для нормализации микробиома кожи с лизатами, пребиотиками и постбиотиками new"
-                                    data-product-category="Сыворотки"
-                                                                            data-product-price="1890"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/face/serum/syvorotka-dlya-normalizatsii-mikrobioma-kozhi-s-lizatami-prebiotikami-i-postbiotikami/" class="product-card__name metrika_good_click">Сыворотка для нормализации микробиома кожи с лизатами, пребиотиками и постбиотиками new
-                                                                                                            <span>40 ml</span>
-                                                    
+    @foreach ($products as $product)
+        <div class="nm_{{ $loop->index }} col-6 col-md-4 col-lg-3">
+            <article class="product-card ssss_{{ $loop->index }} item" data-id="{{ $product->id }}">
+                <div class="product-card__desc">
+                    <a href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"
+                       class="product-card__photo metrika_good_click"
+                       style="background-image: url('{{ asset($product->image) }}')">
                     </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 890 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_1 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_1 item " data-id="2857">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/serum/podtyagivayushchaya-syvorotka-s-bakuchiolom-i-biopeptidami-new/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/999/xi9mbybttfxt8gol3gvapkj6zywdgtdk/309_390_2/frame_2087328662.jpg')"></a>
-                        
-                        
-                                                                                <div class="product-card__badge product-card__badge_new">Новинки</div>
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Подтягивающая сыворотка с бакучиолом и биопептидами new</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1990">1 990 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Подтягивающая сыворотка с бакучиолом и биопептидами new"
-                                    data-product-category="Сыворотки"
-                                                                            data-product-price="1990"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
+                    <div class="product-card__favorite {{ auth()->user()?->hasFavorite($product->id) ? 'product-card__favorite_active' : '' }}" data-product-id="{{ $product->id }}">
+                        <svg><use href="#heart"></use></svg>
                     </div>
-                                        <a href="/catalog/face/serum/podtyagivayushchaya-syvorotka-s-bakuchiolom-i-biopeptidami-new/" class="product-card__name metrika_good_click">Подтягивающая сыворотка с бакучиолом и биопептидами new
-                                                                                                            <span>40 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 990 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_2 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_2 item " data-id="1061">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/serum/syvorotka-dlya-problemnoy-kozhi-s-salitsilovoy-i-azelainovoy-kislotami-tsinkom-i-ekstraktom-usnei-an/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/a56/vl8ti2olh9fj1wm9ie5wqrkp5fik59eq/309_390_2/smrdn_anti_acne_facial_serum_0369.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Сыворотка &quot;Anti-acne&quot; с салициловой и азелаиновой кислотами new</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1890">1 890 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                    <div class="product-card__text">
+                        <div class="product-card__text__prev">
+                            {{ $product->name }}
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Сыворотка &quot;Anti-acne&quot; с салициловой и азелаиновой кислотами new"
-                                    data-product-category="Сыворотки"
-                                                                            data-product-price="1890"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/face/serum/syvorotka-dlya-problemnoy-kozhi-s-salitsilovoy-i-azelainovoy-kislotami-tsinkom-i-ekstraktom-usnei-an/" class="product-card__name metrika_good_click">Сыворотка &quot;Anti-acne&quot; с салициловой и азелаиновой кислотами new
-                                                                                                            <span>40 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 890 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_3 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_3 item " data-id="1064">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/serum/antivozrastnaya-osvetlyayushchaya-syvorotka-s-vitaminami-s/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/0cc/cr8sfy82swud7tvxe50xvcyy3g7bfl6s/309_390_2/smrdn_anti_age_facial_serum_0158.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Антивозрастная осветляющая сыворотка с витамином С в липосомах «Vitamin C» new</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1990">1 990 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                        <div class="product-card__text__price" data-currency-symbol="₽">
+                            <span class="product-card__text__price-current" data-current-price="{{ $product->price }}">
+                                {{ number_format($product->price, 0, ',', ' ') }} ₽
+                            </span>
+                            <span class="product-card__text__price-quantity">0</span>
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Антивозрастная осветляющая сыворотка с витамином С в липосомах «Vitamin C» new"
-                                    data-product-category="Сыворотки"
-                                                                            data-product-price="1990"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
                     </div>
-                                        <a href="/catalog/face/serum/antivozrastnaya-osvetlyayushchaya-syvorotka-s-vitaminami-s/" class="product-card__name metrika_good_click">Антивозрастная осветляющая сыворотка с витамином С в липосомах «Vitamin C» new
-                                                                                                            <span>40 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 990 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_4 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_4 item " data-id="1060">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/serum/uvlazhnyayushchaya-syvorotka-dlya-litsa-s-tseramidami-i-niatsinamidom-ceramides/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/275/hdm91p34u221f4sp87gts8alflzcpk84/309_390_2/smrdn_moisturing_serum_ceramides_0320.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Увлажняющая сыворотка для лица с церамидами «Ceramides» new</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1990">1 990 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                    <div class="product-card__add-block">
+                        <div class="product-card__count">
+                            <div class="product-card__count__minus" data-type="minus">-</div>
+                            <div class="product-card__count__value">0</div>
+                            <div class="product-card__count__plus" data-type="plus">+</div>
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Увлажняющая сыворотка для лица с церамидами «Ceramides» new"
-                                    data-product-category="Сыворотки"
-                                                                            data-product-price="1990"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/face/serum/uvlazhnyayushchaya-syvorotka-dlya-litsa-s-tseramidami-i-niatsinamidom-ceramides/" class="product-card__name metrika_good_click">Увлажняющая сыворотка для лица с церамидами «Ceramides» new
-                                                                                                            <span>40 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 990 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_5 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_5 item " data-id="65">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/serum/gialuronovaya-syvorotka-dlya-litsa-bezzhirovoy-ukhod/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/35f/6wx0dvbmahedkfewdia3o16unjhbtxul/309_390_2/smrdn_moisturing_serum_hyaluronic_0330.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Гиалуроновая сыворотка new</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1890">1 890 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                        <div class="product-card__btn-wrap product-card__btn-js"
+                             data-product-name="{{ $product->name }}"
+                             data-product-category="{{ $product->category->name }}"
+                             data-product-price="{{ $product->price }}">
+                            <div class="product-card__btn smo-btn">
+                                <svg><use href="#bag"></use></svg>
+                                <span class="product-card__btn-text">В корзину</span>
+                            </div>
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Гиалуроновая сыворотка new"
-                                    data-product-category="Сыворотки"
-                                                                            data-product-price="1890"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
                     </div>
-                                        <a href="/catalog/face/serum/gialuronovaya-syvorotka-dlya-litsa-bezzhirovoy-ukhod/" class="product-card__name metrika_good_click">Гиалуроновая сыворотка new
-                                                                                                            <span>40 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 890 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
+                </div>
 
-            
-        
-            
-            
-            <div class="nm_6 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_6 item " data-id="2888">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/serum/uspokaivayushchaya-syvorotka-dlya-chuvstvitelnoy-kozhi-/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/86d/4x3qeqixwnpwh8vmz016b891c4e7i558/309_390_2/frame_2087328744.jpg')"></a>
-                        
-                        
-                                                                                <div class="product-card__badge product-card__badge_new">Новинки</div>
-                        
+                <a href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"
+                   class="product-card__name metrika_good_click">
+                    {{ $product->name }}
+                                        
+                    @if($product->volume)
+                    <span>{{ $product->volume }}</span>  
+                    @endif
+                </a>
 
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Успокаивающая сыворотка для чувствительной кожи </div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1990">1 990 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Успокаивающая сыворотка для чувствительной кожи "
-                                    data-product-category="Сыворотки"
-                                                                            data-product-price="1990"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
+                <div class="facial-item__price">
+                    <div class="product-card__price">
+                        {{ number_format($product->price, 0, ',', ' ') }} ₽
                     </div>
-                                        <a href="/catalog/face/serum/uspokaivayushchaya-syvorotka-dlya-chuvstvitelnoy-kozhi-/" class="product-card__name metrika_good_click">Успокаивающая сыворотка для чувствительной кожи 
-                                                                                                            <span>40 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 990 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_7 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_7 item " data-id="1063">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/serum/uspokaivayushchaya-syvorotka-dlya-kozhi-sklonnoy-k-pokrasneniyam-i-pigmentatsii-azelaic-acid/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/061/bmjzvtxa9l0kcuakvtsi3pwl1mcy16pw/309_390_2/facial_azelain.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Сыворотка &quot;Azelaic Acid&quot; успокаивающая для кожи, склонной к покраснениям и пигментации</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1890">1 890 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Сыворотка &quot;Azelaic Acid&quot; успокаивающая для кожи, склонной к покраснениям и пигментации"
-                                    data-product-category="Сыворотки"
-                                                                            data-product-price="1890"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/face/serum/uspokaivayushchaya-syvorotka-dlya-kozhi-sklonnoy-k-pokrasneniyam-i-pigmentatsii-azelaic-acid/" class="product-card__name metrika_good_click">Сыворотка &quot;Azelaic Acid&quot; успокаивающая для кожи, склонной к покраснениям и пигментации
-                                                                                                            <span>40 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 890 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-            
+                </div>
+            </article>
+        </div>
+    @endforeach
 </div>
 
 

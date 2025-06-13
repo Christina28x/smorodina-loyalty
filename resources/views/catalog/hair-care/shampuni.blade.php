@@ -145,10 +145,7 @@
                                         <a href="/catalog/hair-care/refily/" class="d-block catalog-section__menu__item ">Рефилы</a>
                                     </div>
                                                                     <div class="swiper-slide">
-                                        <a href="/catalog/hair-care/tverdye-shampuni-i-konditsionery/" class="d-block catalog-section__menu__item ">Твердые шампуни и кондиционеры</a>
-                                    </div>
-                                                                    <div class="swiper-slide">
-                                        <a href="/catalog/hair-care/aromaraschesyvanie/" class="d-block catalog-section__menu__item ">Аромарасчесывание</a>
+                                        <a href="/catalog/hair-care/aromaraschesyvanie-hair/" class="d-block catalog-section__menu__item ">Аромарасчесывание</a>
                                     </div>
                                                                     <div class="swiper-slide">
                                         <a href="/catalog/hair-care/polotentse-s/" class="d-block catalog-section__menu__item ">Полотенце</a>
@@ -163,196 +160,67 @@
         <div class="mt-7">
         
 <div class="row gx-4 gy-7 mb-7 mb-lg-9">
-
-            
-            
-            
-            <div class="nm_0 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_0 item " data-id="2130">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/hair-care/shampuni/shampun-dlya-obyema-i-uplotneniya-tonkikh-volos/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/7c2/2o6umsvkuebii7rw5pw0wzfr8larvg26/309_390_2/shampun_zel.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Шампунь для объёма и уплотнения тонких волос</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="990">990 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Шампунь для объёма и уплотнения тонких волос"
-                                    data-product-category="Шампуни"
-                                                                            data-product-price="990"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/hair-care/shampuni/shampun-dlya-obyema-i-uplotneniya-tonkikh-volos/" class="product-card__name metrika_good_click">Шампунь для объёма и уплотнения тонких волос
-                                                                                                            <span>330 ml</span>
-                                                    
+    @foreach ($products as $product)
+        <div class="nm_{{ $loop->index }} col-6 col-md-4 col-lg-3">
+            <article class="product-card ssss_{{ $loop->index }} item" data-id="{{ $product->id }}">
+                <div class="product-card__desc">
+                    <a href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"
+                       class="product-card__photo metrika_good_click"
+                       style="background-image: url('{{ asset($product->image) }}')">
                     </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">990 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_1 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_1 item " data-id="2126">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/hair-care/shampuni/vosstanavlivayushchiy-shampun-dlya-povrezhdennykh-i-okrashennykh-volos/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/850/n15vknpjc65p9ao5s866025gagwm0js5/309_390_2/shampun_fiol.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Восстанавливающий шампунь для поврежденных и окрашенных волос</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="990">990 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Восстанавливающий шампунь для поврежденных и окрашенных волос"
-                                    data-product-category="Шампуни"
-                                                                            data-product-price="990"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
+                    <div class="product-card__favorite {{ auth()->user()?->hasFavorite($product->id) ? 'product-card__favorite_active' : '' }}" data-product-id="{{ $product->id }}">
+                        <svg><use href="#heart"></use></svg>
                     </div>
-                                        <a href="/catalog/hair-care/shampuni/vosstanavlivayushchiy-shampun-dlya-povrezhdennykh-i-okrashennykh-volos/" class="product-card__name metrika_good_click">Восстанавливающий шампунь для поврежденных и окрашенных волос
-                                                                                                            <span>330 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">990 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_2 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_2 item " data-id="2142">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/hair-care/shampuni/uvlazhnyayushchiy-shampun-dlya-vsekh-tipov-volos/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/1f1/69psoqag0knmydxdriu5pclqctte00aw/309_390_2/shampun_sin.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Увлажняющий шампунь для всех типов волос</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="990">990 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                    <div class="product-card__text">
+                        <div class="product-card__text__prev">
+                            {{ $product->name }}
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Увлажняющий шампунь для всех типов волос"
-                                    data-product-category="Шампуни"
-                                                                            data-product-price="990"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/hair-care/shampuni/uvlazhnyayushchiy-shampun-dlya-vsekh-tipov-volos/" class="product-card__name metrika_good_click">Увлажняющий шампунь для всех типов волос
-                                                                                                            <span>330 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">990 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_3 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_3 item " data-id="2141">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/hair-care/shampuni/shampun-dlya-kudryavykh-i-volnistykh-volos/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/d39/j7rf6ory8oms99x0dlq5cg4e67299ysc/309_390_2/shampun_roz.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Шампунь для кудрявых и волнистых волос</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="990">990 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                        <div class="product-card__text__price" data-currency-symbol="₽">
+                            <span class="product-card__text__price-current" data-current-price="{{ $product->price }}">
+                                {{ number_format($product->price, 0, ',', ' ') }} ₽
+                            </span>
+                            <span class="product-card__text__price-quantity">0</span>
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Шампунь для кудрявых и волнистых волос"
-                                    data-product-category="Шампуни"
-                                                                            data-product-price="990"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
                     </div>
-                                        <a href="/catalog/hair-care/shampuni/shampun-dlya-kudryavykh-i-volnistykh-volos/" class="product-card__name metrika_good_click">Шампунь для кудрявых и волнистых волос
-                                                                                                            <span>330 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">990 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-            
+                    <div class="product-card__add-block">
+                        <div class="product-card__count">
+                            <div class="product-card__count__minus" data-type="minus">-</div>
+                            <div class="product-card__count__value">0</div>
+                            <div class="product-card__count__plus" data-type="plus">+</div>
+                        </div>
+
+                        <div class="product-card__btn-wrap product-card__btn-js"
+                             data-product-name="{{ $product->name }}"
+                             data-product-category="{{ $product->category->name }}"
+                             data-product-price="{{ $product->price }}">
+                            <div class="product-card__btn smo-btn">
+                                <svg><use href="#bag"></use></svg>
+                                <span class="product-card__btn-text">В корзину</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"
+                   class="product-card__name metrika_good_click">
+                    {{ $product->name }}
+                                        
+                    @if($product->volume)
+                    <span>{{ $product->volume }}</span>  
+                    @endif
+                </a>
+
+                <div class="facial-item__price">
+                    <div class="product-card__price">
+                        {{ number_format($product->price, 0, ',', ' ') }} ₽
+                    </div>
+                </div>
+            </article>
+        </div>
+    @endforeach
 </div>
 
 

@@ -172,42 +172,6 @@
                                                                                         </div>
             </article>
         </div>
-            <div class="swiper-slide" data-filter="new" role="group" aria-label="4 / 25" style="width: 355.25px; margin-right: 20px;">
-            <article class="product-card item " data-id="2333">
-                <div class="product-card__desc">
-                                                                                        <a href="https://smorodinacosmetic.com/catalog/promotions/prodvinutyy-ukhod/anti-eydzh-30-prodvinutyy-ukhod-4-/" class="product-card__photo metrika_good_click" style="background-image: url(&#39;https://smorodinacosmetic.com/upload/resize_cache/iblock/04d/xnvp0sm0vdbf9ed76qss12k9bcgjrrrk/309_390_2/nabor_lifting_3.jpg&#39;)"></a>
-                    
-                                        
-                    
-                    
-                                                            <div class="product-card__text">
-                        <div class="product-card__text__prev">Комплексный лифтинг-уход </div>
-                        <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                        <span class="product-card__text__price-current" data-current-price="6360">6 360 ₽</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                        </div>
-                    </div>
-                    <div class="product-card__add-block">
-                                                    <div class="product-card__count">
-                                <div class="product-card__count__minus" data-type="minus">-</div>
-                                <div class="product-card__count__value">0</div>
-                                <div class="product-card__count__plus" data-type="plus">+</div>
-                            </div>
-                                                        <div class="product-card__btn-wrap product-card__btn-js" data-product-name="Комплексный лифтинг-уход " data-product-category="Продвинутый уход" data-product-price="6360">
-                                <div class="product-card__btn smo-btn">
-                                    <svg><use href="#bag"></use></svg>
-                                    <span class="product-card__btn-text">В корзину</span>
-                                </div>
-                            </div>
-                                            </div>
-                </div>
-                                <a href="https://smorodinacosmetic.com/catalog/promotions/prodvinutyy-ukhod/anti-eydzh-30-prodvinutyy-ukhod-4-/" class="product-card__name metrika_good_click">Комплексный лифтинг-уход 
-                                                                                                        
-                </a>
-                                <div class="facial-item__price">
-                                                                                                        <div class="product-card__price">6 360 ₽</div>
-                                                                                        </div>
-            </article>
-        </div>
             <div class="swiper-slide" data-filter="new" role="group" aria-label="5 / 25" style="width: 355.25px; margin-right: 20px;">
             <article class="product-card item " data-id="2330">
                 <div class="product-card__desc">
@@ -993,7 +957,7 @@
             </div>
         <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
         <div class="text-center">
-            <a href="https://smorodinacosmetic.com/catalog/" class="smo-btn">Перейти в каталог</a>
+            <a href="/catalog/" class="smo-btn">Перейти в каталог</a>
         </div>
     </div>
 </section>

@@ -158,22 +158,25 @@
 
                             {{-- Применение --}}
                             <div class="product-page__top__sub-texts mt-4">
+                                @if($product->usage)
                                                                             <div class="product-page__top__sub-text p-4 mb-4">
                             <div class="product-page__top__sub-text__title mb-2">Применение</div>
                             <div class="product-page__top__sub-text__desc">
-                                {!! $product->usage_short !!}
+                                {!! $product->usage !!}
                             <div class="html-detail-text" style="display: none">
                                 {!! $product->usage !!}
                                 </div>
                                                                     </div>
                                 <div class="product-page__top__sub-text__more mt-2 js-usage-detail">Подробнее</div>
                             </div>
+                            @endif
                         
                             {{-- Ингредиенты --}}
+                            @if($product->ingredients)
                                 <div class="product-page__top__sub-text p-4 mb-4">
                                     <div class="product-page__top__sub-text__title mb-2">Активные ингредиенты</div>
                                     <div class="product-page__top__sub-text__desc">
-                                        {!! $product->ingredients_short !!}
+                                        {!! $product->ingredients !!}
 
                                 <div class="html-detail-text" style="display: none">
                                         {!! $product->ingredients !!}
@@ -181,8 +184,10 @@
 
 
                                 </div>
+
                                 <div class="product-page__top__sub-text__more mt-2 js-ingredients-detail">Подробнее</div>
                             </div>
+                            @endif
                         
                             {{-- Упаковка --}}
     @if($product->packaging)

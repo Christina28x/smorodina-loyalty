@@ -97,9 +97,9 @@ class CartController extends Controller
 
 session()->put('applied_discount', [
     'code' => $discount->code,
-    'value' => $discount->value,
-    'type' => $discount->type,
+    'value' => $discount->value, 
     'target_id' => $discount->target_id,
+    'category_id' => $discount->target_id,
 ]);
 
 
@@ -108,14 +108,10 @@ session()->put('applied_discount', [
     'discount' => [
         'code' => $discount->code,
         'value' => $discount->value,
-        'type' => $discount->type,
-        'target' => match ($discount->type) {
-            'category' => \App\Models\Category::find($discount->target_id)?->name,
-            'subcategory' => \App\Models\Subcategory::find($discount->target_id)?->name,
-            default => null,
-        }
-    ],
-]);
+        'category_id' => $discount->target_id,
+        'category_name' => \App\Models\Category::find($discount->target_id)?->name,
+            ],
+        ]);
     }
 public function setDiscountedTotal(Request $request)
 {

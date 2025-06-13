@@ -1,11 +1,10 @@
 @extends('layouts.app')
-@section('title', 'Кондиционеры')
+@section('title', 'Аромарасчесывание')
 @section('content')
 <main class="">
 
 
 <a href="#" id="scroll_top" title="Наверх"></a>
-
 
 <section class="catalog-section">
 
@@ -120,7 +119,7 @@
                 <span>/</span>
                 <a href="/catalog/">Каталог</a>
             </div>
-            <h1 class="text-lowercase">Кондиционеры</h1>
+            <h1 class="text-lowercase">Аромарасчесывание</h1>
         </div>
     </div>
 
@@ -139,13 +138,13 @@
                                         <a href="/catalog/hair-care/shampuni/" class="d-block catalog-section__menu__item ">Шампуни</a>
                                     </div>
                                                                     <div class="swiper-slide">
-                                        <a href="/catalog/hair-care/konditsionery/" class="d-block catalog-section__menu__item catalog-section__menu__item_active">Кондиционеры</a>
+                                        <a href="/catalog/hair-care/konditsionery/" class="d-block catalog-section__menu__item ">Кондиционеры</a>
                                     </div>
                                                                     <div class="swiper-slide">
                                         <a href="/catalog/hair-care/refily/" class="d-block catalog-section__menu__item ">Рефилы</a>
                                     </div>
                                                                     <div class="swiper-slide">
-                                        <a href="/catalog/hair-care/aromaraschesyvanie-hair/" class="d-block catalog-section__menu__item ">Аромарасчесывание</a>
+                                        <a href="/catalog/hair-care/aromaraschesyvanie-hair/" class="d-block catalog-section__menu__item catalog-section__menu__item_active">Аромарасчесывание</a>
                                     </div>
                                                                     <div class="swiper-slide">
                                         <a href="/catalog/hair-care/polotentse-s/" class="d-block catalog-section__menu__item ">Полотенце</a>
@@ -234,7 +233,6 @@
     </div>
 
 </section>
-
 
 
 </main>

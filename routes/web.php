@@ -19,13 +19,8 @@ Route::get('/', function () {
 
 
 Route::get('/promotions', function () {
-    return app(ProductController::class)->showCategoryView('promotions');
+    return app(ProductController::class)->showCategory('promotions');
 });
-
-
-Route::get('/promotions/complex-face', function () {
-    return view('promotions/complex-face.index');
-})->name('promotions/complex-face.index');
 
 Route::get('/promotions/complex-face/ready', [ProductController::class, 'readyPage'])->name('promotions/complex-face.ready');
 
@@ -79,156 +74,130 @@ Route::get('/catalog', function () {
 
 
 Route::get('/catalog/face/', function () {
-    return view('catalog.face.index');
-})->name('catalog.face.index');
+    return app(ProductController::class)->showCategoryView('face');
+});
 
 Route::get('/catalog/face/accessories', function () {
-    return view('catalog.face.accessories');
-})->name('catalog.face.accessories');
+    return app(ProductController::class)->showCatalogView('face', 'accessories');
+});
 
 Route::get('/catalog/face/alginate-masks', function () {
-    return view('catalog.face.alginate-masks');
-})->name('catalog.face.alginate-masks');
+    return app(ProductController::class)->showCatalogView('face', 'alginate-masks');
+});
 
 Route::get('/catalog/face/cream', function () {
-    return view('catalog.face.cream');
-})->name('catalog.face.cream');
-
+    return app(ProductController::class)->showCatalogView('face', 'cream');
+});
 
 Route::get('/catalog/face/enzyme-system', function () {
     return app(ProductController::class)->showCatalogView('face', 'enzyme-system');
 });
 
 Route::get('/catalog/face/hydrolate', function () {
-    return view('catalog.face.hydrolate');
-})->name('catalog.face.hydrolate');
+    return app(ProductController::class)->showCatalogView('face', 'hydrolate');
+});
 
 Route::get('/catalog/face/kremy-s-spf', function () {
-    return view('catalog.face.kremy-s-spf');
-})->name('catalog.face.kremy-s-spf');
+    return app(ProductController::class)->showCatalogView('face', 'kremy-s-spf');
+});
 
 Route::get('/catalog/face/patchi', function () {
-    return view('catalog.face.patchi');
-})->name('catalog.face.patchi');
-
-
+    return app(ProductController::class)->showCatalogView('face', 'patchi');
+});
 
 Route::get('/catalog/face/serum', function () {
-    return view('catalog.face.serum');
-})->name('catalog.face.serum');
+    return app(ProductController::class)->showCatalogView('face', 'serum');
+});
 
 Route::get('/catalog/face/tonery', function () {
-    return view('catalog.face.tonery');
-})->name('catalog.face.tonery');
+    return app(ProductController::class)->showCatalogView('face', 'tonery');
+});
 
 Route::get('/catalog/face/ukhod-za-kozhey-vokrug-glaz', function () {
-    return view('catalog.face.ukhod-za-kozhey-vokrug-glaz');
-})->name('catalog.face.ukhod-za-kozhey-vokrug-glaz');
+    return app(ProductController::class)->showCatalogView('face', 'ukhod-za-kozhey-vokrug-glaz');
+});
 
 
 Route::get('/catalog/hair-care/', function () {
-    return view('catalog.hair-care.index');
-})->name('catalog.hair-care.index');
+    return app(ProductController::class)->showCategoryView('hair-care');
+});
 
 Route::get('/catalog/hair-care/shampuni', function () {
-    return view('catalog.hair-care.shampuni');
-})->name('catalog.hair-care.shampuni');
+    return app(ProductController::class)->showCatalogView('hair-care', 'shampuni');
+});
 
 Route::get('/catalog/hair-care/konditsionery', function () {
-    return view('catalog.hair-care.konditsionery');
-})->name('catalog.hair-care.konditsionery');
+    return app(ProductController::class)->showCatalogView('hair-care', 'konditsionery');
+});
 
 Route::get('/catalog/hair-care/refily', function () {
-    return view('catalog.hair-care.refily');
-})->name('catalog.hair-care.refily');
+    return app(ProductController::class)->showCatalogView('hair-care', 'refily');
+});
 
-Route::get('/catalog/hair-care/tverdye-shampuni-i-konditsionery', function () {
-    return view('catalog.hair-care.tverdye-shampuni-i-konditsionery');
-})->name('catalog.hair-care.tverdye-shampuni-i-konditsionery');
-
-Route::get('/catalog/hair-care/aromaraschesyvanie', function () {
-    return view('catalog.hair-care.aromaraschesyvanie');
-})->name('catalog.hair-care.aromaraschesyvanie');
+Route::get('/catalog/hair-care/aromaraschesyvanie-hair', function () {
+    return app(ProductController::class)->showCatalogView('hair-care', 'aromaraschesyvanie-hair');
+});
 
 Route::get('/catalog/hair-care/polotentse-s', function () {
-    return view('catalog.hair-care.polotentse-s');
-})->name('catalog.hair-care.polotentse-s');
+    return app(ProductController::class)->showCatalogView('hair-care', 'polotentse-s');
+});
 
 
 Route::get('/catalog/body/', function () {
-    return view('catalog.body.index');
-})->name('catalog.body.index');
+    return app(ProductController::class)->showCategoryView('body');
+});
 
 Route::get('/catalog/body/sugar-and-salt', function () {
-    return view('catalog.body.sugar-and-salt');
-})->name('catalog.body.sugar-and-salt');
-
-Route::get('/catalog/body/vygodnoe-predlozhenie', function () {
-    return view('catalog.body.vygodnoe-predlozhenie');
-})->name('catalog.body.vygodnoe-predlozhenie');
+    return app(ProductController::class)->showCatalogView('body', 'sugar-and-salt');
+});
 
 Route::get('/catalog/body/krem-dlya-tela-i-ruk', function () {
-    return view('catalog.body.krem-dlya-tela-i-ruk');
-})->name('catalog.body.krem-dlya-tela-i-ruk');
-
-Route::get('/catalog/body/tverdye-produkty-dlya-tel', function () {
-    return view('catalog.body.tverdye-produkty-dlya-tel');
-})->name('catalog.body.tverdye-produkty-dlya-tel');
+    return app(ProductController::class)->showCatalogView('body', 'krem-dlya-tela-i-ruk');
+});
 
 Route::get('/catalog/body/brush', function () {
-    return view('catalog.body.brush');
-})->name('catalog.body.brush');
+    return app(ProductController::class)->showCatalogView('body', 'brush');
+});
 
 Route::get('/catalog/body/oil-with-essential-oils', function () {
-    return view('catalog.body.oil-with-essential-oils');
-})->name('catalog.body.oil-with-essential-oils');
+    return app(ProductController::class)->showCatalogView('body', 'oil-with-essential-oils');
+});
 
 Route::get('/catalog/body/nabor-dlya-depilyatsii', function () {
-    return view('catalog.body.nabor-dlya-depilyatsii');
-})->name('catalog.body.nabor-dlya-depilyatsii');
+    return app(ProductController::class)->showCatalogView('body', 'nabor-dlya-depilyatsii');
+});
 
 Route::get('/catalog/body/vodostoykiy-spf-sprey', function () {
-    return view('catalog.body.vodostoykiy-spf-sprey');
-})->name('catalog.body.vodostoykiy-spf-sprey');
-
+    return app(ProductController::class)->showCatalogView('body', 'vodostoykiy-spf-sprey');
+});
 
 Route::get('/catalog/tverdye-produkty/', function () {
-    return view('catalog.tverdye-produkty.index');
-})->name('catalog.tverdye-produkty.index');
+    return app(ProductController::class)->showCategoryView('tverdye-produkty');
+});
 
-Route::get('/catalog/tverdye-produkty/tverdye-produkty-dlya-volos', function () {
-    return view('catalog.tverdye-produkty.tverdye-produkty-dlya-volos');
-})->name('catalog.tverdye-produkty.tverdye-produkty-dlya-volos');
+Route::get('/catalog/tverdye-produkty/tverdye-produkty-dlya-tel', function () {
+    return app(ProductController::class)->showCatalogView('tverdye-produkty', 'tverdye-produkty-dlya-tel');
+});
 
-Route::get('/catalog/tverdye-produkty/tverdye-produkty-dlya-litsa', function () {
-    return view('catalog.tverdye-produkty.tverdye-produkty-dlya-litsa');
-})->name('catalog.tverdye-produkty.tverdye-produkty-dlya-litsa');
-
-Route::get('/catalog/tverdye-produkty/tverdye-produkty-dlya-tela', function () {
-    return view('catalog.tverdye-produkty.tverdye-produkty-dlya-tela');
-})->name('catalog.tverdye-produkty.tverdye-produkty-dlya-tela');
+Route::get('/catalog/tverdye-produkty/tverdye-shampuni-i-konditsionery', function () {
+    return app(ProductController::class)->showCatalogView('tverdye-produkty', 'tverdye-shampuni-i-konditsionery');
+});
 
 Route::get('/catalog/tverdye-produkty/aksessuary-dlya-sushki-i-khraneniya', function () {
-    return view('catalog.tverdye-produkty.aksessuary-dlya-sushki-i-khraneniya');
-})->name('catalog.tverdye-produkty.aksessuary-dlya-sushki-i-khraneniya');
+    return app(ProductController::class)->showCatalogView('tverdye-produkty', 'aksessuary-dlya-sushki-i-khraneniya');
+});
 
 
 Route::get('/catalog/aromatherapy/', function () {
-    return view('catalog.aromatherapy.index');
-})->name('catalog.aromatherapy.index');
+    return app(ProductController::class)->showCategoryView('aromatherapy');
+});
 
 Route::get('/catalog/aromatherapy/aroma-therapy-massage-candles', function () {
-    return view('catalog.aromatherapy.aroma-therapy-massage-candles');
-})->name('catalog.aromatherapy.aroma-therapy-massage-candles');
-
+    return app(ProductController::class)->showCatalogView('aromatherapy', 'aroma-therapy-massage-candles');
+});
 Route::get('/catalog/aromatherapy/interior-candles-selective', function () {
-    return view('catalog.aromatherapy.interior-candles-selective');
-})->name('catalog.aromatherapy.interior-candles-selective');
-
-
-Route::get('/catalog/aksessuary-/', function () {
-    return view('catalog.aksessuary-');
-})->name('catalog.aksessuary-');
+    return app(ProductController::class)->showCatalogView('aromatherapy', 'interior-candles-selective');
+});
 
 
 Route::get('/about', function () {
@@ -274,9 +243,9 @@ Route::post('/auth/login', [AuthController::class, 'login']);
 Route::post('/auth/register', [AuthController::class, 'register'])->name('auth.register');
 
 
-// Кабинет (в будущем – редирект авторизованным)
+// Кабинет 
 Route::get('/cabinet', function () {
-    return view('cabinet.index'); // если понадобится отдельная страница
+    return view('cabinet.index'); 
 })->middleware('auth')->name('cabinet');
 
 
@@ -289,7 +258,7 @@ Route::get('/verify-email/{id}/{hash}', VerifyEmailController::class)
 
 
     Route::get('/login', function () {
-    return redirect('/'); // или на popup login не важно
+    return redirect('/');
 })->name('login');
 
 Route::get('/check-auth', function () {
@@ -312,6 +281,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/cart/set-discounted-total', [CartController::class, 'setDiscountedTotal']);
     Route::get('/cabinet/loyalty-admin', [LoyaltyAdminController::class, 'index'])->name('admin.loyalty');
     Route::post('/cabinet/loyalty-admin', [LoyaltyAdminController::class, 'update'])->name('admin.loyalty.update');
+    Route::get('/admin/forecast/products', [ForecastController::class, 'getProducts']);
+    Route::get('/admin/forecast/data', [ForecastController::class, 'getForecastData']);
 
 });
 

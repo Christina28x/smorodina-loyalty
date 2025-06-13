@@ -12,8 +12,7 @@ class Discount extends Model
     protected $fillable = [
         'user_id',
         'code',
-        'type',        // 'category', 'subcategory', 'all', и т.д.
-        'target_id',   // ID категории/подкатегории (если применимо)
+        'target_id',   // ID категории
         'value',       // Скидка в процентах
         'valid_until'
     ];
@@ -27,13 +26,7 @@ class Discount extends Model
     // Получение целевого объекта скидки (категория или подкатегория)
     public function target()
     {
-        if ($this->type === 'subcategory') {
-            return $this->belongsTo(Subcategory::class, 'target_id');
-        } elseif ($this->type === 'category') {
-            return $this->belongsTo(Category::class, 'target_id');
-        }
-
-        return null;
+        return $this->belongsTo(Category::class, 'target_id');
     }
 
     // Проверка истечения срока действия

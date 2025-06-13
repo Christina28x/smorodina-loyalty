@@ -130,13 +130,10 @@
                                     <a href="/catalog/tverdye-produkty/" class="d-block catalog-section__menu__item catalog-section__menu__item_active">все товары</a>
                                 </div>
                                                                     <div class="swiper-slide">
-                                        <a href="/catalog/tverdye-produkty/tverdye-produkty-dlya-volos/" class="d-block catalog-section__menu__item ">Для волос</a>
+                                        <a href="/catalog/tverdye-produkty/tverdye-shampuni-i-konditsionery/" class="d-block catalog-section__menu__item ">Для волос</a>
                                     </div>
                                                                     <div class="swiper-slide">
-                                        <a href="/catalog/tverdye-produkty/tverdye-produkty-dlya-litsa/" class="d-block catalog-section__menu__item ">Для лица</a>
-                                    </div>
-                                                                    <div class="swiper-slide">
-                                        <a href="/catalog/tverdye-produkty/tverdye-produkty-dlya-tela/" class="d-block catalog-section__menu__item ">Для тела </a>
+                                        <a href="/catalog/tverdye-produkty/tverdye-produkty-dlya-tel/" class="d-block catalog-section__menu__item ">Для тела </a>
                                     </div>
                                                                     <div class="swiper-slide">
                                         <a href="/catalog/tverdye-produkty/aksessuary-dlya-sushki-i-khraneniya/" class="d-block catalog-section__menu__item ">Аксессуары </a>
@@ -151,446 +148,67 @@
         <div class="mt-7">
         
 <div class="row gx-4 gy-7 mb-7 mb-lg-9">
-
-            
-            
-                
-                
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <a href="/sets/spf/" class="catalog-banner-2 d-flex flex-column align-items-center justify-content-between p-4"
-                           style="background-image: url('https://smorodinacosmetic.com/upload/iblock/25e/7ml98nxktdjqmu8i79s79xx31bk319q9/Frame-2087328988.jpg')">
-                            <div class="catalog-banner-2__tag" ></div>
-                            <span class="catalog-banner-2__title" >SPF серия</span>
-                        </a>
-                    </div>
-
-                
-            
-            
-            <div class="nm_0 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_0 item " data-id="2947">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/enzyme-system/tverdoe-molochko-dlya-ochishcheniya-litsa-s-pudroy-risa-i-prebiotikami/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/42b/llp1sptjy52daptbul61plumntkxdcyn/309_390_2/umyvanie_s_prebiotikom.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Твердое молочко для очищения лица с пудрой риса и пребиотиками</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="990">990 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Твердое молочко для очищения лица с пудрой риса и пребиотиками"
-                                    data-product-category="Очищение"
-                                                                            data-product-price="990"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/face/enzyme-system/tverdoe-molochko-dlya-ochishcheniya-litsa-s-pudroy-risa-i-prebiotikami/" class="product-card__name metrika_good_click">Твердое молочко для очищения лица с пудрой риса и пребиотиками
-                                                                                                            <span>50 g</span>
-                                                    
+    @foreach ($products as $product)
+        <div class="nm_{{ $loop->index }} col-6 col-md-4 col-lg-3">
+            <article class="product-card ssss_{{ $loop->index }} item" data-id="{{ $product->id }}">
+                <div class="product-card__desc">
+                    <a href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"
+                       class="product-card__photo metrika_good_click"
+                       style="background-image: url('{{ asset($product->image) }}')">
                     </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">990 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_1 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_1 item " data-id="1076">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/enzyme-system/tverdoe-umyvanie-dlya-litsa-dlya-litsa-s-chaynym-derevom-i-tsinkom/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/f58/j128tbfk6v6a3l4a75jlonim4x4jto4i/309_390_2/umyvanie_s_prebiotikom_1.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Твердое умывание для лица “С чайным деревом и цинком” для проблемной кожи</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="990">990 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Твердое умывание для лица “С чайным деревом и цинком” для проблемной кожи"
-                                    data-product-category="Очищение"
-                                                                            data-product-price="990"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
+                    <div class="product-card__favorite {{ auth()->user()?->hasFavorite($product->id) ? 'product-card__favorite_active' : '' }}" data-product-id="{{ $product->id }}">
+                        <svg><use href="#heart"></use></svg>
                     </div>
-                                        <a href="/catalog/face/enzyme-system/tverdoe-umyvanie-dlya-litsa-dlya-litsa-s-chaynym-derevom-i-tsinkom/" class="product-card__name metrika_good_click">Твердое умывание для лица “С чайным деревом и цинком” для проблемной кожи
-                                                                                                            <span>50 g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">990 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_2 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_2 item " data-id="1070">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/hair-care/tverdye-shampuni-i-konditsionery/tvyerdyy-shampun-dlya-volos-uvlazhnyayushchiy/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/96f/4fvmf0r799ml37ck0l3utfafdpydo9jv/309_390_2/shampun_uvlazhnenie.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                                                            <div class="product-card__awards">
-                                                                                                                    <div class="product-card__award" style="background-image: url('https://smorodinacosmetic.com/upload/iblock/e48/5xdpa1stm26cympb6pckofrec4gztyfz/winner_PREVIEW_02.svg')"></div>
-                                                                    </div>
-                                                                            <div class="product-card__text">
-                            <div class="product-card__text__prev">Твёрдый шампунь для увлажнения волос old</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="690">690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                    <div class="product-card__text">
+                        <div class="product-card__text__prev">
+                            {{ $product->name }}
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Твёрдый шампунь для увлажнения волос old"
-                                    data-product-category="Твердые шампуни и кондиционеры"
-                                                                            data-product-price="690"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/hair-care/tverdye-shampuni-i-konditsionery/tvyerdyy-shampun-dlya-volos-uvlazhnyayushchiy/" class="product-card__name metrika_good_click">Твёрдый шампунь для увлажнения волос old
-                                                                                                            <span>75 g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_3 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_3 item " data-id="1072">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/pink-therapy/tvyerdyy-konditsioner-dlya-volos-uvlazhnyayushchiy/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/e47/d54qm0dirdjlnk09x9dbzmaxzpo556ut/309_390_2/kond_roz.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Твёрдый кондиционер для волос &quot;Увлажняющий&quot;</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="890">890 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                        <div class="product-card__text__price" data-currency-symbol="₽">
+                            <span class="product-card__text__price-current" data-current-price="{{ $product->price }}">
+                                {{ number_format($product->price, 0, ',', ' ') }} ₽
+                            </span>
+                            <span class="product-card__text__price-quantity">0</span>
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Твёрдый кондиционер для волос &quot;Увлажняющий&quot;"
-                                    data-product-category="BARBIE BOOM "
-                                                                            data-product-price="890"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
                     </div>
-                                        <a href="/catalog/pink-therapy/tvyerdyy-konditsioner-dlya-volos-uvlazhnyayushchiy/" class="product-card__name metrika_good_click">Твёрдый кондиционер для волос &quot;Увлажняющий&quot;
-                                                                                                            <span>75 g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">890 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_4 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_4 item " data-id="2952">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/hair-care/tverdye-shampuni-i-konditsionery/tverdyy-shampun-dlya-obema-i-vosstanovleniya-volos-new/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/b93/lb45b5bqalagn9ge884d5y5fibauet1n/309_390_2/shampun_obem_4.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Твердый шампунь для объема и восстановления волос</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="690">690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                    <div class="product-card__add-block">
+                        <div class="product-card__count">
+                            <div class="product-card__count__minus" data-type="minus">-</div>
+                            <div class="product-card__count__value">0</div>
+                            <div class="product-card__count__plus" data-type="plus">+</div>
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Твердый шампунь для объема и восстановления волос"
-                                    data-product-category="Твердые шампуни и кондиционеры"
-                                                                            data-product-price="690"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/hair-care/tverdye-shampuni-i-konditsionery/tverdyy-shampun-dlya-obema-i-vosstanovleniya-volos-new/" class="product-card__name metrika_good_click">Твердый шампунь для объема и восстановления волос
-                                                                                                            <span>75 g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_5 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_5 item " data-id="1073">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/hair-care/tverdye-shampuni-i-konditsionery/tvyerdyy-konditsioner-dlya-volos-vosstanovlenie-i-pitanie/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/f0a/ixsg3cxxrtpfjjonvzowst59gtxwvoku/309_390_2/kogd_oranzh.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Твёрдый кондиционер для волос &quot;Восстановление и питание&quot;</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="890">890 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                        <div class="product-card__btn-wrap product-card__btn-js"
+                             data-product-name="{{ $product->name }}"
+                             data-product-category="{{ $product->category->name }}"
+                             data-product-price="{{ $product->price }}">
+                            <div class="product-card__btn smo-btn">
+                                <svg><use href="#bag"></use></svg>
+                                <span class="product-card__btn-text">В корзину</span>
+                            </div>
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Твёрдый кондиционер для волос &quot;Восстановление и питание&quot;"
-                                    data-product-category="Твердые шампуни и кондиционеры"
-                                                                            data-product-price="890"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
                     </div>
-                                        <a href="/catalog/hair-care/tverdye-shampuni-i-konditsionery/tvyerdyy-konditsioner-dlya-volos-vosstanovlenie-i-pitanie/" class="product-card__name metrika_good_click">Твёрдый кондиционер для волос &quot;Восстановление и питание&quot;
-                                                                                                            <span>75 g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">890 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
+                </div>
 
-            
-        
-            
-            
-            <div class="nm_6 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_6 item " data-id="1074">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/tverdye-produkty/tverdye-produkty-dlya-tela/tvyerdyy-gel-dlya-dusha-s-prebiotikami/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/40e/uvhxm86dn8eu50xwr1pz4xxz8fguvi7k/309_390_2/gel.jpg')"></a>
-                        
-                        
-                        
+                <a href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"
+                   class="product-card__name metrika_good_click">
+                    {{ $product->name }}
+                                        
+                    @if($product->volume)
+                    <span>{{ $product->volume }}</span>  
+                    @endif
+                </a>
 
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Твёрдый гель для душа с пребиотиками</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="690">690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Твёрдый гель для душа с пребиотиками"
-                                    data-product-category="Для тела "
-                                                                            data-product-price="690"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
+                <div class="facial-item__price">
+                    <div class="product-card__price">
+                        {{ number_format($product->price, 0, ',', ' ') }} ₽
                     </div>
-                                        <a href="/catalog/tverdye-produkty/tverdye-produkty-dlya-tela/tvyerdyy-gel-dlya-dusha-s-prebiotikami/" class="product-card__name metrika_good_click">Твёрдый гель для душа с пребиотиками
-                                                                                                            <span>75 g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_7 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_7 item " data-id="2430">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/tverdye-produkty/tverdye-produkty-dlya-tela/tverdyy-gel-dlya-dusha-lavandovyy-/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/13d/d5i0s4cumu10r0elx3ul10iaavar3ozu/309_390_2/frame_2087326976.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Твердый гель для душа «Лавандовый»</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="690">690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Твердый гель для душа «Лавандовый»"
-                                    data-product-category="Для тела "
-                                                                            data-product-price="690"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/tverdye-produkty/tverdye-produkty-dlya-tela/tverdyy-gel-dlya-dusha-lavandovyy-/" class="product-card__name metrika_good_click">Твердый гель для душа «Лавандовый»
-                                                                                                            <span>75 g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_8 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_8 item " data-id="1119">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/tverdye-produkty/aksessuary-dlya-sushki-i-khraneniya/alyuminievyy-keys-dlya-khranenie-tverdykh-produktov-smorodina/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/97d/qzah69he6oqak0r99o8rqgvmggcbr2wo/309_390_2/kei_s.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Тревел-кейс для хранения твердых продуктов</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="349">349 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Тревел-кейс для хранения твердых продуктов"
-                                    data-product-category="Аксессуары "
-                                                                            data-product-price="349"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/tverdye-produkty/aksessuary-dlya-sushki-i-khraneniya/alyuminievyy-keys-dlya-khranenie-tverdykh-produktov-smorodina/" class="product-card__name metrika_good_click">Тревел-кейс для хранения твердых продуктов
-                                                                                                            <span>15 g</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">349 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-            
+                </div>
+            </article>
+        </div>
+    @endforeach
 </div>
 
 

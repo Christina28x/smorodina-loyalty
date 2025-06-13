@@ -5,12 +5,6 @@
 <!--NEW-->
         
 
-    <div class="top-marquee_slider swiper-fade swiper-initialized swiper-horizontal swiper-watch-progress swiper-backface-hidden">
-        <div class="swiper-wrapper top-marquee__track_slider" id="swiper-wrapper-327ce10514e9475c2" aria-live="off" style="transition-duration: 0ms;">
-                            
-                            
-                    <a href="https://smorodinacosmetic.com/" class="swiper-slide top-marquee__text_slider swiper-slide-next swiper-slide-prev" role="group" aria-label="2 / 2" data-swiper-slide-index="1" style="width: 1507px; opacity: 0; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">Подарки в заказах: от 6000 рублей - полноразмерный, от 3000 рублей - мини сайз</a><a href="https://smorodinacosmetic.com/shipping_and_payment/" class="swiper-slide top-marquee__text_slider swiper-slide-visible swiper-slide-active" role="group" aria-label="1 / 2" data-swiper-slide-index="0" style="width: 1507px; opacity: 1; transform: translate3d(-1507px, 0px, 0px); transition-duration: 0ms;">Бесплатная доставка до пунктов выдачи от 3500 рублей*</a></div>
-    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
     <div class="container-xxl">
         <div class="header__wrap d-flex justify-content-between align-items-center">
             <div class="header__wrap__lb d-flex align-items-center">

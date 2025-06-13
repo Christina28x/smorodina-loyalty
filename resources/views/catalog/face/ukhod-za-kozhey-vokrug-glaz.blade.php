@@ -238,198 +238,67 @@
         <div class="mt-7">
         
 <div class="row gx-4 gy-7 mb-7 mb-lg-9">
-
-            
-            
-            
-            <div class="nm_0 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_0 item " data-id="2844">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/novinki/krem-flyuid-dlya-kozhi-vokrug-glaz-c-lizatami-bifida-i-kofeinom-dlya-umensheniya-otyechnosti-new/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/559/jdz58jk89qm26jak6ey4rc3wjrga5zbq/309_390_2/frame_2087328667.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Крем-флюид для кожи вокруг глаз c лизатами Bifida и кофеином для уменьшения отёчности new</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1490">1 490 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Крем-флюид для кожи вокруг глаз c лизатами Bifida и кофеином для уменьшения отёчности new"
-                                    data-product-category="Новинки"
-                                                                            data-product-price="1490"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/novinki/krem-flyuid-dlya-kozhi-vokrug-glaz-c-lizatami-bifida-i-kofeinom-dlya-umensheniya-otyechnosti-new/" class="product-card__name metrika_good_click">Крем-флюид для кожи вокруг глаз c лизатами Bifida и кофеином для уменьшения отёчности new
-                                                                                                            <span>30 ml</span>
-                                                    
+    @foreach ($products as $product)
+        <div class="nm_{{ $loop->index }} col-6 col-md-4 col-lg-3">
+            <article class="product-card ssss_{{ $loop->index }} item" data-id="{{ $product->id }}">
+                <div class="product-card__desc">
+                    <a href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"
+                       class="product-card__photo metrika_good_click"
+                       style="background-image: url('{{ asset($product->image) }}')">
                     </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 490 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_1 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_1 item " data-id="1986">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/novinki/podtyagivayushchiy-krem-dlya-glaz-bakuchiol/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/b23/0m1nykh3m5adtoui1uv1k3c2sjq9tgab/309_390_2/frame_2087328668.jpg')"></a>
-                        
-                        
-                                                                                <div class="product-card__badge product-card__badge_new">Новинки</div>
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Подтягивающий крем-флюид для кожи вокруг глаз с бакучиолом и экстрактом анигозантоса </div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1590">1 590 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Подтягивающий крем-флюид для кожи вокруг глаз с бакучиолом и экстрактом анигозантоса "
-                                    data-product-category="Новинки"
-                                                                            data-product-price="1590"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
+                    <div class="product-card__favorite {{ auth()->user()?->hasFavorite($product->id) ? 'product-card__favorite_active' : '' }}" data-product-id="{{ $product->id }}">
+                        <svg><use href="#heart"></use></svg>
                     </div>
-                                        <a href="/catalog/novinki/podtyagivayushchiy-krem-dlya-glaz-bakuchiol/" class="product-card__name metrika_good_click">Подтягивающий крем-флюид для кожи вокруг глаз с бакучиолом и экстрактом анигозантоса 
-                                                                                                            <span>30 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 590 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_2 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_2 item " data-id="2927">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/novinki/antivozrastnoy-krem-dlya-siyaniya-kozhi-vokrug-glaz-s-vitaminom-s-i-ekstraktom-tsentelly-/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/f53/gbqpbrp9xmuf6yme6noj9v7gpvcj72sk/309_390_2/frame_2087328813.jpg')"></a>
-                        
-                        
-                                                                                <div class="product-card__badge product-card__badge_new">Новинки</div>
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Антивозрастной крем для сияния кожи вокруг глаз с витамином С и экстрактом центеллы </div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1690">1 690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                    <div class="product-card__text">
+                        <div class="product-card__text__prev">
+                            {{ $product->name }}
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Антивозрастной крем для сияния кожи вокруг глаз с витамином С и экстрактом центеллы "
-                                    data-product-category="Новинки"
-                                                                            data-product-price="1690"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/novinki/antivozrastnoy-krem-dlya-siyaniya-kozhi-vokrug-glaz-s-vitaminom-s-i-ekstraktom-tsentelly-/" class="product-card__name metrika_good_click">Антивозрастной крем для сияния кожи вокруг глаз с витамином С и экстрактом центеллы 
-                                                                                                            <span>30 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_3 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_3 item " data-id="2667">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/ukhod-za-kozhey-vokrug-glaz/uvlazhnyayushchiy-gel-dlya-kozhi-vokrug-glaz-s-tseramidami-i-gialuronovoy-kislotoy/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/652/ch7y6e1zx3h9z0akma35xu2m1aq4hvwb/309_390_2/smrdn_moisturing_eye_gel_5101.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Увлажняющий гель для кожи вокруг глаз с церамидами и гиалуроновой кислотой</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1490">1 490 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                        <div class="product-card__text__price" data-currency-symbol="₽">
+                            <span class="product-card__text__price-current" data-current-price="{{ $product->price }}">
+                                {{ number_format($product->price, 0, ',', ' ') }} ₽
+                            </span>
+                            <span class="product-card__text__price-quantity">0</span>
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Увлажняющий гель для кожи вокруг глаз с церамидами и гиалуроновой кислотой"
-                                    data-product-category="Кремы для кожи вокруг глаз"
-                                                                            data-product-price="1490"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
                     </div>
-                                        <a href="/catalog/face/ukhod-za-kozhey-vokrug-glaz/uvlazhnyayushchiy-gel-dlya-kozhi-vokrug-glaz-s-tseramidami-i-gialuronovoy-kislotoy/" class="product-card__name metrika_good_click">Увлажняющий гель для кожи вокруг глаз с церамидами и гиалуроновой кислотой
-                                                                                                            <span>30 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 490 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-            
+                    <div class="product-card__add-block">
+                        <div class="product-card__count">
+                            <div class="product-card__count__minus" data-type="minus">-</div>
+                            <div class="product-card__count__value">0</div>
+                            <div class="product-card__count__plus" data-type="plus">+</div>
+                        </div>
+
+                        <div class="product-card__btn-wrap product-card__btn-js"
+                             data-product-name="{{ $product->name }}"
+                             data-product-category="{{ $product->category->name }}"
+                             data-product-price="{{ $product->price }}">
+                            <div class="product-card__btn smo-btn">
+                                <svg><use href="#bag"></use></svg>
+                                <span class="product-card__btn-text">В корзину</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"
+                   class="product-card__name metrika_good_click">
+                    {{ $product->name }}
+                                        
+                    @if($product->volume)
+                    <span>{{ $product->volume }}</span>  
+                    @endif
+                </a>
+
+                <div class="facial-item__price">
+                    <div class="product-card__price">
+                        {{ number_format($product->price, 0, ',', ' ') }} ₽
+                    </div>
+                </div>
+            </article>
+        </div>
+    @endforeach
 </div>
 
 

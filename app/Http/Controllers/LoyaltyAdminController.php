@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\LoyaltyLevel;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Order;
+use App\Models\OrderItem;
+use Carbon\Carbon;
+use App\Models\Product;
+
 
 class LoyaltyAdminController extends Controller
 {
@@ -15,11 +21,87 @@ class LoyaltyAdminController extends Controller
             abort(403);
         }
 
+        $user = Auth::user();
+        $orderCount = $user->orders()->count();
         $levels = LoyaltyLevel::orderBy('min_spending')->get();
         $settings = \App\Models\LoyaltySetting::first();
 
-        return view('cabinet.loyalty_admin', compact('levels', 'settings'));
+        $topCategories = \App\Models\Discount::select('target_id', \DB::raw('count(*) as total'))
+            ->groupBy('target_id')
+            ->orderByDesc('total')
+            ->with('target')
+            ->take(3)
+            ->get();
+
+        $categoryStats = \App\Models\Discount::select('target_id', \DB::raw('count(*) as total'))
+            ->groupBy('target_id')
+            ->with('target')
+            ->get()
+            ->filter(fn($item) => $item->target); // чтобы не было null
+
+        $chartLabels = $categoryStats->pluck('target.rus_name');
+        $chartData = $categoryStats->pluck('total');
+        $topThree = $categoryStats->sortByDesc('total')->take(3);
+
+
+        $loyaltyDistribution = User::select('loyalty_level_id', \DB::raw('count(*) as total'))
+            ->groupBy('loyalty_level_id')
+            ->with('loyaltyLevel') // связь user → loyaltyLevel
+            ->get();
+
+        $levelLabels = $loyaltyDistribution->map(fn($item) => $item->loyaltyLevel->level_name)->toArray();
+        $levelData = $loyaltyDistribution->map(fn($item) => $item->total)->toArray();
+
+        
+        $ordersWithBonuses = Order::where('bonus_used', '>', 0)->count();
+        $ordersWithoutBonuses = Order::where('bonus_used', 0)->count();
+
+        $bonusUsageLabels = ['С бонусами', 'Без бонусов'];
+        $bonusUsageData = [$ordersWithBonuses, $ordersWithoutBonuses];
+
+
+        $productId = 42; // выбери ID продукта
+        $product = Product::findOrFail($productId);
+        $salesPerMonth = [];
+
+        $months = ['2025-03', '2025-04', '2025-05', '2025-06'];
+
+        foreach ($months as $month) {
+            $start = Carbon::parse($month)->startOfMonth();
+            $end = Carbon::parse($month)->endOfMonth();
+
+            $total = OrderItem::where('product_id', $productId)
+                ->whereHas('order', function ($q) use ($start, $end) {
+                    $q->whereBetween('created_at', [$start, $end]);
+                })
+                ->sum('quantity');
+
+            $salesPerMonth[] = $total;
+        }
+
+        // Получаем прогноз на июнь
+        $forecast = $this->exponentialSmoothing($salesPerMonth);
+        $forecastForJune = end($forecast);
+
+        $monthLabels = ['Март', 'Апрель', 'Май', 'Июнь', 'Июль (прогноз)'];
+        $monthData = array_merge($salesPerMonth, [round($forecastForJune)]);
+
+
+        return view('cabinet.loyalty_admin', compact('levels', 'settings', 'orderCount',
+         'topCategories', 'chartLabels','chartData','topThree', 'product',
+         'levelLabels', 'levelData', 'bonusUsageLabels','bonusUsageData', 'monthLabels','monthData'));
     }
+
+    function exponentialSmoothing(array $data, float $alpha = 0.6): array {
+        $forecast = [$data[0]]; // первое значение = начальный прогноз
+
+        for ($i = 1; $i < count($data); $i++) {
+            $forecast[] = $alpha * $data[$i - 1] + (1 - $alpha) * $forecast[$i - 1];
+        }
+
+        return $forecast;
+    }
+
 
     public function update(Request $request)
     {

@@ -55,6 +55,16 @@
                 </div>
 
                 <div class="col-lg-9">
+                    @if(!$hasChosenDiscounts)
+<div class="alert alert-info personal-discount-alert" style="
+                                    border: 2px solid #F9C9E1;
+                                    background-color: #FFF5F9;
+                                    border-radius: 12px;">
+    <p><strong>У вас доступна персональная скидка!</strong></p>
+    <p>Выберите категорию, на которую получите скидку в текущем месяце.</p>
+    <a href="{{ route('loyalty.selectDiscount') }}" class="btn btn-pink">Выбрать категорию</a>
+</div>
+@endif
                     <div class="account-data__block p-4 mb-5">
                         <h2 class="account-data__block-title mb-4">Программа лояльности</h2>
 
@@ -112,7 +122,7 @@
                 <div class="swiper-slide" data-filter="">
                     <article class="product-card item" data-id="{{ $product->id }}">
                         <div class="product-card__desc">
-                            <a href="{{ route('products.show', [$product->category, $product->subcategory, $product->slug]) }}"
+                            <a href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"
                                class="product-card__photo metrika_good_click"
                                style="background-image: url('{{ asset($product->image) }}')"></a>
 
@@ -145,7 +155,7 @@
                             </div>
                         </div>
 
-                        <a href="{{ route('products.show', [$product->category, $product->subcategory, $product->slug]) }}"
+                        <a href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"
                            class="product-card__name metrika_good_click">
                            {{ $product->name }}
                            @if($product->volume)
@@ -166,10 +176,10 @@
                     @endif
 
                     {{-- Форма выбора скидки --}}
-                    @if($settings->discount_choice_enabled && now()->startOfMonth()->eq(now()))
+                    @if($settings->discount_choice_enabled)
                     @if(!$hasChosenDiscounts)
                     <div id="discount-choice-form" class="account-data__block p-4 mb-5">
-                        <h3 class="account-data__block-title mb-3">Персональная скидка на следующий месяц</h3>
+                        <h3 class="account-data__block-title mb-3">Персональная скидка на текущий месяц</h3>
                         <form id="discountSelectForm">
                             <div class="form__item mb-3">
                                 <label class="form__label mb-3">Выберите категорию для скидки:</label>
@@ -267,6 +277,7 @@ document.getElementById('discountSelectForm')?.addEventListener('submit', functi
     .custom-radio input[type="radio"] {
         display: none;
     }
+
 
     .custom-radio__circle {
         position: relative;

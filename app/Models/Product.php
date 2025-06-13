@@ -14,11 +14,9 @@ class Product extends Model
         'name',
         'description_short',
         'description',
-        'category',
-        'subcategory',
-        'usage_short',
+        'category_id',
+        'subcategory_id',
         'usage',
-        'ingredients_short',
         'ingredients',
         'packaging',
         'image',
@@ -46,6 +44,16 @@ class Product extends Model
     public function series()
     {
         return $this->belongsTo(Series::class);
+    }
+
+   public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function subcategory()
+    {
+        return $this->belongsTo(Subcategory::class);
     }
     
     public function favoritedByUsers()

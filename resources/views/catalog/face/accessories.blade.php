@@ -238,146 +238,67 @@
         <div class="mt-7">
         
 <div class="row gx-4 gy-7 mb-7 mb-lg-9">
-
-            
-            
-            
-            <div class="nm_0 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_0 item " data-id="202">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/accessories/sponzh-konzhakovyy-dlya-umyvaniya-green-tea-s-zelenym-chaem/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/4ab/uzabduwvwv2x376cn8733byko7rl260m/309_390_2/zelyenyy_sponzh_2.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Спонж конжаковый для умывания &quot;GREEN TEA&quot;  с зеленым чаем</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="490">490 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Спонж конжаковый для умывания &quot;GREEN TEA&quot;  с зеленым чаем"
-                                    data-product-category="Спонжи"
-                                                                            data-product-price="490"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/face/accessories/sponzh-konzhakovyy-dlya-umyvaniya-green-tea-s-zelenym-chaem/" class="product-card__name metrika_good_click">Спонж конжаковый для умывания &quot;GREEN TEA&quot;  с зеленым чаем
-                                                                                                    
+    @foreach ($products as $product)
+        <div class="nm_{{ $loop->index }} col-6 col-md-4 col-lg-3">
+            <article class="product-card ssss_{{ $loop->index }} item" data-id="{{ $product->id }}">
+                <div class="product-card__desc">
+                    <a href="{{ route('products.show', [ $product->category->name ?? 'unknown',$product->subcategory->name ?? 'unknown', $product->slug]) }}"
+                       class="product-card__photo metrika_good_click"
+                       style="background-image: url('{{ asset($product->image) }}')">
                     </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">490 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_1 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_1 item " data-id="201">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/accessories/sponzh-konzhakovyy-dlya-umyvaniya-bamboo-charcoall-s-bambukovym-uglem/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/8aa/9to8fu0cd0fhokdmnkjamx4nj5d4mnma/309_390_2/chyernyy_sponzh_2.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Спонж конжаковый для умывания &quot;BAMBOO CHARCOALl&quot;  с бамбуковым углем</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="490">490 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Спонж конжаковый для умывания &quot;BAMBOO CHARCOALl&quot;  с бамбуковым углем"
-                                    data-product-category="Спонжи"
-                                                                            data-product-price="490"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
+                    <div class="product-card__favorite {{ auth()->user()?->hasFavorite($product->id) ? 'product-card__favorite_active' : '' }}" data-product-id="{{ $product->id }}">
+                        <svg><use href="#heart"></use></svg>
                     </div>
-                                        <a href="/catalog/face/accessories/sponzh-konzhakovyy-dlya-umyvaniya-bamboo-charcoall-s-bambukovym-uglem/" class="product-card__name metrika_good_click">Спонж конжаковый для умывания &quot;BAMBOO CHARCOALl&quot;  с бамбуковым углем
-                                                                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">490 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_2 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_2 item " data-id="200">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/accessories/sponzh-konzhakovyy-dlya-umyvaniya-white-natural/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/a7f/4dxkoucvirefbgm6vwfkwbr10gqkypm8/309_390_2/belyy_sponzh_2.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Спонж конжаковый для умывания &quot;WHITE natural&quot;</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="490">490 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                    <div class="product-card__text">
+                        <div class="product-card__text__prev">
+                            {{ $product->name }}
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Спонж конжаковый для умывания &quot;WHITE natural&quot;"
-                                    data-product-category="Спонжи"
-                                                                            data-product-price="490"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/face/accessories/sponzh-konzhakovyy-dlya-umyvaniya-white-natural/" class="product-card__name metrika_good_click">Спонж конжаковый для умывания &quot;WHITE natural&quot;
-                                                                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">490 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-            
+                        <div class="product-card__text__price" data-currency-symbol="₽">
+                            <span class="product-card__text__price-current" data-current-price="{{ $product->price }}">
+                                {{ number_format($product->price, 0, ',', ' ') }} ₽
+                            </span>
+                            <span class="product-card__text__price-quantity">0</span>
+                        </div>
+                    </div>
+
+                    <div class="product-card__add-block">
+                        <div class="product-card__count">
+                            <div class="product-card__count__minus" data-type="minus">-</div>
+                            <div class="product-card__count__value">0</div>
+                            <div class="product-card__count__plus" data-type="plus">+</div>
+                        </div>
+
+                        <div class="product-card__btn-wrap product-card__btn-js"
+                             data-product-name="{{ $product->name }}"
+                             data-product-category="{{ $product->category->name }}"
+                             data-product-price="{{ $product->price }}">
+                            <div class="product-card__btn smo-btn">
+                                <svg><use href="#bag"></use></svg>
+                                <span class="product-card__btn-text">В корзину</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="{{ route('products.show', [ $product->category->name ?? 'unknown', $product->subcategory->name ?? 'unknown', $product->slug]) }}"
+                   class="product-card__name metrika_good_click">
+                    {{ $product->name }}
+                                        
+                    @if($product->volume)
+                    <span>{{ $product->volume }}</span>  
+                    @endif
+                </a>
+
+                <div class="facial-item__price">
+                    <div class="product-card__price">
+                        {{ number_format($product->price, 0, ',', ' ') }} ₽
+                    </div>
+                </div>
+            </article>
+        </div>
+    @endforeach
 </div>
 
 

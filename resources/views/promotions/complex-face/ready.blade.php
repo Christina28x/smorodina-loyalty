@@ -57,7 +57,11 @@
         <div class="nm_{{ $loop->index }} col-6 col-md-4 col-lg-3">
             <article class="product-card ssss_{{ $loop->index }} item" data-id="{{ $product->id }}">
                 <div class="product-card__desc">
-                    <a href="{{ route('products.show', [$product->category, $product->subcategory, $product->slug]) }}"
+                    <a href="{{ route('products.show', [
+    $product->category->name ?? 'unknown',
+    $product->subcategory->name ?? 'unknown',
+    $product->slug
+]) }}"
                        class="product-card__photo metrika_good_click"
                        style="background-image: url('{{ asset($product->image) }}')">
                     </a>
@@ -87,7 +91,7 @@
 
                         <div class="product-card__btn-wrap product-card__btn-js"
                              data-product-name="{{ $product->name }}"
-                             data-product-category="{{ $product->category }}"
+                             data-product-category="{{ $product->category->name }}"
                              data-product-price="{{ $product->price }}">
                             <div class="product-card__btn smo-btn">
                                 <svg><use href="#bag"></use></svg>
@@ -97,7 +101,11 @@
                     </div>
                 </div>
 
-                <a href="{{ route('products.show', [$product->category, $product->subcategory, $product->slug]) }}"
+                <a href="{{ route('products.show', [
+    $product->category->name ?? 'unknown',
+    $product->subcategory->name ?? 'unknown',
+    $product->slug
+]) }}"
                    class="product-card__name metrika_good_click">
                     {{ $product->name }}
 
@@ -131,7 +139,11 @@
         <div class="nm_{{ $loop->index }} col-6 col-md-4 col-lg-3">
             <article class="product-card ssss_{{ $loop->index }} item" data-id="{{ $product->id }}">
                 <div class="product-card__desc">
-                    <a href="{{ route('products.show', [$product->category, $product->subcategory, $product->slug]) }}"
+                    <a href="{{ route('products.show', [
+    $product->category->name ?? 'unknown',
+    $product->subcategory->name ?? 'unknown',
+    $product->slug
+]) }}"
                        class="product-card__photo metrika_good_click"
                        style="background-image: url('{{ asset($product->image) }}')">
                     </a>
@@ -161,7 +173,7 @@
 
                         <div class="product-card__btn-wrap product-card__btn-js"
                              data-product-name="{{ $product->name }}"
-                             data-product-category="{{ $product->category }}"
+                             data-product-category="{{ $product->category->name }}"
                              data-product-price="{{ $product->price }}">
                             <div class="product-card__btn smo-btn">
                                 <svg><use href="#bag"></use></svg>
@@ -171,7 +183,11 @@
                     </div>
                 </div>
 
-                <a href="{{ route('products.show', [$product->category, $product->subcategory, $product->slug]) }}"
+                <a href="{{ route('products.show', [
+    $product->category->name ?? 'unknown',
+    $product->subcategory->name ?? 'unknown',
+    $product->slug
+]) }}"
                    class="product-card__name metrika_good_click">
                     {{ $product->name }}
 
@@ -203,7 +219,11 @@
         <div class="nm_{{ $loop->index }} col-6 col-md-4 col-lg-3">
             <article class="product-card ssss_{{ $loop->index }} item" data-id="{{ $product->id }}">
                 <div class="product-card__desc">
-                    <a href="{{ route('products.show', [$product->category, $product->subcategory, $product->slug]) }}"
+                    <a href="{{ route('products.show', [
+    $product->category->name ?? 'unknown',
+    $product->subcategory->name ?? 'unknown',
+    $product->slug
+]) }}"
                        class="product-card__photo metrika_good_click"
                        style="background-image: url('{{ asset($product->image) }}')">
                     </a>
@@ -233,7 +253,7 @@
 
                         <div class="product-card__btn-wrap product-card__btn-js"
                              data-product-name="{{ $product->name }}"
-                             data-product-category="{{ $product->category }}"
+                             data-product-category="{{ $product->category->name }}"
                              data-product-price="{{ $product->price }}">
                             <div class="product-card__btn smo-btn">
                                 <svg><use href="#bag"></use></svg>
@@ -243,7 +263,11 @@
                     </div>
                 </div>
 
-                <a href="{{ route('products.show', [$product->category, $product->subcategory, $product->slug]) }}"
+                <a href="{{ route('products.show', [
+    $product->category->name ?? 'unknown',
+    $product->subcategory->name ?? 'unknown',
+    $product->slug
+]) }}"
                    class="product-card__name metrika_good_click">
                     {{ $product->name }}
                                         

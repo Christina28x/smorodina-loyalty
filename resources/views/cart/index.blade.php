@@ -21,12 +21,13 @@
                         <div class="cart__items">
                             @foreach ($products as $product)
                                 <article class="cart__article item-cart" data-id="{{ $product->id }}" data-product-id="{{ $product->id }}" 
-                                data-price="{{ $product->price }}" data-product-category="{{ $product->category }}"
-         data-product-subcategory="{{ $product->subcategory }}" data-original-price="{{ $product->price }}"
->
+                                data-price="{{ $product->price }}" data-product-category="{{ $product->category->name }}"
+                                data-product-subcategory="{{ $product->subcategory->name }}" 
+                                data-original-price="{{ $product->price }}" data-product-category-id="{{ $product->category_id }}">
+
                                     <div class="item-cart__inner">
                                         <div class="item-cart__pic">
-                                            <a class="item-cart__photo-link" href="{{ route('products.show', [$product->category, $product->subcategory, $product->slug]) }}"></a>
+                                            <a class="item-cart__photo-link" href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"></a>
                                             <img class="item-cart__photo" src="{{ asset($product->image) }}" alt="{{ $product->name }}">
                                         </div>
 
@@ -42,7 +43,7 @@
                                                 </div>
 
                                                 <div class="item-cart__title-link-wrap">
-                                                    <a class="item-cart__title-link" href="{{ route('products.show', [$product->category, $product->subcategory, $product->slug]) }}">
+                                                    <a class="item-cart__title-link" href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}">
                                                         <span class="item-cart__title">{{ $product->name }}</span>
                                                     </a>
                                                 </div>
@@ -76,7 +77,7 @@
                                              data-product-id="{{ $product->id }}"
                                              data-product-price="{{ $product->price }}"
                                              data-product-name="{{ $product->name }}"
-                                             data-product-category="{{ $product->category }}">
+                                             data-product-category="{{ $product->category->name }}">
                                         </div>
                                     </div>
                                 </article>
@@ -262,11 +263,7 @@ function applyDiscountToCart(discount) {
         const category = item.dataset.productCategory;
         const subcategory = item.dataset.productSubcategory;
 
-        const matches = (
-            discount.type === 'all' ||
-            (discount.type === 'category' && discount.target === category) ||
-            (discount.type === 'subcategory' && discount.target === subcategory)
-        );
+        const matches = parseInt(item.dataset.productCategoryId) === discount.category_id;
 
         let newPrice = price;
         if (matches) {
@@ -299,7 +296,7 @@ function applyDiscountToCart(discount) {
 
     updateCartSummary();
 
-    // 💾 Сохраняем сумму со скидкой в сессию
+    // Сохраняем сумму со скидкой в сессию
     fetch('/cart/set-discounted-total', {
         method: 'POST',
         headers: {

@@ -122,13 +122,10 @@
                                     <a href="/catalog/tverdye-produkty/" class="d-block catalog-section__menu__item ">все товары</a>
                                 </div>
                                                                     <div class="swiper-slide">
-                                        <a href="/catalog/tverdye-produkty/tverdye-produkty-dlya-volos/" class="d-block catalog-section__menu__item ">Для волос</a>
+                                        <a href="/catalog/tverdye-produkty/tverdye-shampuni-i-konditsionery/" class="d-block catalog-section__menu__item ">Для волос</a>
                                     </div>
                                                                     <div class="swiper-slide">
-                                        <a href="/catalog/tverdye-produkty/tverdye-produkty-dlya-litsa/" class="d-block catalog-section__menu__item ">Для лица</a>
-                                    </div>
-                                                                    <div class="swiper-slide">
-                                        <a href="/catalog/tverdye-produkty/tverdye-produkty-dlya-tela/" class="d-block catalog-section__menu__item ">Для тела </a>
+                                        <a href="/catalog/tverdye-produkty/tverdye-produkty-dlya-tel/" class="d-block catalog-section__menu__item ">Для тела </a>
                                     </div>
                                                                     <div class="swiper-slide">
                                         <a href="/catalog/tverdye-produkty/aksessuary-dlya-sushki-i-khraneniya/" class="d-block catalog-section__menu__item catalog-section__menu__item_active">Аксессуары </a>
@@ -143,55 +140,67 @@
         <div class="mt-7">
         
 <div class="row gx-4 gy-7 mb-7 mb-lg-9">
-
-            
-            
-            
-            <div class="nm_0 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_0 item " data-id="1119">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/tverdye-produkty/aksessuary-dlya-sushki-i-khraneniya/alyuminievyy-keys-dlya-khranenie-tverdykh-produktov-smorodina/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/97d/qzah69he6oqak0r99o8rqgvmggcbr2wo/309_390_2/kei_s.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Тревел-кейс для хранения твердых продуктов</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="349">349 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Тревел-кейс для хранения твердых продуктов"
-                                    data-product-category="Аксессуары "
-                                                                            data-product-price="349"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/tverdye-produkty/aksessuary-dlya-sushki-i-khraneniya/alyuminievyy-keys-dlya-khranenie-tverdykh-produktov-smorodina/" class="product-card__name metrika_good_click">Тревел-кейс для хранения твердых продуктов
-                                                                                                            <span>15 g</span>
-                                                    
+    @foreach ($products as $product)
+        <div class="nm_{{ $loop->index }} col-6 col-md-4 col-lg-3">
+            <article class="product-card ssss_{{ $loop->index }} item" data-id="{{ $product->id }}">
+                <div class="product-card__desc">
+                    <a href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"
+                       class="product-card__photo metrika_good_click"
+                       style="background-image: url('{{ asset($product->image) }}')">
                     </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">349 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
+                    <div class="product-card__favorite {{ auth()->user()?->hasFavorite($product->id) ? 'product-card__favorite_active' : '' }}" data-product-id="{{ $product->id }}">
+                        <svg><use href="#heart"></use></svg>
+                    </div>
 
-            
-            
+                    <div class="product-card__text">
+                        <div class="product-card__text__prev">
+                            {{ $product->name }}
+                        </div>
+
+                        <div class="product-card__text__price" data-currency-symbol="₽">
+                            <span class="product-card__text__price-current" data-current-price="{{ $product->price }}">
+                                {{ number_format($product->price, 0, ',', ' ') }} ₽
+                            </span>
+                            <span class="product-card__text__price-quantity">0</span>
+                        </div>
+                    </div>
+
+                    <div class="product-card__add-block">
+                        <div class="product-card__count">
+                            <div class="product-card__count__minus" data-type="minus">-</div>
+                            <div class="product-card__count__value">0</div>
+                            <div class="product-card__count__plus" data-type="plus">+</div>
+                        </div>
+
+                        <div class="product-card__btn-wrap product-card__btn-js"
+                             data-product-name="{{ $product->name }}"
+                             data-product-category="{{ $product->category->name }}"
+                             data-product-price="{{ $product->price }}">
+                            <div class="product-card__btn smo-btn">
+                                <svg><use href="#bag"></use></svg>
+                                <span class="product-card__btn-text">В корзину</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"
+                   class="product-card__name metrika_good_click">
+                    {{ $product->name }}
+                                        
+                    @if($product->volume)
+                    <span>{{ $product->volume }}</span>  
+                    @endif
+                </a>
+
+                <div class="facial-item__price">
+                    <div class="product-card__price">
+                        {{ number_format($product->price, 0, ',', ' ') }} ₽
+                    </div>
+                </div>
+            </article>
+        </div>
+    @endforeach
 </div>
 
 

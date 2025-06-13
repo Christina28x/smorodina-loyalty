@@ -238,338 +238,67 @@
         <div class="mt-7">
         
 <div class="row gx-4 gy-7 mb-7 mb-lg-9">
-
-            
-            
-            
-            <div class="nm_0 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_0 item " data-id="1330">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/cream/krem-dlya-normalizatsii-mikrobioma-kozhi-s-lizatami-prebiotikami-i-postbiotikami-microbiome/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/e3b/6d35fnebf6ckxmsk66fhi4fiiwdh093q/309_390_2/smrdn_microbiome_facial_cream_5147.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Крем для лица &quot;MICROBIOME&quot;  new</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1490">1 490 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Крем для лица &quot;MICROBIOME&quot;  new"
-                                    data-product-category="Кремы для лица"
-                                                                            data-product-price="1490"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/face/cream/krem-dlya-normalizatsii-mikrobioma-kozhi-s-lizatami-prebiotikami-i-postbiotikami-microbiome/" class="product-card__name metrika_good_click">Крем для лица &quot;MICROBIOME&quot;  new
-                                                                                                            <span>50 ml </span>
-                                                    
+    @foreach ($products as $product)
+        <div class="nm_{{ $loop->index }} col-6 col-md-4 col-lg-3">
+            <article class="product-card ssss_{{ $loop->index }} item" data-id="{{ $product->id }}">
+                <div class="product-card__desc">
+                    <a href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"
+                       class="product-card__photo metrika_good_click"
+                       style="background-image: url('{{ asset($product->image) }}')">
                     </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 490 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_1 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_1 item " data-id="73">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/cream/podtyagivayushchiy-krem-flyuid-lifting-dlya-kozhi-litsa-shei-i-dekolte/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/1dd/z38j3ejnz2udqslyf9ndpogms3sn23oc/309_390_2/smrdn_lifting_facial_cream_0075.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Подтягивающий крем-флюид &quot;LIFTING&quot; new</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1590">1 590 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Подтягивающий крем-флюид &quot;LIFTING&quot; new"
-                                    data-product-category="Кремы для лица"
-                                                                            data-product-price="1590"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
+                    <div class="product-card__favorite {{ auth()->user()?->hasFavorite($product->id) ? 'product-card__favorite_active' : '' }}" data-product-id="{{ $product->id }}">
+                        <svg><use href="#heart"></use></svg>
                     </div>
-                                        <a href="/catalog/face/cream/podtyagivayushchiy-krem-flyuid-lifting-dlya-kozhi-litsa-shei-i-dekolte/" class="product-card__name metrika_good_click">Подтягивающий крем-флюид &quot;LIFTING&quot; new
-                                                                                                            <span>50 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 590 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_2 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_2 item " data-id="76">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/cream/krem-dlya-problemnoy-i-zhirnoy-kozhi-litsa-anti-acne/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/0c9/k0hhxk5rs3jcxb42pu5kkrws7hhh25y8/309_390_2/smrdn_anti_acne_facial_cream_0362.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Крем-флюид «Anti-Acne» для проблемной и жирной кожи new</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1490">1 490 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                    <div class="product-card__text">
+                        <div class="product-card__text__prev">
+                            {{ $product->name }}
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Крем-флюид «Anti-Acne» для проблемной и жирной кожи new"
-                                    data-product-category="Кремы для лица"
-                                                                            data-product-price="1490"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/face/cream/krem-dlya-problemnoy-i-zhirnoy-kozhi-litsa-anti-acne/" class="product-card__name metrika_good_click">Крем-флюид «Anti-Acne» для проблемной и жирной кожи new
-                                                                                                            <span>50 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 490 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_3 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_3 item " data-id="75">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/cream/antivozrastnoy-krem-anti-age-day/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/af2/73bvdv02ox436gvdej012t4co6txf3uq/309_390_2/v2_new_smrdn_anti_age_facial_cream_day_0169.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Антивозрастной дневной крем с витамином С в липосомах &quot;ANTI-AGE&quot; new</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1490">1 490 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                        <div class="product-card__text__price" data-currency-symbol="₽">
+                            <span class="product-card__text__price-current" data-current-price="{{ $product->price }}">
+                                {{ number_format($product->price, 0, ',', ' ') }} ₽
+                            </span>
+                            <span class="product-card__text__price-quantity">0</span>
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Антивозрастной дневной крем с витамином С в липосомах &quot;ANTI-AGE&quot; new"
-                                    data-product-category="Кремы для лица"
-                                                                            data-product-price="1490"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
                     </div>
-                                        <a href="/catalog/face/cream/antivozrastnoy-krem-anti-age-day/" class="product-card__name metrika_good_click">Антивозрастной дневной крем с витамином С в липосомах &quot;ANTI-AGE&quot; new
-                                                                                                            <span>50 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 490 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_4 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_4 item " data-id="2702">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/cream/antivozrastnoy-krem-anti-age-noch/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/258/2ddo3zbim3g1hajw6eklm52ufssh4uoq/309_390_2/new_smrdn_anti_age_facial_cream_night_0174.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Антивозрастной ночной крем &quot;ANTI-AGE&quot; new</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1690">1 690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                    <div class="product-card__add-block">
+                        <div class="product-card__count">
+                            <div class="product-card__count__minus" data-type="minus">-</div>
+                            <div class="product-card__count__value">0</div>
+                            <div class="product-card__count__plus" data-type="plus">+</div>
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Антивозрастной ночной крем &quot;ANTI-AGE&quot; new"
-                                    data-product-category="Кремы для лица"
-                                                                            data-product-price="1690"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/face/cream/antivozrastnoy-krem-anti-age-noch/" class="product-card__name metrika_good_click">Антивозрастной ночной крем &quot;ANTI-AGE&quot; new
-                                                                                                            <span>50 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_5 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_5 item " data-id="74">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/cream/uvlazhnyayushchiy-krem-moisturizing-dlya-sukhoy-kombinirovannoy-i-obezvozhennoy-kozhi/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/0a7/fasoybeoay81xhdzksy7xjwx6g0xcm1u/309_390_2/new_smrdn_moisturing_facial_cream_0317.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Увлажняющий крем с растительными церамидами и гиалуроновой кислотой</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1490">1 490 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                        <div class="product-card__btn-wrap product-card__btn-js"
+                             data-product-name="{{ $product->name }}"
+                             data-product-category="{{ $product->category->name }}"
+                             data-product-price="{{ $product->price }}">
+                            <div class="product-card__btn smo-btn">
+                                <svg><use href="#bag"></use></svg>
+                                <span class="product-card__btn-text">В корзину</span>
+                            </div>
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Увлажняющий крем с растительными церамидами и гиалуроновой кислотой"
-                                    data-product-category="Кремы для лица"
-                                                                            data-product-price="1490"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
                     </div>
-                                        <a href="/catalog/face/cream/uvlazhnyayushchiy-krem-moisturizing-dlya-sukhoy-kombinirovannoy-i-obezvozhennoy-kozhi/" class="product-card__name metrika_good_click">Увлажняющий крем с растительными церамидами и гиалуроновой кислотой
-                                                                                                            <span>50 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 490 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
+                </div>
 
-            
-        
-            
-            
-            <div class="nm_6 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_6 item " data-id="2889">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/cream/uspokaivayushchiy-i-vosstanavlivayushchiy-krem-dlya-chuvstvitelnoy-kozhi-/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/3d9/sb0nmakev7ufms4sew2i3pezwyn0yajn/309_390_2/frame_2087328745.jpg')"></a>
-                        
-                        
-                                                                                <div class="product-card__badge product-card__badge_new">new</div>
-                        
+                <a href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"
+                   class="product-card__name metrika_good_click">
+                    {{ $product->name }}
+                                        
+                    @if($product->volume)
+                    <span>{{ $product->volume }}</span>  
+                    @endif
+                </a>
 
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Успокаивающий и восстанавливающий крем для чувствительной кожи </div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1690">1 690 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Успокаивающий и восстанавливающий крем для чувствительной кожи "
-                                    data-product-category="Кремы для лица"
-                                                                            data-product-price="1690"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
+                <div class="facial-item__price">
+                    <div class="product-card__price">
+                        {{ number_format($product->price, 0, ',', ' ') }} ₽
                     </div>
-                                        <a href="/catalog/face/cream/uspokaivayushchiy-i-vosstanavlivayushchiy-krem-dlya-chuvstvitelnoy-kozhi-/" class="product-card__name metrika_good_click">Успокаивающий и восстанавливающий крем для чувствительной кожи 
-                                                                                                            <span>50 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 690 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-            
+                </div>
+            </article>
+        </div>
+    @endforeach
 </div>
 
 

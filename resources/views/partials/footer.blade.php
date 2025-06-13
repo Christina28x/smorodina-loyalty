@@ -536,17 +536,3 @@
         </div>
     </div>
 </div>
-
-
-
-<section class="feedback-icons d-flex flex-column">
-    <a href="https://wa.me/79823631284" target="_blank" class="feedback-icons__icon feedback-icons__icon_wa mb-2 d-flex align-items-center justify-content-center">
-        <svg><use href="#whatsapp"></use></svg>
-    </a>
-    <a href="https://t.me/Smorodinacosmetic" target="_blank" class="feedback-icons__icon feedback-icons__icon_tg d-flex mb-2 align-items-center justify-content-center">
-        <svg><use href="#telegram"></use></svg>
-    </a>
-    <a href="https://smorodinacosmetic.com/#" class="feedback-icons__icon feedback-icons__icon_share d-flex align-items-center justify-content-center">
-        <svg><use href="#share"></use></svg>
-    </a>
-</section>

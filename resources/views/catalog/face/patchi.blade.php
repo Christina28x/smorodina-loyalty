@@ -241,477 +241,67 @@
         <div class="mt-7">
         
 <div class="row gx-4 gy-7 mb-7 mb-lg-9">
-
-            
-            
-            
-            <div class="nm_0 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_0 item " data-id="34">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/patchi/nabor-mnogorazovykh-patchey-refreshing-ot-ustalosti-i-otekov/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/59e/9pjeoldyggzsd24tjcbz8suvwo0n7tft/309_390_2/refresh_patchi.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                                                            <div class="product-card__awards">
-                                                                                                                    <div class="product-card__award" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/dfd/u7iwl5w1h76v3607kyjy7ryzy0au5662/44_44_2/ECOgolik_AWARDS_2021.png')"></div>
-                                                                    </div>
-                                                                            <div class="product-card__text">
-                            <div class="product-card__text__prev">Набор патчей от отеков и усталости</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1790">1 790 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Набор патчей от отеков и усталости"
-                                    data-product-category="Патчи"
-                                                                            data-product-price="1790"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/face/patchi/nabor-mnogorazovykh-patchey-refreshing-ot-ustalosti-i-otekov/" class="product-card__name metrika_good_click">Набор патчей от отеков и усталости
-                                                                                                            <span>30 ml</span>
-                                                    
+    @foreach ($products as $product)
+        <div class="nm_{{ $loop->index }} col-6 col-md-4 col-lg-3">
+            <article class="product-card ssss_{{ $loop->index }} item" data-id="{{ $product->id }}">
+                <div class="product-card__desc">
+                    <a href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"
+                       class="product-card__photo metrika_good_click"
+                       style="background-image: url('{{ asset($product->image) }}')">
                     </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 790 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_1 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_1 item " data-id="37">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/patchi/gel-syvorotka-refreshing-ot-ustalosti-i-otekov/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/32f/9xuhxo8d9o26cpuggtqev2kssmfu5ewh/309_390_2/refresh_gel.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Гель-сыворотка от отеков и усталости</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="990">990 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Гель-сыворотка от отеков и усталости"
-                                    data-product-category="Патчи"
-                                                                            data-product-price="990"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
+                    <div class="product-card__favorite {{ auth()->user()?->hasFavorite($product->id) ? 'product-card__favorite_active' : '' }}" data-product-id="{{ $product->id }}">
+                        <svg><use href="#heart"></use></svg>
                     </div>
-                                        <a href="/catalog/face/patchi/gel-syvorotka-refreshing-ot-ustalosti-i-otekov/" class="product-card__name metrika_good_click">Гель-сыворотка от отеков и усталости
-                                                                                                            <span>30 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">990 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_2 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_2 item " data-id="35">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/patchi/nabor-mnogorazovykh-patchey-deep-hydration-glubokoe-uvlazhnenie/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/3a1/8ziw4e4b18rge2lnhfo4d9rp4cfgwa5g/309_390_2/diip_patchi.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Набор патчей Глубокое увлажнение</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1990">1 990 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                    <div class="product-card__text">
+                        <div class="product-card__text__prev">
+                            {{ $product->name }}
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Набор патчей Глубокое увлажнение"
-                                    data-product-category="Патчи"
-                                                                            data-product-price="1990"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/face/patchi/nabor-mnogorazovykh-patchey-deep-hydration-glubokoe-uvlazhnenie/" class="product-card__name metrika_good_click">Набор патчей Глубокое увлажнение
-                                                                                                            <span>30 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 990 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_3 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_3 item " data-id="36">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/patchi/gel-syvorotka-anti-wrinkle-ot-mimicheskikh-morshchin/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/541/8l8sp4pl3rp0ygv0d227xdhtnk0l1ve1/309_390_2/vrinkl_gel.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Гель-сыворотка от мимических морщин</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="990">990 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                        <div class="product-card__text__price" data-currency-symbol="₽">
+                            <span class="product-card__text__price-current" data-current-price="{{ $product->price }}">
+                                {{ number_format($product->price, 0, ',', ' ') }} ₽
+                            </span>
+                            <span class="product-card__text__price-quantity">0</span>
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Гель-сыворотка от мимических морщин"
-                                    data-product-category="Патчи"
-                                                                            data-product-price="990"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
                     </div>
-                                        <a href="/catalog/face/patchi/gel-syvorotka-anti-wrinkle-ot-mimicheskikh-morshchin/" class="product-card__name metrika_good_click">Гель-сыворотка от мимических морщин
-                                                                                                            <span>30 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">990 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_4 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_4 item " data-id="38">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/patchi/gel-syvorotka-deep-hydration-glubokoe-uvlazhnenie/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/bae/7ao4jt8xliv06wbiq9j4bnly61uz0zwg/309_390_2/diip_gel_1.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Гель-сыворотка глубокое увлажнение</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="990">990 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                    <div class="product-card__add-block">
+                        <div class="product-card__count">
+                            <div class="product-card__count__minus" data-type="minus">-</div>
+                            <div class="product-card__count__value">0</div>
+                            <div class="product-card__count__plus" data-type="plus">+</div>
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Гель-сыворотка глубокое увлажнение"
-                                    data-product-category="Патчи"
-                                                                            data-product-price="990"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/face/patchi/gel-syvorotka-deep-hydration-glubokoe-uvlazhnenie/" class="product-card__name metrika_good_click">Гель-сыворотка глубокое увлажнение
-                                                                                                            <span>30 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">990 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
 
-            
-        
-            
-            
-            <div class="nm_5 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_5 item " data-id="33">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/patchi/nabor-patchey-anti-wrinkle-ot-mimicheskikh-morshchin/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/bbb/1pfs2kap48gu43jvuqo9i98fpc5ic1ne/309_390_2/vrinkl_patchi.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Набор патчей от мимических морщин</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="1790">1 790 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
+                        <div class="product-card__btn-wrap product-card__btn-js"
+                             data-product-name="{{ $product->name }}"
+                             data-product-category="{{ $product->category->name }}"
+                             data-product-price="{{ $product->price }}">
+                            <div class="product-card__btn smo-btn">
+                                <svg><use href="#bag"></use></svg>
+                                <span class="product-card__btn-text">В корзину</span>
+                            </div>
                         </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Набор патчей от мимических морщин"
-                                    data-product-category="Патчи"
-                                                                            data-product-price="1790"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
                     </div>
-                                        <a href="/catalog/face/patchi/nabor-patchey-anti-wrinkle-ot-mimicheskikh-morshchin/" class="product-card__name metrika_good_click">Набор патчей от мимических морщин
-                                                                                                            <span>30 ml</span>
-                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">1 790 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
+                </div>
 
-            
-        
-            
-            
-            <div class="nm_6 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_6 item " data-id="43">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/patchi/konoplyanye-patchi-vyrezki-4-sht-refreshing/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/be0/pm8ohvmrtba9sktm4enfxpkavq1d5j8f/309_390_2/bezhevyy_patch.jpg')"></a>
-                        
-                        
-                        
+                <a href="{{ route('products.show', [$product->category->name, $product->subcategory->name, $product->slug]) }}"
+                   class="product-card__name metrika_good_click">
+                    {{ $product->name }}
+                                        
+                    @if($product->volume)
+                    <span>{{ $product->volume }}</span>  
+                    @endif
+                </a>
 
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Конопляные патчи — вырезки 4 шт оранжевые</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="290">290 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Конопляные патчи — вырезки 4 шт оранжевые"
-                                    data-product-category="Патчи"
-                                                                            data-product-price="290"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
+                <div class="facial-item__price">
+                    <div class="product-card__price">
+                        {{ number_format($product->price, 0, ',', ' ') }} ₽
                     </div>
-                                        <a href="/catalog/face/patchi/konoplyanye-patchi-vyrezki-4-sht-refreshing/" class="product-card__name metrika_good_click">Конопляные патчи — вырезки 4 шт оранжевые
-                                                                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">290 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_7 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_7 item " data-id="40">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/patchi/keys-dlya-khraneniya-patchey-refreshing/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/a74/vt01m8cpg0knryzb94d3kbx0u7opzdlw/309_390_2/refresh_keys.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Кейс для хранения патчей оранжевые</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="390">390 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Кейс для хранения патчей оранжевые"
-                                    data-product-category="Патчи"
-                                                                            data-product-price="390"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/face/patchi/keys-dlya-khraneniya-patchey-refreshing/" class="product-card__name metrika_good_click">Кейс для хранения патчей оранжевые
-                                                                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">390 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_8 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_8 item " data-id="39">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/patchi/keys-dlya-khraneniya-patchey-anti-wrinkle/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/c2f/7d068ciun8r1auvyewyz0oclctfwmwmk/309_390_2/vrinkl_keys.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Кейс для хранения патчей бежевый</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="390">390 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Кейс для хранения патчей бежевый"
-                                    data-product-category="Патчи"
-                                                                            data-product-price="390"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/face/patchi/keys-dlya-khraneniya-patchey-anti-wrinkle/" class="product-card__name metrika_good_click">Кейс для хранения патчей бежевый
-                                                                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">390 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-        
-            
-            
-            <div class="nm_9 col-6 col-md-4 col-lg-3">
-                <article class="product-card ssss_9 item " data-id="41">
-                    <div class="product-card__desc">
-                                                                                                        <a href="/catalog/face/patchi/keys-dlya-khraneniya-patchey-deep-hydration/" class="product-card__photo metrika_good_click" style="background-image: url('https://smorodinacosmetic.com/upload/resize_cache/iblock/6e3/3fz0762drp6ueiyj2ehg8hh6884srg0v/309_390_2/diip_keys.jpg')"></a>
-                        
-                        
-                        
-
-                        
-                                                                        <div class="product-card__text">
-                            <div class="product-card__text__prev">Кейс для хранения патчей голубой</div>
-                            <div class="product-card__text__price" data-currency-symbol="₽">
-                                                                                                                                                        <span class="product-card__text__price-current" data-current-price="390">390 &#8381;</span> <span class="product-card__text__price-quantity">0</span>
-                                                                                                                                        </div>
-                        </div>
-                        <div class="product-card__add-block">
-                                                            <div class="product-card__count">
-                                    <div class="product-card__count__minus" data-type="minus">-</div>
-                                    <div class="product-card__count__value">0</div>
-                                    <div class="product-card__count__plus" data-type="plus">+</div>
-                                </div>
-                                                                <div class="product-card__btn-wrap product-card__btn-js"
-                                    data-product-name="Кейс для хранения патчей голубой"
-                                    data-product-category="Патчи"
-                                                                            data-product-price="390"
-                                                                    >
-                                    <div class="product-card__btn smo-btn">
-                                        <svg><use href="#bag"></use></svg>
-                                        <span class="product-card__btn-text">В корзину</span>
-                                    </div>
-                                </div>
-                                                    </div>
-                    </div>
-                                        <a href="/catalog/face/patchi/keys-dlya-khraneniya-patchey-deep-hydration/" class="product-card__name metrika_good_click">Кейс для хранения патчей голубой
-                                                                                                    
-                    </a>
-                                        <div class="facial-item__price">
-                                                                                                                        <div class="product-card__price">390 &#8381;</div>
-                                                                                                        </div>
-                </article>
-            </div>
-
-            
-            
+                </div>
+            </article>
+        </div>
+    @endforeach
 </div>
 
 
