@@ -35,37 +35,33 @@ Route::get('/sets', function () {
     return view('sets.index');
 })->name('sets.index');
 
-Route::get('/sets/all', function () {
-    return view('sets.all');
-})->name('sets.all');
-
 Route::get('/sets/microbiome', function () {
-    return view('sets.microbiome');
-})->name('sets.microbiome');
+    return app(ProductController::class)->showSeries('microbiome');
+});
 
-Route::get('/sets/lifting', function () {
-    return view('sets.lifting');
-})->name('sets.lifting');
+Route::get('/sets/smart-lifting', function () {
+    return app(ProductController::class)->showSeries('smart-lifting');
+});
 
 Route::get('/sets/smart anti-acne', function () {
-    return view('sets.smart anti-acne');
-})->name('sets.smart anti-acneindex');
+    return app(ProductController::class)->showSeries('smart anti-acne');
+});
 
 Route::get('/sets/smart-age', function () {
-    return view('sets.smart-age');
-})->name('sets.smart-age');
+    return app(ProductController::class)->showSeries('smart-age');
+});
 
 Route::get('/sets/sensitive', function () {
-    return view('sets.sensitive');
-})->name('sets.sensitive');
+    return app(ProductController::class)->showSeries('sensitive');
+});
 
 Route::get('/sets/hydration', function () {
-    return view('sets.hydration');
-})->name('sets.hydration');
+    return app(ProductController::class)->showSeries('hydration');
+});
 
 Route::get('/sets/spf', function () {
-    return view('sets.spf');
-})->name('sets.spf');
+    return app(ProductController::class)->showSeries('spf');
+});
 
 
 Route::get('/catalog', function () {
@@ -200,21 +196,6 @@ Route::get('/catalog/aromatherapy/interior-candles-selective', function () {
 });
 
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
-
-Route::get('/partners', function () {
-    return view('partners');
-})->name('partners');
-
-Route::get('/foreign-partnership', function () {
-    return view('foreign-partnership');
-})->name('foreign-partnership');
-
-
-
-
 Route::get('/catalog/{category}/{subcategory}/{slug}', [ProductController::class, 'show'])->name('products.show');
 
 
@@ -281,8 +262,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/cart/set-discounted-total', [CartController::class, 'setDiscountedTotal']);
     Route::get('/cabinet/loyalty-admin', [LoyaltyAdminController::class, 'index'])->name('admin.loyalty');
     Route::post('/cabinet/loyalty-admin', [LoyaltyAdminController::class, 'update'])->name('admin.loyalty.update');
-    Route::get('/admin/forecast/products', [ForecastController::class, 'getProducts']);
-    Route::get('/admin/forecast/data', [ForecastController::class, 'getForecastData']);
+    Route::get('/cabinet/loyalty-admin/products', [LoyaltyAdminController::class, 'getProducts']);
+    Route::get('/cabinet/loyalty-admin/data', [LoyaltyAdminController::class, 'getForecastData']);
 
 });
 

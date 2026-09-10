@@ -5,12 +5,12 @@
 
     <section class="catalog-section">
 
-        <div class="catalog-section__head" style="background-image: url(https://smorodinacosmetic.com/local/templates/smorodinacosmetic_f61/images/demo/section_bg.png)">
+        <div class="catalog-section__head" style="background-image: url('{{ asset('img/section_bg.png') }}')">
             <div class="container-xxl h-100 d-flex flex-column justify-content-end justify-content-lg-between">
                 <div class="head-breadcrumbs d-none d-lg-flex flex-wrap">
                     <a href="/">Главная страница</a>
                     <span>/</span>
-                    <a href="/promotions/">Готовые наборы</a>
+                    <a href="/promotions">Готовые наборы</a>
                 </div>
                 <h1 class="text-lowercase">Готовые наборы</h1>
             </div>
@@ -33,7 +33,7 @@
             <div class="series-list mt-6">
                 <div class="row g-4">
                                             <div class="col-6">
-                            <a href="/promotions/complex-face/ready/" class="series-list__item series-list__item_114                           series-list__item_type-1 d-flex flex-column align-items-center justify-content-end justify-content-md-center p-4 p-md-6" style="background-image: url(https://smorodinacosmetic.com/upload/iblock/aa7/ug25225xvvp34zuwji2ecmhz18nn7ico/category_cards.jpg)">
+                            <a href="/promotions/complex-face/ready/" class="series-list__item series-list__item_114                           series-list__item_type-1 d-flex flex-column align-items-center justify-content-end justify-content-md-center p-4 p-md-6" style="background-image: url(img/category_cards.jpg)">
                                 <div class="series-list__item-bg" style="background-color: #7A74CA"></div>
                                 <div class="text-center series-list__item__title text-lowercase">Лицо</div>
                                 <div class="series-list__item__desc mt-2"></div>
@@ -41,7 +41,7 @@
                             </a>
                         </div>
                                             <div class="col-6">
-                            <a href="/promotions/complex-hair" class="series-list__item series-list__item_114                           series-list__item_type-1 d-flex flex-column align-items-center justify-content-end justify-content-md-center p-4 p-md-6" style="background-image: url(https://smorodinacosmetic.com/upload/iblock/a1c/n9ez89y66ebxv8g71f1bvqcnywb3fbt7/category_cards_1.jpg)">
+                            <a href="/promotions/complex-hair" class="series-list__item series-list__item_114                           series-list__item_type-1 d-flex flex-column align-items-center justify-content-end justify-content-md-center p-4 p-md-6" style="background-image: url(img/category_cards_1.jpg)">
                                 <div class="series-list__item-bg" style="background-color: #7A74CA"></div>
                                 <div class="text-center series-list__item__title text-lowercase">Волосы</div>
                                 <div class="series-list__item__desc mt-2"></div>
@@ -49,7 +49,7 @@
                             </a>
                         </div>
                                             <div class="col-6">
-                            <a href="/promotions/complex-body" class="series-list__item series-list__item_114                           series-list__item_type-1 d-flex flex-column align-items-center justify-content-end justify-content-md-center p-4 p-md-6" style="background-image: url(https://smorodinacosmetic.com/upload/iblock/3c7/qwf10tewgzayxxjryp256m12vpbtwdgj/category_cards_2.jpg)">
+                            <a href="/promotions/complex-body" class="series-list__item series-list__item_114                           series-list__item_type-1 d-flex flex-column align-items-center justify-content-end justify-content-md-center p-4 p-md-6" style="background-image: url(img/category_cards_2.jpg)">
                                 <div class="series-list__item-bg" style="background-color: #7A74CA"></div>
                                 <div class="text-center series-list__item__title text-lowercase">Тело</div>
                                 <div class="series-list__item__desc mt-2"></div>
@@ -57,7 +57,7 @@
                             </a>
                         </div>
                                             <div class="col-6">
-                            <a href="/promotions/complex-aroma" class="series-list__item series-list__item_114                           series-list__item_type-1 d-flex flex-column align-items-center justify-content-end justify-content-md-center p-4 p-md-6" style="background-image: url(https://smorodinacosmetic.com/upload/iblock/f50/7mcqg5juktnxwx0qqpewg47j0aah4zks/category_cards_3.jpg)">
+                            <a href="/promotions/complex-aroma" class="series-list__item series-list__item_114                           series-list__item_type-1 d-flex flex-column align-items-center justify-content-end justify-content-md-center p-4 p-md-6" style="background-image: url(img/category_cards_3.jpg)">
                                 <div class="series-list__item-bg" style="background-color: #7A74CA"></div>
                                 <div class="text-center series-list__item__title text-lowercase">Ароматерапия</div>
                                 <div class="series-list__item__desc mt-2"></div>

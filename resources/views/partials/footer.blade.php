@@ -83,47 +83,8 @@
                                     <a href="/certificate/" class="footer__menu__item">Подарочный сертификат</a>
                                 </div>
                             </div>
-                            <div class="footer__menu mb-0">
-                                <div class="footer__menu__title">
-                                    О компании
-                                    <svg><use href="#arrow_down"></use></svg>
-                                </div>
-                                <div class="footer__menu__list flex-column">
-                                    <a href="/about/" class="footer__menu__item">О бренде</a>
-                                </div>
-                            </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="footer__menu footer-menu_shipping_desk">
-                                <div class="footer__menu__title">
-                                    <a href="/shipping_and_payment/" class="footer__menu__item menu-item_shipping">Доставка и оплата</a>
-                                </div>
-                            </div>
-
-                            <div class="footer__menu">
-                                <div class="footer__menu__title">
-                                    Покупателю
-                                    <svg><use href="#arrow_down"></use></svg>
-                                </div>
-                                <div class="footer__menu__list flex-column">
-<!--                                    <a href="/shipping_and_payment/" class="footer__menu__item">Доставка и оплата</a>-->
-                                    <a href="/status-order/" class="footer__menu__item">Статус заказа</a>
-                                </div>
-                            </div>
-
-                            <div class="footer__menu">
-                                <div class="footer__menu__title">
-                                    Партнерам
-                                    <svg><use href="#arrow_down"></use></svg>
-                                </div>
-                                <div class="footer__menu__list flex-column">
-                                    <a href="/partners/" class="footer__menu__item">Оптовым партнерам</a>
-                                </div>
-                                <div class="footer__menu__list flex-column">
-                                    <a href="/foreign-partnership/" class="footer__menu__item">Зарубежным партнерам</a>
-                                </div>
-                            </div>
-
                             <div class="footer__menu">
                                 <div class="footer__menu__title">
                                     Контакты

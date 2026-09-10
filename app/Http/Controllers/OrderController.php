@@ -47,6 +47,7 @@ class OrderController extends Controller
             'price' => 'required|numeric|min:0',
             'final_price' => 'required|numeric|min:0',
             'bonus_used' => 'required|numeric|min:0',
+            'discount' => 'required|numeric|min:0',
             'product_count' => 'required|integer|min:1',
         ]);
 
@@ -87,7 +88,7 @@ if ($discount) {
         $order = $user->orders()->create([
             'price' => $validated['price'],
             'bonus_used' => $validated['bonus_used'],
-            'discount_used' => 0, // появятся купоны — обновим
+            'discount_used' =>$validated['discount'], // появятся купоны — обновим
             'final_price' => $validated['final_price'],
             'total_quantity' => $validated['product_count'],
             'address' => $fullAddress,

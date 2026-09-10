@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Subcategory;
+use App\Models\Series;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -80,6 +81,17 @@ class ProductController extends Controller
             ->get();
 
         return view("$category.index", compact('products'));
+    }
+
+    public function showSeries($seriesName)
+    {
+        $series = Series::where('name', $seriesName)->firstOrFail();
+
+        $products = Product::where('series_id', $series->id)
+            ->with('images')
+            ->get();
+
+        return view("sets.$seriesName", compact('products'));
     }
 
     public function showComplexHair()

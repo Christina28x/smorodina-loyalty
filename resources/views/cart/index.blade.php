@@ -103,7 +103,7 @@
                 <section class="cart__empty-inner">
                     <div class="cart__empty empty-cart">
                         <div class="empty-cart__content">
-                            <img class="empty-cart__img lazyload" src="https://smorodinacosmetic.com/local/templates/smorodinacosmetic_f61/svg/empty-cart.svg" alt="empty">
+                            <img class="empty-cart__img lazyload" src="{{ asset('img/empty-cart.svg') }}" alt="empty">
                             <h2 class="cart__block-title">В корзине ничего нет</h2>
                             <p class="cart__block-desc">Добавьте в нее товары<br> из каталога и рекомендаций</p>
                             <a class="empty-cart__btn btn" href="/catalog/">Перейти в каталог</a>

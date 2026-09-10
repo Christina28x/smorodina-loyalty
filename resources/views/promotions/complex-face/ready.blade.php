@@ -6,12 +6,12 @@
     <section class="catalog-section">
 
         <div class="catalog-section__head"
-             style="background-image: url(https://smorodinacosmetic.com/local/templates/smorodinacosmetic_f61/images/demo/section_bg.png)">
+             style="background-image: url('{{ asset('img/section_bg.png') }}')">
             <div class="container-xxl h-100 d-flex flex-column justify-content-end justify-content-lg-between">
                 <div class="head-breadcrumbs d-none d-lg-flex flex-wrap">
                     <a href="/">Главная страница</a>
                     <span>/</span>
-                    <a href="/promotions/">Готовые наборы</a>
+                    <a href="/promotions">Готовые наборы</a>
                     <span>/</span>
                     <a href="/promotions/complex-face/">Лицо</a>
                 </div>
@@ -30,9 +30,6 @@
                             <div class="swiper-slide">
                                 <a href="/promotions/complex-face/ready/" class="d-block catalog-section__menu__item catalog-section__menu__item_active">Готовые наборы</a>
                             </div>
-                                                            <div class="swiper-slide">
-                                    <a href="/promotions/complex-face/" class="d-block catalog-section__menu__item">Собери себе уход</a>
-                                </div>
                                                     </div>
                     </div>
                 </div>

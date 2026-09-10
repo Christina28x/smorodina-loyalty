@@ -232,6 +232,7 @@
                         <input type="hidden" name="bonus_used" id="bonusInput" value="0">
                         <input type="hidden" name="final_price" id="finalPriceInput" value="{{ $total }}">
                         <input type="hidden" name="product_count" id="productCountInput" value="{{ $products->sum(fn($p) => $p->quantity) }}">
+                        <input type="hidden" name="discount" id="discountInput" value="{{ session('applied_discount.value') ?? 0 }}">
 
 
                     </section>

@@ -52,6 +52,60 @@
                 </div>
 
                 <div class="col-lg-9">
+                    <h3 class="account-data__block-title mb-4" style="font-size: 22px;">Прогноз спроса по товару</h3>
+    <div class="mb-3">
+        <label>Выберите категорию:</label>
+        <select id="categorySelect" class="form-control">
+            <option value="">-- Выберите --</option>
+            @foreach ($categories as $cat)
+                <option value="{{ $cat->id }}">{{ $cat->rus_name }}</option>
+            @endforeach
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Выберите товар:</label>
+        <select id="productSelect" class="form-control" disabled>
+            <option value="">-- Сначала выберите категорию --</option>
+        </select>
+    </div>
+
+    <div class="chart-section line-section" id="forecastWrapper" style="display:none;">
+        <h3 class="account-data__block-title mb-4" id="productTitle" style="font-size: 18px;">Прогноз спроса по товару</h3>
+        <div class="line-wrapper">
+        <canvas id="forecastChart"></canvas>
+        </div>
+    </div>
+                        <div class="chart-section pie-section">
+        <h3 class="chart-title">Распределение скидок по категориям</h3>
+        <div class="pie-wrapper">
+            <canvas id="discountChart"></canvas>
+            <div class="top-three">
+                <h4>Топ-3 категорий по количеству скидок:</h4>
+                <ul>
+                    @foreach ($topThree as $item)
+                        <li>{{ $item->target->rus_name }} — {{ $item->total }} выбока скидок</li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-section pie-section">
+        <h3 class="chart-title">Распределение пользователей по уровням лояльности</h3>
+        <div class="pie-wrapper">
+            <canvas id="levelChart"></canvas>
+        </div>
+    </div>
+    <div class="chart-section pie-section">
+        <h3 class="chart-title">Использование бонусов при заказах</h3>
+        <div class="pie-wrapper">
+            <canvas id="bonusChart"></canvas>
+        </div>
+    </div>
+
+
+
 
 <div class="account-data__block p-4 mb-5">
     <h3 class="account-data__block-title mb-4" style="font-size: 20px;">Редактирование уровней лояльности</h3>
@@ -98,39 +152,7 @@
         </button>
     </form>
 </div>
-    <div class="chart-section">
-        <h3 class="chart-title">Распределение скидок по категориям</h3>
-        <div class="chart-wrapper">
-            <canvas id="discountChart"></canvas>
-            <div class="top-three">
-                <h4>Топ-3 категорий по количеству скидок:</h4>
-                <ul>
-                    @foreach ($topThree as $item)
-                        <li>{{ $item->target->rus_name }} — {{ $item->total }} выбока скидок</li>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
-    </div>
 
-    <div class="chart-section">
-        <h3 class="chart-title">Распределение пользователей по уровням лояльности</h3>
-        <div class="chart-wrapper">
-            <canvas id="levelChart"></canvas>
-        </div>
-    </div>
-    <div class="chart-section">
-        <h3 class="chart-title">Использование бонусов при заказах</h3>
-        <div class="chart-wrapper">
-            <canvas id="bonusChart"></canvas>
-        </div>
-    </div>
-    <div class="chart-section">
-        <h3 class="chart-title">Прогноз спроса на товар «{{ $product->name }}»</h3>
-        <div class="chart-wrapper">
-            <canvas id="forecastChart"></canvas>
-        </div>
-    </div>
 
 
 
@@ -146,6 +168,7 @@
 </main>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
 
 <script>
     const ctx = document.getElementById('discountChart').getContext('2d');
@@ -170,16 +193,16 @@
                     position: 'bottom'
                 },
                 datalabels: {
-                    color: '#fff',
+                    color: '#000',
                     font: {
                         weight: 'bold',
-                        size: 14
+                        size: 13
                     },
                     formatter: (value, context) => {
                         const total = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
                         const percentage = ((value / total) * 100).toFixed(1);
                         const label = context.chart.data.labels[context.dataIndex];
-                        return label + '\n' + percentage + '%';
+                        return percentage >= 15 ? `${label}\n${percentage}%` : percentage + '%';
                     }
                 }
             }
@@ -210,10 +233,10 @@
                     position: 'bottom'
                 },
                 datalabels: {
-                    color: '#fff',
+                    color: '#000',
                     font: {
                         weight: 'bold',
-                        size: 14
+                        size: 13
                     },
                     formatter: (value, context) => {
                         const total = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
@@ -247,10 +270,10 @@
                     position: 'bottom'
                 },
                 datalabels: {
-                    color: '#fff',
+                    color: '#000',
                     font: {
                         weight: 'bold',
-                        size: 14
+                        size: 13
                     },
                     formatter: (value, context) => {
                         const total = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
@@ -264,35 +287,86 @@
         plugins: [ChartDataLabels]
     });
 </script>
+
 <script>
-    const forecastCtx = document.getElementById('forecastChart').getContext('2d');
-    new Chart(forecastCtx, {
-        type: 'line',
-        data: {
-            labels: @json($monthLabels),
-            datasets: [{
-                label: 'Продажи',
-                data: @json($monthData),
-                fill: false,
-                borderColor: '#36A2EB',
-                backgroundColor: '#36A2EB',
-                tension: 0.3
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'bottom'
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
+    document.addEventListener('DOMContentLoaded', function () {
+        const categorySelect = document.getElementById('categorySelect');
+        const productSelect = document.getElementById('productSelect');
+        const wrapper = document.getElementById('forecastWrapper');
+        const productTitle = document.getElementById('productTitle');
+        let chartInstance;
+
+        categorySelect.addEventListener('change', function () {
+            const categoryId = this.value;
+            productSelect.innerHTML = '<option value="">Загрузка...</option>';
+            productSelect.disabled = true;
+
+            fetch(`/cabinet/loyalty-admin/products?category_id=${categoryId}`)
+                .then(res => res.json())
+                .then(products => {
+                    productSelect.innerHTML = '<option value="">-- Выберите --</option>';
+                    products.forEach(p => {
+                        productSelect.innerHTML += `<option value="${p.id}">${p.name}</option>`;
+                    });
+                    productSelect.disabled = false;
+                });
+        });
+
+        productSelect.addEventListener('change', function () {
+            const productId = this.value;
+            if (!productId) return;
+
+            fetch(`/cabinet/loyalty-admin/data?product_id=${productId}`)
+                .then(res => res.json())
+                .then(data => {
+                    productTitle.textContent = `Прогноз спроса: ${data.product_name}`;
+                    wrapper.style.display = 'block';
+
+                    const ctx = document.getElementById('forecastChart').getContext('2d');
+
+                    if (chartInstance) chartInstance.destroy();
+
+                                        chartInstance = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: data.labels,
+                            datasets: [
+                                {
+                                    label: 'Фактический спрос',
+                                    data: data.real_data,
+                                    borderColor: '#4CAF50',
+                                    backgroundColor: '#4CAF50',
+                                    fill: false,
+                                    tension: 0.3
+                                },
+                                {
+                                    label: 'Прогноз спроса',
+                                    data: [null, ...data.data],
+                                    borderColor: '#36A2EB',
+                                    backgroundColor: '#36A2EB',
+                                    borderDash: [5, 5],
+                                    fill: false,
+                                    tension: 0.3
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    display: true,
+                                    position: 'bottom'
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                });
+        });
     });
 </script>
 
@@ -302,7 +376,7 @@
     .chart-section {
         margin-bottom: 48px;
     }
-
+    
     .chart-title {
         font-size: 20px;
         font-weight: bold;
@@ -310,17 +384,33 @@
         margin-bottom: 16px;
     }
 
-    .chart-wrapper {
-        max-width: 500px;
+    /* 🎯 Pie chart стили */
+    .pie-wrapper {
+        max-width: 520px;
         margin: 0 auto;
-        padding: 16px;
         position: relative;
     }
 
-    .chart-wrapper canvas {
+    .pie-wrapper canvas {
         width: 100% !important;
         height: auto !important;
         aspect-ratio: 1 / 1;
+    }
+
+    /* 📈 Line chart стили */
+    .line-wrapper {
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+        background-color: #fff;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .line-wrapper canvas {
+        width: 100% !important;
+        height: 400px !important;
     }
 
     .top-three {
@@ -347,5 +437,6 @@
         margin-bottom: 6px;
     }
 </style>
+
 
 @endsection

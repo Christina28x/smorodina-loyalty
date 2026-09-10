@@ -82,7 +82,7 @@
                                                 @foreach ($product->images as $image)
                                                     <div class="swiper-slide w-auto">
                                                         <div class="product-page__gallery-item">
-                                                            <img src="{{ asset($image->getThumbnailPath()) }}" alt="{{ $product->name }}">
+                                                            <img src="{{ asset($image->image_path) }}" alt="{{ $product->name }}">
                                                             </div>
                                                     </div>
                                                 @endforeach                                                                                                                                                                             

@@ -107,7 +107,6 @@ class CabinetController extends Controller
             'city' => 'required|string|max:255',
             'birthday' => 'required|date|before:2021-01-01',
         ]);
-
         $user = Auth::user();
         $user->update($request->only(['name', 'phone', 'city', 'birthday']));
 
@@ -128,16 +127,12 @@ class CabinetController extends Controller
         return response()->json(['success' => true]);
     }
 
-
-
     public function submitDiscountChoice(Request $request)
     {
         $request->validate([
             'category_id' => 'required|exists:categories,id',
         ]);
-
         $user = Auth::user();
-
         // Проверка — не создавал ли уже выбор в этом месяце
         $already = Discount::where('user_id', $user->id)
             ->whereMonth('created_at', now()->month)
@@ -146,9 +141,7 @@ class CabinetController extends Controller
         if ($already) {
             return response()->json(['error' => 'Вы уже выбрали скидку в этом месяце.'], 422);
         }
-
         $code = strtoupper(Str::random(8)); 
-
         // Создаём запись
         $discount = Discount::create([
             'user_id' => $user->id,
@@ -157,9 +150,6 @@ class CabinetController extends Controller
             'value' => 15, // например, 15%
             'valid_until' => now()->addMonth()->startOfMonth()->addDays(30),
         ]);
-
-        
-
         $category = Category::find($request->category_id);
 
         return response()->json([
@@ -168,7 +158,5 @@ class CabinetController extends Controller
             'category' => $category,
         ]);
     }
-
-
 }
 

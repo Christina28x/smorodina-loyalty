@@ -10,6 +10,7 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use Carbon\Carbon;
 use App\Models\Product;
+use App\Models\Category;
 
 
 class LoyaltyAdminController extends Controller
@@ -25,6 +26,7 @@ class LoyaltyAdminController extends Controller
         $orderCount = $user->orders()->count();
         $levels = LoyaltyLevel::orderBy('min_spending')->get();
         $settings = \App\Models\LoyaltySetting::first();
+        $categories = Category::with('products')->get();
 
         $topCategories = \App\Models\Discount::select('target_id', \DB::raw('count(*) as total'))
             ->groupBy('target_id')
@@ -60,46 +62,65 @@ class LoyaltyAdminController extends Controller
         $bonusUsageData = [$ordersWithBonuses, $ordersWithoutBonuses];
 
 
-        $productId = 42; // выбери ID продукта
-        $product = Product::findOrFail($productId);
+        return view('cabinet.loyalty_admin', compact('levels', 'settings', 'orderCount',
+         'topCategories', 'chartLabels','chartData','topThree','categories',
+         'levelLabels', 'levelData', 'bonusUsageLabels','bonusUsageData'));
+    }
+
+
+    public function getProducts(Request $request)
+    {
+        $products = Product::where('category_id', $request->category_id)->get();
+        return response()->json($products);
+    }
+
+    public function getForecastData(Request $request)
+    {
+        $product = Product::findOrFail($request->product_id);
+
         $salesPerMonth = [];
 
-        $months = ['2025-03', '2025-04', '2025-05', '2025-06'];
+        $months = ['2025-02', '2025-03', '2025-04', '2025-05'];
 
         foreach ($months as $month) {
             $start = Carbon::parse($month)->startOfMonth();
             $end = Carbon::parse($month)->endOfMonth();
 
-            $total = OrderItem::where('product_id', $productId)
-                ->whereHas('order', function ($q) use ($start, $end) {
-                    $q->whereBetween('created_at', [$start, $end]);
-                })
+            $total = OrderItem::where('product_id', $request->product_id)
+                ->whereBetween('created_at', [$start, $end])
                 ->sum('quantity');
 
             $salesPerMonth[] = $total;
         }
 
-        // Получаем прогноз на июнь
         $forecast = $this->exponentialSmoothing($salesPerMonth);
-        $forecastForJune = end($forecast);
 
-        $monthLabels = ['Март', 'Апрель', 'Май', 'Июнь', 'Июль (прогноз)'];
-        $monthData = array_merge($salesPerMonth, [round($forecastForJune)]);
+        $dates = ['Февраль', 'Март', 'Апрель', 'Май', 'Июнь(прогноз)'];
 
-
-        return view('cabinet.loyalty_admin', compact('levels', 'settings', 'orderCount',
-         'topCategories', 'chartLabels','chartData','topThree', 'product',
-         'levelLabels', 'levelData', 'bonusUsageLabels','bonusUsageData', 'monthLabels','monthData'));
+        return response()->json([
+            'labels' => $dates,
+            'real_data' => $salesPerMonth,
+            'data' => array_slice($forecast, 1),
+            'product_name' => $product->name,
+        ]);
     }
 
-    function exponentialSmoothing(array $data, float $alpha = 0.6): array {
-        $forecast = [$data[0]]; // первое значение = начальный прогноз
 
-        for ($i = 1; $i < count($data); $i++) {
-            $forecast[] = $alpha * $data[$i - 1] + (1 - $alpha) * $forecast[$i - 1];
+    function exponentialSmoothing(array $data, float $alpha = 0.6): array {
+        $forecast = [];
+        $lastForecast = ($data[0] + $data[1]) / 2;
+
+        // Прогноз на месяцы, начиная с 4-го
+        foreach ($data as $actual) {
+            $lastForecast = $alpha * $actual + (1 - $alpha) * $lastForecast;
+            $forecast[] = $lastForecast;
         }
 
-        return $forecast;
+        // Прогноз на следующий месяц (июнь)
+        $lastForecast = $alpha * end($data) + (1 - $alpha) * $lastForecast;
+        $forecast[] = $lastForecast;
+
+        return array_map('round', $forecast);
     }
 
 
