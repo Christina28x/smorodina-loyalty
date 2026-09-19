@@ -104,6 +104,36 @@ def parse_page(raw, member, archive_name):
             'approved': False}
 
 
+def parse_variants(raw, member, archive_name):
+    soup = BeautifulSoup(raw, 'html.parser')
+    options = soup.select('section.product-page #volumeFormSKU input[data-tab]')
+    if not options:
+        return [parse_page(raw, member, archive_name)]
+    products = []
+    for option in options:
+        variant = option['data-tab']
+        doc = BeautifulSoup(raw, 'html.parser')
+        page = doc.select_one('section.product-page')
+        for node in list(page.select('[data-tab]')):
+            if node.attrs is not None and node.get('data-tab') != variant:
+                node.decompose()
+        page['data-product-id'] = variant
+        title = page.select_one('h1')
+        if title is None:
+            raise ValueError('Нет названия варианта ' + variant)
+        price_block = page.select_one('.product-page__top__price')
+        if not price_block.select_one('[data-product-price]'):
+            price = doc.new_tag('div', attrs={'data-product-price': option['data-product-price']})
+            price_block.append(price)
+        p = parse_page(str(doc).encode(), member, archive_name)
+        p['fields']['name'] = option['data-product-name']
+        p['fields']['volume'] = option['value']
+        p['volume_source'] = 'variant_option'
+        p['variant_id'] = variant
+        products.append(p)
+    return products
+
+
 def copy_images(z, product, output):
     names = set(z.namelist())
     for index, reference in enumerate(product.pop('image_references')):
@@ -182,14 +212,15 @@ def main():
                 try:
                     if z.getinfo(member).file_size>10*1024*1024:
                         raise ValueError('HTML больше 10 МБ')
-                    p=parse_page(z.read(member),member,archive.name)
-                    if p['key'] in seen:
-                        raise ValueError('Повтор одного товара: '+seen[p['key']])
-                    seen[p['key']]=member
-                    copy_images(z,p,args.output);products.append(p)
+                    for p in parse_variants(z.read(member),member,archive.name):
+                        if p['key'] in seen:
+                            raise ValueError('Повтор одного товара: '+seen[p['key']])
+                        seen[p['key']]=member
+                        copy_images(z,p,args.output);products.append(p)
                 except Exception as error:
                     errors.append({'archive':archive.name,'page':member,'error':str(error)})
     print(json.dumps(write_review(products,errors,args.output),ensure_ascii=False,indent=2))
 
 
 if __name__=='__main__':main()
+
