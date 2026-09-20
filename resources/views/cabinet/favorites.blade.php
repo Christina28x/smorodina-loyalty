@@ -8,10 +8,10 @@
     <section class="cabinet">
         <div class="cabinet__head mb-4 mb-lg-6">
             <figure class="cabinet__cover desktop">
-                <img class="cabinet__cover-img" src="https://smorodinacosmetic.com/local/templates/smorodinacosmetic_f61/images/cabinet/banner/WebWide2.png" />
+                <img class="cabinet__cover-img" src="{{ asset('img/WebWide2.png') }}" />
             </figure>
             <figure class="cabinet__cover mob">
-                <img class="cabinet__cover-img" src="https://smorodinacosmetic.com/local/templates/smorodinacosmetic_f61/images/cabinet/banner/Web1.png" />
+                <img class="cabinet__cover-img" src="{{ asset('img/Web1.png') }}" />
             </figure>
             <div class="container-xxl h-100 d-flex flex-column justify-content-end align-items-center">
                 <h1 class="text-lowercase">избранное</h1>

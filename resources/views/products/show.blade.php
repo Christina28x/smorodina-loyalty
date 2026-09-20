@@ -80,12 +80,12 @@
                                                 </div>
                                             <!--MORE PHOTO-->
                                                 @foreach ($product->images as $image)
-                                                    <div class="swiper-slide w-auto">
-                                                        <div class="product-page__gallery-item">
-                                                            <img src="{{ asset($image->image_path) }}" alt="{{ $product->name }}">
-                                                            </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="product-page__gallery-thumb"
+                                                            style="background-image: url('{{ asset($image->image_path) }}')">
+                                                        </div>
                                                     </div>
-                                                @endforeach                                                                                                                                                                             
+                                                @endforeach                                                                                                                                                                          
                                             <!--GIF-->
                                             
                                                                             </div>

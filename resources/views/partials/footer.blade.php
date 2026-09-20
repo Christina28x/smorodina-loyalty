@@ -215,7 +215,7 @@
         width: 24px;
         height: 24px;
         padding: 0;
-        background: url("https://smorodinacosmetic.com/local/templates/smorodinacosmetic_f61/svg/close_black.svg") 50% 50% no-repeat #f6f6f600;
+        background: url("{{ asset('img/close_black.svg') }}") 50% 50% no-repeat #f6f6f600;
         background-size: 24px;
         border-radius: 0;
         box-shadow: none;
@@ -297,7 +297,7 @@
         transform: translate(-50%, -50%);
         width: 8px;
         height: 7px;
-        background-image: url('https://smorodinacosmetic.com/local/templates/smorodinacosmetic_f61/svg/icons/icon-check_white.svg');
+        background-image: url("{{ asset('img/icon-check_white.svg') }}");
         background-repeat: no-repeat;
         background-size: 8px;
     }
@@ -383,7 +383,7 @@
             position: absolute;
         }
         .welcom-unisender__close {
-            background: url("https://smorodinacosmetic.com/local/templates/smorodinacosmetic_f61/svg/close_white_spacious.svg") 50% 50% no-repeat #f6f6f600;
+            background: url("{{ asset('img/close_white_spacious.svg') }}") 50% 50% no-repeat #f6f6f600;
         }
         .welcom-unisender__wrap {
             max-width: 430px;

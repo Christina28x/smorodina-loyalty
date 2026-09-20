@@ -5,7 +5,7 @@
     font-family: 'suissentl';
     font-weight: 400;
     font-style: normal;
-    src: url('/local/templates/smorodinacosmetic_f61/fonts/./suissentl/suissentl_regular.woff2');
+    src: url('/fonts/suissentl_regular.woff2');
     font-display: swap;
 }
 
@@ -13,7 +13,7 @@
     font-family: 'suissentl';
     font-weight: 500;
     font-style: normal;
-    src: url('/local/templates/smorodinacosmetic_f61/fonts/./suissentl/suissentl_medium.woff2');
+    src: url('/fonts/suissentl_medium.woff2');
     font-display: swap;
 }
 
@@ -21,7 +21,7 @@
     font-family: 'suissentl';
     font-weight: 700;
     font-style: normal;
-    src: url('/local/templates/smorodinacosmetic_f61/fonts/./suissentl/suissentl_bold.woff2');
+    src: url('/fonts/suissentl_bold.woff2');
     font-display: swap;
 }
 
@@ -16054,10 +16054,10 @@ textarea::placeholder {
         padding: 105px 0 90px;
     }
     .mega-menu__menu ul li a.mega-menu__menu__get-lvl2_with-arrow {
-        background: url('/local/templates/smorodinacosmetic_f61/css/../images/arrow_down.svg') no-repeat right 10px center;
+        background: url('/img/arrow_down.svg') no-repeat right 10px center;
     }
     .mega-menu__menu ul li a.mega-menu__menu__get-lvl2_with-arrow_act {
-        background: url('/local/templates/smorodinacosmetic_f61/css/../images/arrow_up.svg') no-repeat right 10px center;
+        background: url('/img/arrow_up.svg') no-repeat right 10px center;
     }
     .mega-menu__menu > ul > li {
         margin-bottom: 10px;
@@ -16073,7 +16073,7 @@ textarea::placeholder {
 
      .mega-menu__menu .mega-menu__points-bottom li a {
         min-height: 30px;
-         background: url('/local/templates/smorodinacosmetic_f61/css/../images/arrow_down.svg') no-repeat right 10px center;
+         background: url('/img/arrow_down.svg') no-repeat right 10px center;
     }
     .mega-menu__menu > ul > li > ul > li {
         margin-bottom: 23px;

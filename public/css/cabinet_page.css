@@ -826,7 +826,7 @@ div.bx-system-auth-form div.bx-auth-secure-unlock {background-image:url(/local/t
 .cabinet__order-more {
     width: 40px;
     height: 40px;
-    background: url('https://smorodinacosmetic.com/local/templates/smorodinacosmetic_f61/components/bitrix/sale.personal.order.list/repeat-and-pay/img/arrow_down.svg') no-repeat center;
+    background: url("/img/arrow_down.svg") no-repeat center;
     border-radius: 12px;
     cursor: pointer;
     transform: rotate(-90deg);
