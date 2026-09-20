@@ -59,29 +59,17 @@ class OrderController extends Controller
         if (!empty($validated['flat'])) $fullAddress .= ", кв. {$validated['flat']}";
 
         $discountUsed = 0;
-$discount = session('applied_discount');
+        $discount = session('applied_discount');
 
-if ($discount) {
-    if ($discount['type'] === 'all') {
-        $discountUsed = round($validated['price'] * $discount['value'] / 100);
-    } elseif ($discount['type'] === 'category') {
-        $cart = session('cart', []);
-        foreach ($cart as $productId => $item) {
-            $product = Product::find($productId);
-            if ($product && $product->category === $discount['target_id']) {
-                $discountUsed += round($item['price'] * $item['quantity'] * $discount['value'] / 100);
+    if ($discount) {
+            $cart = session('cart', []);
+            foreach ($cart as $productId => $item) {
+                $product = Product::find($productId);
+                if ($product && $product->category === $discount['target_id']) {
+                    $discountUsed += round($item['price'] * $item['quantity'] * $discount['value'] / 100);
+                }
             }
-        }
-    } elseif ($discount['type'] === 'subcategory') {
-        $cart = session('cart', []);
-        foreach ($cart as $productId => $item) {
-            $product = Product::find($productId);
-            if ($product && $product->subcategory === $discount['target_id']) {
-                $discountUsed += round($item['price'] * $item['quantity'] * $discount['value'] / 100);
-            }
-        }
     }
-}
 
 
         //  Создание заказа
