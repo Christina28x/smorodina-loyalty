@@ -148,7 +148,7 @@
                                      data-product-category="{{ $product->subcategory->rus_name ?? '' }}"
                                      data-product-price="{{ $product->price }}">
                                     <div class="product-card__btn smo-btn">
-                                        <svg><use href="/local/templates/smorodinacosmetic_f61/images/sprite.svg#bag"></use></svg>
+                                        <svg><use href="{{ asset('img/sprite.svg') }}#bag"></use></svg>
                                         <span class="product-card__btn-text">В корзину</span>
                                     </div>
                                 </div>

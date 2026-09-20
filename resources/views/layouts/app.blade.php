@@ -16,12 +16,10 @@
     <meta name="yandex-verification" content="38490c9d4fe4fe1d">
 
     <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="https://smorodinacosmetic.com/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://smorodinacosmetic.com/local/templates/smorodinacosmetic_f61/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://smorodinacosmetic.com/local/templates/smorodinacosmetic_f61/favicon/favicon-16x16.png">
-    <link rel="icon" type="image/x-icon" href="https://smorodinacosmetic.com/favicon.ico">
-    <link rel="manifest" href="https://smorodinacosmetic.com/local/templates/smorodinacosmetic_f61/favicon/site.webmanifest">
-    <link rel="mask-icon" href="https://smorodinacosmetic.com/local/templates/smorodinacosmetic_f61/favicon/safari-pinned-tab.svg" color="#dea0c5">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
     

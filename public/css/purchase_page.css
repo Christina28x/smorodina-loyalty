@@ -1171,7 +1171,7 @@ place_of_issue .col {
     transform: translate(-50%, -50%);
     width: 8px;
     height: 7px;
-    background-image: url('/img/icons/icon-check_white.svg');
+    background-image: url('/img/icon-check_white.svg');
     background-repeat: no-repeat;
     background-size: 8px;
 }
@@ -1649,9 +1649,4 @@ margin-top: 10px;
 		width: 100%;
 	}
 }
-/* End */
-/* /bitrix/components/bitrix/sale.location.selector.steps/templates/.default/style.min.css?16179976616061 */
-/* /bitrix/components/ipol/ipol.sdekPickup/templates/order/style.css?16668123559944 */
-/* /local/templates/smorodinacosmetic_f61/components/bitrix/sale.order.ajax/sale-order_v2/style.css?173737246040255 */
-/* /local/templates/smorodinacosmetic_f61/lib/slick/slick.min.css?16898957831329 */
-/* /local/templates/smorodinacosmetic_f61/components/bitrix/sale.location.selector.search/pink/style.css?16898972645396 */
+

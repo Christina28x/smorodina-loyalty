@@ -8,7 +8,7 @@
             <div class="hero__slides swiper swiper-fade swiper-initialized swiper-horizontal swiper-watch-progress swiper-backface-hidden">
                 <div class="swiper-wrapper" id="swiper-wrapper-a36ba1b2f3827b22" aria-live="off" style="transition-duration: 0ms;">                                                                                                                       
                             <div class="swiper-slide swiper-slide-next" role="group" aria-label="3 / 3" data-swiper-slide-index="2" style="width: 1521px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
-                                <div class="hero__slide hero__slide_pic d-flex flex-column align-items-center justify-content-end" style="background-image: url(&#39;/img/Banner-catalog-_4_.jpg&#39;)" data-bg-mob="https://smorodinacosmetic.com/upload/resize_cache/iblock/b89/0k1qkiq3hwdldqb0cr7noefywuwj5v63/300_0_0/1.jpg">
+                                <div class="hero__slide hero__slide_pic d-flex flex-column align-items-center justify-content-end" style="background-image: url(&#39;/img/Banner-catalog-_4_.jpg&#39;)">
 
                                     
                                                                             <div class="hero__title" style="color: #000000">новинка - сухие шёлковые масла для тела</div>
@@ -16,7 +16,7 @@
                             </div>
 
                                                             <div class="swiper-slide swiper-slide-prev" role="group" aria-label="1 / 3" data-swiper-slide-index="0" style="width: 1521px; opacity: 1; transform: translate3d(-1521px, 0px, 0px); transition-duration: 0ms;">
-                                <div class="hero__slide hero__slide_pic d-flex flex-column align-items-center justify-content-end" style="background-image: url(&#39;/img/Banner-catalog-_2_-_1_.jpg&#39;)" data-bg-mob="https://smorodinacosmetic.com/upload/resize_cache/iblock/2b9/rob30i3n9bbzhn4qivv16gab78rrzgi7/300_0_0/mobile.jpg">
+                                <div class="hero__slide hero__slide_pic d-flex flex-column align-items-center justify-content-end" style="background-image: url(&#39;/img/Banner-catalog-_2_-_1_.jpg&#39;)">
 
                                     
                                                                             <div class="hero__title">функциональные лосьоны для тела&nbsp;&nbsp;</div>

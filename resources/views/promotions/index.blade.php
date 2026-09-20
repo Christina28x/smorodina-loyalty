@@ -10,7 +10,7 @@
                 <div class="head-breadcrumbs d-none d-lg-flex flex-wrap">
                     <a href="/">Главная страница</a>
                     <span>/</span>
-                    <a href="/promotions">Готовые наборы</a>
+                    <a href="/promotions/">Готовые наборы</a>
                 </div>
                 <h1 class="text-lowercase">Готовые наборы</h1>
             </div>
@@ -23,7 +23,7 @@
                     <div class="catalog-section__menu__slides swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 1" style="margin-right: 9px;">
-                                <a href="https://smorodinacosmetic.com/promotions/" class="d-block catalog-section__menu__item catalog-section__menu__item_active">Категории</a>
+                                <a href="/promotions/" class="d-block catalog-section__menu__item catalog-section__menu__item_active">Категории</a>
                             </div>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
             <div class="series-list mt-6">
                 <div class="row g-4">
                                             <div class="col-6">
-                            <a href="/promotions/complex-face/ready/" class="series-list__item series-list__item_114                           series-list__item_type-1 d-flex flex-column align-items-center justify-content-end justify-content-md-center p-4 p-md-6" style="background-image: url(img/category_cards.jpg)">
+                            <a href="/promotions/complex-face/ready/" class="series-list__item series-list__item_114                           series-list__item_type-1 d-flex flex-column align-items-center justify-content-end justify-content-md-center p-4 p-md-6" style="background-image: url('{{ asset('img/category_cards.jpg') }}')">
                                 <div class="series-list__item-bg" style="background-color: #7A74CA"></div>
                                 <div class="text-center series-list__item__title text-lowercase">Лицо</div>
                                 <div class="series-list__item__desc mt-2"></div>
@@ -41,7 +41,7 @@
                             </a>
                         </div>
                                             <div class="col-6">
-                            <a href="/promotions/complex-hair" class="series-list__item series-list__item_114                           series-list__item_type-1 d-flex flex-column align-items-center justify-content-end justify-content-md-center p-4 p-md-6" style="background-image: url(img/category_cards_1.jpg)">
+                            <a href="/promotions/complex-hair" class="series-list__item series-list__item_114                           series-list__item_type-1 d-flex flex-column align-items-center justify-content-end justify-content-md-center p-4 p-md-6" style="background-image: url('{{ asset('img/category_cards_1.jpg') }}')">
                                 <div class="series-list__item-bg" style="background-color: #7A74CA"></div>
                                 <div class="text-center series-list__item__title text-lowercase">Волосы</div>
                                 <div class="series-list__item__desc mt-2"></div>
@@ -49,7 +49,7 @@
                             </a>
                         </div>
                                             <div class="col-6">
-                            <a href="/promotions/complex-body" class="series-list__item series-list__item_114                           series-list__item_type-1 d-flex flex-column align-items-center justify-content-end justify-content-md-center p-4 p-md-6" style="background-image: url(img/category_cards_2.jpg)">
+                            <a href="/promotions/complex-body" class="series-list__item series-list__item_114                           series-list__item_type-1 d-flex flex-column align-items-center justify-content-end justify-content-md-center p-4 p-md-6" style="background-image: url('{{ asset('img/category_cards_2.jpg') }}')">
                                 <div class="series-list__item-bg" style="background-color: #7A74CA"></div>
                                 <div class="text-center series-list__item__title text-lowercase">Тело</div>
                                 <div class="series-list__item__desc mt-2"></div>
@@ -57,7 +57,7 @@
                             </a>
                         </div>
                                             <div class="col-6">
-                            <a href="/promotions/complex-aroma" class="series-list__item series-list__item_114                           series-list__item_type-1 d-flex flex-column align-items-center justify-content-end justify-content-md-center p-4 p-md-6" style="background-image: url(img/category_cards_3.jpg)">
+                            <a href="/promotions/complex-aroma" class="series-list__item series-list__item_114                           series-list__item_type-1 d-flex flex-column align-items-center justify-content-end justify-content-md-center p-4 p-md-6" style="background-image: url('{{ asset('img/category_cards_3.jpg') }}')">
                                 <div class="series-list__item-bg" style="background-color: #7A74CA"></div>
                                 <div class="text-center series-list__item__title text-lowercase">Ароматерапия</div>
                                 <div class="series-list__item__desc mt-2"></div>

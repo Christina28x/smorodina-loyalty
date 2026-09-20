@@ -331,7 +331,7 @@
                                                                     
                                     
                                         <div class=""><!--col-md-6-->
-                                            <a href="/promotions/" class="catalog-banner-2 d-flex flex-column align-items-center justify-content-between p-4" style="background-image: url(&#39;https://smorodinacosmetic.com/upload/iblock/191/cz17ag9b75fvzqxt4q1ztarc34tbwwi1/Category-Cards_4.jpg&#39;)">
+                                            <a href="/promotions/" class="catalog-banner-2 d-flex flex-column align-items-center justify-content-between p-4" style="background-image: url('{{ asset('img/Category-Cards_4.jpg') }}')">
                                                 <div class="catalog-banner-2__tag">готовое решение</div>
                                                 <span class="catalog-banner-2__title">для каждого типа кожи</span>
                                             </a>
@@ -445,7 +445,7 @@
             <div class="mega-menu__banners">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="catalog-banner-2 d-flex flex-column align-items-center justify-content-between p-4" style="background-image: url(&#39;/local/templates/smorodinacosmetic_f61/images/mega-menu/banner_2.jpg&#39;)">
+                        <div class="catalog-banner-2 d-flex flex-column align-items-center justify-content-between p-4" style="background-image: url('{{ asset('img/banner_2.jpg') }}')">
                             <div class="catalog-banner-2__tag">готовое решение</div>
                             <a href="https://smorodinacosmetic.com/catalog/promotions/" class="catalog-banner-2__title">для каждого типа кожи</a>
                         </div>
