@@ -43,9 +43,6 @@
                                                                     <div class="swiper-slide">
                                         <a href="/catalog/hair-care/aromaraschesyvanie-hair/" class="d-block catalog-section__menu__item ">Аромарасчесывание</a>
                                     </div>
-                                                                    <div class="swiper-slide">
-                                        <a href="/catalog/hair-care/polotentse-s/" class="d-block catalog-section__menu__item ">Полотенце</a>
-                                    </div>
                                                                                                         </div>
                     <div class="catalog-section__menu-scrollbar swiper-scrollbar"></div>
                 </div>

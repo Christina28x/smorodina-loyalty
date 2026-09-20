@@ -30,7 +30,7 @@
 
     
 <meta name="robots" content="index, follow">
-<meta name="description" content="Производитель российской натуральной косметики, возможность купить натуральную косметику оптом и в розницу!"><link href="{{ asset('css/ui.font.opensans.min.css') }}" type="text/css" rel="stylesheet">
+<meta name="description" content="Производитель российской натуральной косметики, возможность купить натуральную косметику оптом и в розницу!">
 <link href="{{ asset('css/main.popup.bundle.min.css') }}" type="text/css" rel="stylesheet">
 <link href="{{ asset('css/page_abf0d7690b9729e3402dc7a39ad3da95_v1.css') }}" type="text/css" rel="stylesheet">
 <link href="{{ asset('css/page_3de68166bf3f01df3a58ee3325cbd8f2_v1.css') }}" type="text/css" rel="stylesheet">
@@ -41,7 +41,6 @@
 <link href="{{ asset('css/cabinet_page.css') }}" type="text/css" rel="stylesheet">
 <link href="{{ asset('css/kernel_main_v1.css') }}" type="text/css" rel="stylesheet">
 <link href="{{ asset('css/template_0b80b7434013b79b15128a7013bfd855_v1.css') }}" type="text/css"  data-template-style="true" rel="stylesheet" />
-<link href="{{ asset('css/template_5957792d4c57c19441691684972a6901_v1.css') }}" type="text/css" data-template-style="true" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script async="" src="{{ asset('js/tag.js') }}"></script><script type="text/javascript" async="" src="{{ asset('js/ba.js') }}"></script><script type="text/javascript">if(!window.BX)window.BX={};if(!window.BX.message)window.BX.message=function(mess){if(typeof mess==='object'){for(let i in mess) {BX.message[i]=mess[i];} return true;}};</script>
 <script type="text/javascript">(window.BX||top.BX).message({'pull_server_enabled':'Y','pull_config_timestamp':'1622230965','pull_guest_mode':'N','pull_guest_user_id':'0'});(window.BX||top.BX).message({'PULL_OLD_REVISION':'Для продолжения корректной работы с сайтом необходимо перезагрузить страницу.'});</script>

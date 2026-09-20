@@ -82,7 +82,7 @@
 }
 .video-btn:after {
     content: '';
-    background: #F1F1F1 url('/local/templates/smorodinacosmetic_f61/svg/icons/icon-play.svg') no-repeat calc(50% + 2px) center / 10px auto;
+    background: #F1F1F1 url('/img/icon-play.svg') no-repeat calc(50% + 2px) center / 10px auto;
     width: 42px;
     height: 42px;
     border-radius: 50%;
@@ -294,15 +294,6 @@
     overflow: hidden;
 }
 .features-item__content {
-    /*position: absolute;*/
-    /*z-index: 1;*/
-    /*left: 50%;*/
-    /*bottom: 0;*/
-    /*text-align: center;*/
-    /*max-width: 970px;*/
-    /*transform: translate(-50%, 0);*/
-    /*margin-bottom: 40px;*/
-
     z-index: 2;
     text-align: center;
     max-width: 970px;
@@ -637,7 +628,7 @@
 	background-position: center center;
 	background-color: #fff;
 	border: 1px solid var(--colorBlack_o30);
-	background-image: url('/local/templates/smorodinacosmetic_f61/svg/icons/icon-check_white.svg');
+	background-image: url('/img/icon-check_white.svg');
 	background-size: 8px;
 	transition: all .6s;
 }
@@ -651,7 +642,7 @@
 .form__select {
 	cursor: pointer;
 	appearance: none;
-	background: #fff url('/local/templates/smorodinacosmetic_f61/svg/icons/icon-arrow-down_black_thin.svg') no-repeat right;
+	background: #fff url('/img/icon-arrow-down_black_thin.svg') no-repeat right;
 	background-position-x: calc(100% - 8px);
 	width: 100%;
 }

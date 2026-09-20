@@ -134,10 +134,6 @@ Route::get('/catalog/hair-care/aromaraschesyvanie-hair', function () {
     return app(ProductController::class)->showCatalogView('hair-care', 'aromaraschesyvanie-hair');
 });
 
-Route::get('/catalog/hair-care/polotentse-s', function () {
-    return app(ProductController::class)->showCatalogView('hair-care', 'polotentse-s');
-});
-
 
 Route::get('/catalog/body/', function () {
     return app(ProductController::class)->showCategoryView('body');
@@ -177,10 +173,6 @@ Route::get('/catalog/tverdye-produkty/tverdye-produkty-dlya-tel', function () {
 
 Route::get('/catalog/tverdye-produkty/tverdye-shampuni-i-konditsionery', function () {
     return app(ProductController::class)->showCatalogView('tverdye-produkty', 'tverdye-shampuni-i-konditsionery');
-});
-
-Route::get('/catalog/tverdye-produkty/aksessuary-dlya-sushki-i-khraneniya', function () {
-    return app(ProductController::class)->showCatalogView('tverdye-produkty', 'aksessuary-dlya-sushki-i-khraneniya');
 });
 
 

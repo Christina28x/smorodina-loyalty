@@ -35,9 +35,6 @@
                                                                     <div class="swiper-slide">
                                         <a href="/catalog/tverdye-produkty/tverdye-produkty-dlya-tel/" class="d-block catalog-section__menu__item ">Для тела </a>
                                     </div>
-                                                                    <div class="swiper-slide">
-                                        <a href="/catalog/tverdye-produkty/aksessuary-dlya-sushki-i-khraneniya/" class="d-block catalog-section__menu__item ">Аксессуары </a>
-                                    </div>
                                                                                                         </div>
                     <div class="catalog-section__menu-scrollbar swiper-scrollbar"></div>
                 </div>

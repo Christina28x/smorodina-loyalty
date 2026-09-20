@@ -1,6 +1,6 @@
 
 
-/* Start:/local/templates/smorodinacosmetic_f61/fonts/fonts.css?1689051517502*/
+/* Start*/
 @font-face {
     font-family: 'suissentl';
     font-weight: 400;
@@ -25,15 +25,6 @@
     font-display: swap;
 }
 
-/* End */
-
-
-/* Start:/local/templates/smorodinacosmetic_f61/lib/bootstrap-5.3.0/bootstrap-custom.css?1689164599305435*/
-/*!
- * Bootstrap  v5.3.0 (https://getbootstrap.com/)
- * Copyright 2011-2023 The Bootstrap Authors
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -15517,7 +15508,7 @@ textarea.form-control-lg {
 /* End */
 
 
-/* Start:/local/templates/smorodinacosmetic_f61/lib/swiper/swiper-bundle.min.css?168905152118065*/
+/* Start*/
 /**
  * Swiper 9.4.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -15703,8 +15694,7 @@ li:before {
     z-index: 9;
     width: 37px;
     height: 37px;
-    background-image: url('/local/templates/smorodinacosmetic_f61/svg/icons/icon-arrow-top.png');
-    /*background-image: url('/local/templates/smorodinacosmetic_f61/images/icons/icon-arrow-top_white.png');*/
+    background-image: url('/img/icon-arrow-top.png');
     background-size: 25px;
     background-repeat: no-repeat;
     background-position: center;
@@ -17353,7 +17343,7 @@ textarea::placeholder {
     display: inline-block;
 }
 .fast-search input {
-    background: #fff url('/local/templates/smorodinacosmetic_f61/css/../images/loupe_black.svg') no-repeat left 20px center / 16px;
+    background: #fff url('/img/loupe_black.svg') no-repeat left 20px center / 16px;
     padding-left: 60px;
 }
 .fast-search__results__title {
@@ -17476,7 +17466,7 @@ textarea::placeholder {
     margin-right: 16px;
 }
 .catalog-section__options__sort {
-    background: #fff url(/local/templates/smorodinacosmetic_f61/css/../images/sort.svg) no-repeat center / 20px auto;
+    background: #fff url(/img/sort.svg) no-repeat center / 20px auto;
     width: 42px;
     height: 42px;
     border-radius: 9px;
@@ -17610,7 +17600,7 @@ textarea::placeholder {
 
 }
 .catalog-filter__close {
-    background: #fff url(/local/templates/smorodinacosmetic_f61/css/../images/close.svg) no-repeat center;
+    background: #fff url(/img/close.svg) no-repeat center;
     width: 32px;
     height: 32px;
     position: absolute;
@@ -18098,21 +18088,7 @@ textarea::placeholder {
 .simple-product-page__top__value {
     cursor: inherit;
 }
-.product-page__top__reviews {
 
-}
-.product-page__top__reviews__stars {
-
-}
-.product-page__top__reviews__star {
-    background: url(/local/templates/smorodinacosmetic_f61/css/../img/star_simple.svg) no-repeat center / contain;
-    width: 14px;
-    height: 14px;
-    margin-right: 3px;
-}
-.product-page__top__reviews__star_active {
-    background-image: url(/local/templates/smorodinacosmetic_f61/css/../img/star_fill.svg)
-}
 .product-page__top__reviews__rating {
     color: var(--colorBlack_o30);
     font-size: 14px;
@@ -18188,7 +18164,7 @@ textarea::placeholder {
 .product-page__top__feature:before {
     content: '';
     position: absolute;
-    background: #E9F1E6 url(/local/templates/smorodinacosmetic_f61/css/../img/product_feature.svg) no-repeat center / 21px auto;
+    background: #E9F1E6 url(/img/product_feature.svg) no-repeat center / 21px auto;
     width: 38px;
     height: 38px;
     border-radius: 50px;
@@ -18511,18 +18487,6 @@ textarea::placeholder {
     line-height: 100%;
     letter-spacing: -2.16px;
 }
-.product-reviews__stars {
-    margin-top: 12px
-}
-.product-reviews__star {
-    background: url(/local/templates/smorodinacosmetic_f61/css/../img/star_simple.svg) no-repeat center / contain;
-    width: 14px;
-    height: 14px;
-    margin-right: 3px;
-}
-.product-reviews__star_active {
-    background-image: url(/local/templates/smorodinacosmetic_f61/css/../img/star_fill.svg)
-}
 .product-reviews__info {
     margin-top: 12px;
     font-size: 14px;
@@ -18562,18 +18526,6 @@ textarea::placeholder {
 }
 .product-review__review__stars {
     margin-top: 12px
-}
-.product-review__review__star {
-    background: url(/local/templates/smorodinacosmetic_f61/css/../img/star_simple_pink.svg) no-repeat center / contain;
-    width: 14px;
-    height: 14px;
-    margin-right: 3px;
-}
-.product-review__review__star_active {
-    background-image: url(/local/templates/smorodinacosmetic_f61/css/../img/star_fill_pink.svg)
-}
-.product-review__review__date {
-    color: var(--colorBlack_o30);
 }
 .product-reviews__review__text {
     margin-top: 14px;
@@ -21242,16 +21194,6 @@ textarea::placeholder {
     justify-content: center;
 }
 .review__stars span,
-.raiting__stars span {
-    display: block;
-    background-image: url('/local/templates/smorodinacosmetic_f61/svg/stars/star_fill_pink.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 14.5px;
-    height: 14.5px;
-    margin-right: 1px;
-}
 .product-reviews__menu__item {
     display: grid;
     grid-template-columns: max-content max-content;
@@ -21337,7 +21279,7 @@ textarea::placeholder {
     top: 24px;
     width: 16px;
     height: 16px;
-    background-image: url('/local/templates/smorodinacosmetic/svg/close_black.svg');
+    background-image: url('/img/close_black.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -21500,670 +21442,6 @@ textarea::placeholder {
     font-size: 14px;
     line-height: 130%;
     letter-spacing: -.28px;
-    background: #fff url('/local/templates/smorodinacosmetic_f61/components/bitrix/catalog.section/search_header/../images/loupe_black.svg') no-repeat left 20px center / 16px;
+    background: #fff url('/img/loupe_black.svg') no-repeat left 20px center / 16px;
     padding-left: 60px;
 }
-
-/*.close-search {*/
-/*    cursor: pointer;*/
-/*}*/
-
-/*.search {*/
-/*    width: 100%;*/
-/*}*/
-
-/*.search__input {*/
-/*    background: #fff;*/
-/*    border-radius: 18px;*/
-/*    padding: 10px 15px;*/
-/*    margin-bottom: 0;*/
-/*    margin-right: 15px;*/
-/*}*/
-
-/*.search__input::placeholder {*/
-/*    color: #767676;*/
-/*    font-size: 14px;*/
-/*}*/
-
-/*.search__inner {*/
-/*    margin-bottom: 10px;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*}*/
-
-/*.search__inner.progress {*/
-/*    height: unset !important;*/
-/*    background-color: unset !important;*/
-/*    box-shadow: none !important;*/
-/*}*/
-
-/*.search__title_not-found {*/
-/*    font-size: 14px;*/
-/*    padding: 10px;*/
-/*}*/
-
-/*!* Результаты поиска *!*/
-/*.search__results-wrapper {*/
-/*    !*margin-bottom: 15px;*!*/
-/*    border-radius: 10px;*/
-/*    max-height: 300px;*/
-/*    height: 100%;*/
-/*    overflow-x: hidden;*/
-/*    overflow-y: scroll;*/
-/*}*/
-
-/*.search__results-wrapper::-webkit-scrollbar {*/
-/*    width: 0;*/
-/*}*/
-
-/*.search__results {*/
-/*    padding: 10px 10px 0 10px;*/
-/*}*/
-
-/*.item-search__link {*/
-/*    margin-bottom: 30px;*/
-/*}*/
-
-/*.item-search__link:hover .item-search {*/
-/*    background: #fefafd;*/
-/*}*/
-
-/*.item-search__link:hover .item-search__img,*/
-/*.item-search__link:hover .item-search__title {*/
-/*    transform: scale(1.01);*/
-/*}*/
-
-/*.item-search,*/
-/*.item-search__img,*/
-/*.item-search__title {*/
-/*    transition: all var(--transitionSlow);*/
-/*}*/
-
-/*.item-search {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    border-radius: 8px;*/
-/*    margin-bottom: 10px;*/
-/*}*/
-
-/*.item-search__img {*/
-/*    margin-right: 20px;*/
-/*}*/
-
-/*.item-search__title {*/
-/*}*/
-
-
-/*!* Media *!*/
-/*@media (max-width: 425px) {*/
-/*    .close-search {*/
-/*        font-size: 12px;*/
-/*    }*/
-
-/*    .item-search__title {*/
-/*        font-size: 12px;*/
-/*    }*/
-
-/*    .search__input {*/
-/*        font-size: 14px;*/
-/*    }*/
-/*}*/
-
-/*@media all and (max-width: 320px) {*/
-/*    .search__results-wrapper {*/
-/*        max-height: 270px;*/
-/*    }*/
-/*}*/
-/* End */
-
-
-/* Start:/local/templates/smorodinacosmetic_f61/components/bitrix/catalog.section.list/mega-menu_charity/style.css?17024793796834*/
-/*.pink .burger .burger-category__arrow {*/
-    /*width: 13px;*/
-    /*margin-left: 15px;*/
-    /*height: 100%;*/
-    /*transform: rotate(180deg);*/
-/*}*/
-
-/*.pink .burger .arrow-rotate {*/
-    /*transform: rotate(0deg);*/
-/*}*/
-
-/*.burger {*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*position: fixed;*/
-    /*z-index: 100;*/
-    /*top: 0;*/
-    /*left: 0;*/
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*background-color: white;*/
-    /*overflow-y: scroll;*/
-/*}*/
-
-/*.pink .burger .burger__header {*/
-    /*display: flex;*/
-    /*align-items: flex-start;*/
-    /*justify-content: space-between;*/
-    /*padding: 16px 22px;*/
-    /*background-color: #F4E9EC;*/
-/*}*/
-
-/*.pink .burger .burger__logo_black {*/
-    /*background-image: url(/local/templates/smorodinacosmetic/svg/logo.svg);*/
-    /*background-repeat: no-repeat;*/
-    /*width: 56px;*/
-    /*height: 25px;*/
-    /*display: block;*/
-/*}*/
-
-/*.pink .burger .burger__close {*/
-    /*background-image: url(/local/templates/smorodinacosmetic/svg/close_black.svg);*/
-    /*background-repeat: no-repeat;*/
-    /*width: 16px;*/
-    /*height: 16px;*/
-    /*display: block;*/
-    /*cursor: pointer;*/
-/*}*/
-
-/*.pink .burger .burger__main {*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*padding: 13px 45px 7px 49px;*/
-/*}*/
-
-/*!* Раздел *!*/
-/*.pink .burger .burger__category {*/
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*margin-bottom: 24px;*/
-    /*position: relative;*/
-/*}*/
-
-/*.pink .burger .burger-category__link {*/
-    /*display: flex;*/
-    /*align-items: center;*/
-/*}*/
-
-/*.pink .burger .category:hover .category__title {*/
-    /*color: var(--colorPinkBright);*/
-    /*text-decoration: underline;*/
-/*}*/
-
-/*.pink .burger .category__icon {*/
-     /*margin-right: 8px;*/
-     /*background-repeat: no-repeat;*/
-     /*background-position: center;*/
-     /*background-size: contain;*/
-     /*width: 16px;*/
-     /*height: 17px;*/
-     /*display: block;*/
-     /*transition: all var(--transition);*/
- /*}*/
-
-/*.pink .burger .bestseller {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/bestseller.svg');*/
-/*}*/
-
-/*.pink .burger__main .act .bestseller {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/bestseller_pink.svg');*/
-/*}*/
-
-
-/*.pink .burger .new {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/new.svg');*/
-/*}*/
-
-/*.pink .burger__main .act .new {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/new_pink.svg');*/
-/*}*/
-
-
-/*.pink .burger .product-lines {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/product-lines.svg');*/
-/*}*/
-
-/*.pink .burger__main .act .product-lines {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/product-lines_pink.svg');*/
-/*}*/
-
-
-/*.pink .burger .care-search {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/care-search.svg');*/
-/*}*/
-
-/*.pink .burger__main .act .care-search {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/care-search_pink.svg');*/
-/*}*/
-
-
-/*.pink .burger .skin-type-test {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/skin-type-test.svg');*/
-/*}*/
-
-/*.pink .burger__main .act .skin-type-test {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/skin-type-test_pink.svg');*/
-/*}*/
-
-
-/*.pink .burger .sales {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/sales_black.svg');*/
-/*}*/
-
-/*.pink .burger__main .act .sales {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/sales_pink.svg');*/
-/*}*/
-
-
-/*.pink .burger .special-offers-icon {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/special-offers.svg');*/
-
-/*}*/
-
-/*.pink .burger__main .act .special-offers-icon {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/special-offers_pink.svg');*/
-
-/*}*/
-
-
-/*.pink .burger .certificates {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/certificates.svg');*/
-
-/*}*/
-
-/*.pink .burger__main .act .certificates {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/certificates_pink.svg');*/
-
-/*}*/
-
-
-/*.pink .burger .category__title {*/
-    /*font-family: regular, arial;*/
-    /*font-size: 14px;*/
-    /*line-height: 17px;*/
-    /*color: #000;*/
-    /*text-transform: none;*/
-    /*transition: all var(--transition);*/
-/*}*/
-
-/*.pink .burger .category__title_bold {*/
-    /*font-family: bold, arial;*/
-/*}*/
-
-/*!* Подраздел *!*/
-/*.pink .burger .burger-subcategory {*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*margin: 11px 0 13px 23px;*/
-    /*height: max-content;*/
-/*}*/
-
-/*.pink .burger .burger-subcategory__link {*/
-    /*font-size: 13px;*/
-    /*line-height: 12px;*/
-    /*color: #000;*/
-    /*margin-bottom: 24px;*/
-    /*transition: all var(--transition);*/
-/*}*/
-
-/*.pink .burger .burger-subcategory__link:hover {*/
-    /*color: var(--colorPinkBright);*/
-    /*text-decoration: underline;*/
-/*}*/
-
-
-/*!* Burger footer*!*/
-/*.pink .burger .burger__line {*/
-    /*border: 0.3px solid #C4C4C4;*/
-/*}*/
-
-/*.pink .burger .pages {*/
-    /*display: grid;*/
-    /*grid-gap: 20px;*/
-    /*flex-direction: column;*/
-    /*padding: 10px 35px 15px 35px;*/
-/*}*/
-
-/*.pink .burger .pages__link {*/
-    /*transition: all var(--transition);*/
-    /*margin: 0;*/
-/*}*/
-
-/*.pink .burger .pages__link:hover {*/
-    /*color: var(--colorPinkBright);*/
-/*}*/
-
-/*.pink .burger .burger__social {*/
-
-/*}*/
-
-/*.pink .burger .social {*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*justify-content: center;*/
-    /*padding: 10px 0 28px;*/
-/*}*/
-
-/*.pink .burger .social__title {*/
-    /*font-family: regular, arial;*/
-    /*font-size: 14px;*/
-    /*line-height: 17px;*/
-    /*text-align: center;*/
-    /*color: #000;*/
-    /*text-transform: none;*/
-    /*margin-bottom: 13px;*/
-/*}*/
-
-/*.pink .burger .social__icons {*/
-    /*display: grid;*/
-    /*grid-gap: 20px;*/
-    /*grid-template-columns: repeat(3, 22px);*/
-/*}*/
-
-/*.pink .burger .social__img {*/
-    /*display: block;*/
-    /*width: 21px;*/
-    /*height: 21px;*/
-    /*transition: all var(--transition);*/
-/*}*/
-
-/*.pink .burger .social__img:hover {*/
-    /*transform: rotate(30deg);*/
-/*}*/
-
-
-
-
-
-
-/*!* Media *!*/
-/*@media all and (max-width: 680px) {*/
-    /*.pink .burger .category__title {*/
-        /*text-transform: none;*/
-    /*}*/
-
-/*}*/
-
-/* End */
-
-
-/* Start:/local/templates/smorodinacosmetic_f61/components/bitrix/catalog.section.list/mega-menu_top/style.css?16898819386834*/
-/*.pink .burger .burger-category__arrow {*/
-    /*width: 13px;*/
-    /*margin-left: 15px;*/
-    /*height: 100%;*/
-    /*transform: rotate(180deg);*/
-/*}*/
-
-/*.pink .burger .arrow-rotate {*/
-    /*transform: rotate(0deg);*/
-/*}*/
-
-/*.burger {*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*position: fixed;*/
-    /*z-index: 100;*/
-    /*top: 0;*/
-    /*left: 0;*/
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*background-color: white;*/
-    /*overflow-y: scroll;*/
-/*}*/
-
-/*.pink .burger .burger__header {*/
-    /*display: flex;*/
-    /*align-items: flex-start;*/
-    /*justify-content: space-between;*/
-    /*padding: 16px 22px;*/
-    /*background-color: #F4E9EC;*/
-/*}*/
-
-/*.pink .burger .burger__logo_black {*/
-    /*background-image: url(/local/templates/smorodinacosmetic/svg/logo.svg);*/
-    /*background-repeat: no-repeat;*/
-    /*width: 56px;*/
-    /*height: 25px;*/
-    /*display: block;*/
-/*}*/
-
-/*.pink .burger .burger__close {*/
-    /*background-image: url(/local/templates/smorodinacosmetic/svg/close_black.svg);*/
-    /*background-repeat: no-repeat;*/
-    /*width: 16px;*/
-    /*height: 16px;*/
-    /*display: block;*/
-    /*cursor: pointer;*/
-/*}*/
-
-/*.pink .burger .burger__main {*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*padding: 13px 45px 7px 49px;*/
-/*}*/
-
-/*!* Раздел *!*/
-/*.pink .burger .burger__category {*/
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*margin-bottom: 24px;*/
-    /*position: relative;*/
-/*}*/
-
-/*.pink .burger .burger-category__link {*/
-    /*display: flex;*/
-    /*align-items: center;*/
-/*}*/
-
-/*.pink .burger .category:hover .category__title {*/
-    /*color: var(--colorPinkBright);*/
-    /*text-decoration: underline;*/
-/*}*/
-
-/*.pink .burger .category__icon {*/
-     /*margin-right: 8px;*/
-     /*background-repeat: no-repeat;*/
-     /*background-position: center;*/
-     /*background-size: contain;*/
-     /*width: 16px;*/
-     /*height: 17px;*/
-     /*display: block;*/
-     /*transition: all var(--transition);*/
- /*}*/
-
-/*.pink .burger .bestseller {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/bestseller.svg');*/
-/*}*/
-
-/*.pink .burger__main .act .bestseller {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/bestseller_pink.svg');*/
-/*}*/
-
-
-/*.pink .burger .new {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/new.svg');*/
-/*}*/
-
-/*.pink .burger__main .act .new {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/new_pink.svg');*/
-/*}*/
-
-
-/*.pink .burger .product-lines {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/product-lines.svg');*/
-/*}*/
-
-/*.pink .burger__main .act .product-lines {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/product-lines_pink.svg');*/
-/*}*/
-
-
-/*.pink .burger .care-search {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/care-search.svg');*/
-/*}*/
-
-/*.pink .burger__main .act .care-search {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/care-search_pink.svg');*/
-/*}*/
-
-
-/*.pink .burger .skin-type-test {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/skin-type-test.svg');*/
-/*}*/
-
-/*.pink .burger__main .act .skin-type-test {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/skin-type-test_pink.svg');*/
-/*}*/
-
-
-/*.pink .burger .sales {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/sales_black.svg');*/
-/*}*/
-
-/*.pink .burger__main .act .sales {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/sales_pink.svg');*/
-/*}*/
-
-
-/*.pink .burger .special-offers-icon {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/special-offers.svg');*/
-
-/*}*/
-
-/*.pink .burger__main .act .special-offers-icon {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/special-offers_pink.svg');*/
-
-/*}*/
-
-
-/*.pink .burger .certificates {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/certificates.svg');*/
-
-/*}*/
-
-/*.pink .burger__main .act .certificates {*/
-    /*background-image: url('/local/templates/smorodinacosmetic/svg/burger/certificates_pink.svg');*/
-
-/*}*/
-
-
-/*.pink .burger .category__title {*/
-    /*font-family: regular, arial;*/
-    /*font-size: 14px;*/
-    /*line-height: 17px;*/
-    /*color: #000;*/
-    /*text-transform: none;*/
-    /*transition: all var(--transition);*/
-/*}*/
-
-/*.pink .burger .category__title_bold {*/
-    /*font-family: bold, arial;*/
-/*}*/
-
-/*!* Подраздел *!*/
-/*.pink .burger .burger-subcategory {*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*margin: 11px 0 13px 23px;*/
-    /*height: max-content;*/
-/*}*/
-
-/*.pink .burger .burger-subcategory__link {*/
-    /*font-size: 13px;*/
-    /*line-height: 12px;*/
-    /*color: #000;*/
-    /*margin-bottom: 24px;*/
-    /*transition: all var(--transition);*/
-/*}*/
-
-/*.pink .burger .burger-subcategory__link:hover {*/
-    /*color: var(--colorPinkBright);*/
-    /*text-decoration: underline;*/
-/*}*/
-
-
-/*!* Burger footer*!*/
-/*.pink .burger .burger__line {*/
-    /*border: 0.3px solid #C4C4C4;*/
-/*}*/
-
-/*.pink .burger .pages {*/
-    /*display: grid;*/
-    /*grid-gap: 20px;*/
-    /*flex-direction: column;*/
-    /*padding: 10px 35px 15px 35px;*/
-/*}*/
-
-/*.pink .burger .pages__link {*/
-    /*transition: all var(--transition);*/
-    /*margin: 0;*/
-/*}*/
-
-/*.pink .burger .pages__link:hover {*/
-    /*color: var(--colorPinkBright);*/
-/*}*/
-
-/*.pink .burger .burger__social {*/
-
-/*}*/
-
-/*.pink .burger .social {*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*justify-content: center;*/
-    /*padding: 10px 0 28px;*/
-/*}*/
-
-/*.pink .burger .social__title {*/
-    /*font-family: regular, arial;*/
-    /*font-size: 14px;*/
-    /*line-height: 17px;*/
-    /*text-align: center;*/
-    /*color: #000;*/
-    /*text-transform: none;*/
-    /*margin-bottom: 13px;*/
-/*}*/
-
-/*.pink .burger .social__icons {*/
-    /*display: grid;*/
-    /*grid-gap: 20px;*/
-    /*grid-template-columns: repeat(3, 22px);*/
-/*}*/
-
-/*.pink .burger .social__img {*/
-    /*display: block;*/
-    /*width: 21px;*/
-    /*height: 21px;*/
-    /*transition: all var(--transition);*/
-/*}*/
-
-/*.pink .burger .social__img:hover {*/
-    /*transform: rotate(30deg);*/
-/*}*/
-
-
-
-
-
-
-/*!* Media *!*/
-/*@media all and (max-width: 680px) {*/
-    /*.pink .burger .category__title {*/
-        /*text-transform: none;*/
-    /*}*/
-
-/*}*/
-
-/* End */
-/* /local/templates/smorodinacosmetic_f61/fonts/fonts.css?1689051517502 */
-/* /local/templates/smorodinacosmetic_f61/lib/bootstrap-5.3.0/bootstrap-custom.css?1689164599305435 */
-/* /local/templates/smorodinacosmetic_f61/lib/swiper/swiper-bundle.min.css?168905152118065 */
-/* /local/templates/smorodinacosmetic_f61/css/styles.css?173599266781171 */
-/* /local/templates/smorodinacosmetic_f61/css/pravki.css?173374204144933 */
-/* /local/templates/smorodinacosmetic_f61/components/bitrix/highloadblock.list/notification/style.css?1695618642501 */
-/* /local/templates/smorodinacosmetic_f61/components/bitrix/sale.basket.basket.line/.default/style.css?1689660206291 */
-/* /local/templates/smorodinacosmetic_f61/components/bitrix/catalog.section/search_header/style.css?16891853272592 */
-/* /local/templates/smorodinacosmetic_f61/components/bitrix/catalog.section.list/mega-menu_charity/style.css?17024793796834 */
-/* /local/templates/smorodinacosmetic_f61/components/bitrix/catalog.section.list/mega-menu_top/style.css?16898819386834 */

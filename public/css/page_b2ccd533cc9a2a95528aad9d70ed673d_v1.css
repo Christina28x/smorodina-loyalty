@@ -407,7 +407,7 @@
     z-index: 1;
     background-color: #fff;
     border-radius: 2px;
-    background-image: url('https://smorodinacosmetic.com/local/templates/smorodinacosmetic/svg/close_black.svg');
+    background-image: url('/img/close_black.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 16px;
@@ -657,7 +657,7 @@
     left: 0;
     width: max-content;
     height: 18px;
-    background-image: url('/local/templates/smorodinacosmetic/svg/cart_gift.svg');
+    background-image: url('/img/cart_gift.svg');
     background-repeat: no-repeat;
     background-color: #FF5C7A;
     background-size: 13px;
@@ -947,5 +947,3 @@
     }
 }
 
-/* End */
-/* /local/templates/smorodinacosmetic_f61/components/bitrix/sale.basket.basket/sale-basket_main_gift_v2/style.css?173711662418132 */

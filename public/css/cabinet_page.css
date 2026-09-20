@@ -3,7 +3,6 @@
 /* Start:/local/templates/smorodinacosmetic_f61/css/cabinet.css?171749247210712*/
 
 .cabinet__head {
-    /*background: url(/local/templates/smorodinacosmetic_f61/css/../images/cab_bg.png) no-repeat center / cover;*/
     height: 500px;
     padding: 110px 0 50px;
     position: relative;
@@ -214,12 +213,12 @@
 
 .form__input.filled {
     border: 2px solid #B2CE63 !important;
-    background-image: url('/local/templates/smorodinacosmetic_f61/images/cabinet/check.svg');
+    background-image: url('/img/check.svg');
     background-size: 12px 8px;
     background-repeat: no-repeat;
 }
 .form__input.tick {
-    background-image: url('/local/templates/smorodinacosmetic_f61/images/cabinet/check.svg');
+    background-image: url('/img/check.svg');
     background-size: 12px 8px;
     background-repeat: no-repeat;
 }
@@ -533,8 +532,8 @@ div.bx-auth{max-width:600px;margin-top:16px;margin-bottom:24px}div.bx-auth form{
 
 /* Start:/local/templates/smorodinacosmetic_f61/components/bitrix/system.auth.form/auth_check-user-exist_correct/style.css?17342595882785*/
 div.bx-system-auth-form span.bx-auth-secure {background-color:#FFFAE3; border:1px solid #DEDBC8; padding:2px; display:inline-block; vertical-align:bottom; margin-top:-1px;}
-div.bx-system-auth-form div.bx-auth-secure-icon {background-image:url(/local/templates/smorodinacosmetic_f61/components/bitrix/system.auth.form/auth_check-user-exist_correct/images/sec.png); background-repeat:no-repeat; background-position:center; width:19px; height:18px;}
-div.bx-system-auth-form div.bx-auth-secure-unlock {background-image:url(/local/templates/smorodinacosmetic_f61/components/bitrix/system.auth.form/auth_check-user-exist_correct/images/sec-unlocked.png);}
+div.bx-system-auth-form div.bx-auth-secure-icon {background-image:url(/img/sec.png); background-repeat:no-repeat; background-position:center; width:19px; height:18px;}
+div.bx-system-auth-form div.bx-auth-secure-unlock {background-image:url(/img/sec-unlocked.png);}
 
 /* new */
 .fly-popup__content {
@@ -585,7 +584,7 @@ div.bx-system-auth-form div.bx-auth-secure-unlock {background-image:url(/local/t
 
 .form__input.filled {
     border: 2px solid #B2CE63 !important;
-    background-image: url('/local/templates/smorodinacosmetic_f61/images/cabinet/check.svg');
+    background-image: url('/img/check.svg');
     background-size: 12px 8px;
     background-repeat: no-repeat;
 }
@@ -732,7 +731,7 @@ div.bx-system-auth-form div.bx-auth-secure-unlock {background-image:url(/local/t
     background-position: center center;
     background-color: #fff;
     border: 1px solid var(--colorBlack_o30);
-    background-image: url('/local/templates/smorodinacosmetic_f61/svg/icons/icon-check_white.svg');
+    background-image: url('/img/icon-check_white.svg');
     background-size: 8px;
     transition: all .6s;
 }
@@ -1301,16 +1300,6 @@ div.sale-order-list-repeat-container {
     vertical-align: middle;
 }
 
-.sale-order-list-repeat-link:before {
-    content: "";
-    display: inline-block;
-    margin: 0 3px 4px 0;
-    width: 10px;
-    height: 13px;
-    background: url(/local/templates/smorodinacosmetic_f61/components/bitrix/sale.personal.order.list/repeat-and-pay/images/sale-order-repeat.svg) no-repeat;
-    vertical-align: middle;
-}
-
 .sale-order-link-accomplished {
     padding: 0;
     text-decoration: none;
@@ -1447,14 +1436,6 @@ div.sale-order-list-repeat-container {
     font-weight: 700;
 }
 
-.sale-order-list-shipment-id-icon {
-    display: inline-block;
-    width: 11px;
-    height: 13px;
-    background: url("/local/templates/smorodinacosmetic_f61/components/bitrix/sale.personal.order.list/repeat-and-pay/images/sale-order-order-list-options-methods-shipment-list-item-id-element.svg") center no-repeat;
-    cursor: pointer;
-}
-
 .sale-order-list-top-border {
     width: auto;
     height: 1px;
@@ -1548,8 +1529,6 @@ div.sale-order-list-repeat-container {
 .module-pagination .flex-direction-nav .flex-nav-next{ right: -37px }
 .module-pagination .flex-direction-nav .disabled { display: none; }
 .module-pagination .flex-direction-nav .flex-nav-prev { left: -37px }
-.module-pagination .point_sep { cursor: default; display: inline-block; width: 27px; height: 29px; font-size: 0; background: url(/local/templates/smorodinacosmetic_f61/components/bitrix/sale.personal.order.list/repeat-and-pay/images/pagination_sep.png) center no-repeat !important; border: 0 !important; vertical-align: bottom; }
-
 
 
 
